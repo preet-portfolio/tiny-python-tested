@@ -77,7 +77,9 @@ export function Editor({ value, onChange, onRun, markLine, label }: Props) {
           syntaxHighlighting(highlight),
           theme,
           markedLine,
-          EditorView.contentAttributes.of({ "aria-label": label }),
+          // tabindex: the text is already focusable (contenteditable), but axe only counts the
+          // scrolling box as keyboard-reachable when its content says so explicitly.
+          EditorView.contentAttributes.of({ "aria-label": label, tabindex: "0" }),
           EditorView.updateListener.of((u) => {
             if (u.docChanged) cb.current.onChange(u.state.doc.toString());
           }),
