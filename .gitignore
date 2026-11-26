@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+python/build/
+.mutmut-cache/
+mutants/
+web/node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+web/public/chapters/
+web/public/runtime/
+.vercel
+.DS_Store
+web/public/pyodide/
+.claude/
