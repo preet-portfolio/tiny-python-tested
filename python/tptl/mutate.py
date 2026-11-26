@@ -13,7 +13,9 @@ interactive version and uses the same idea with fewer operators.
 from __future__ import annotations
 
 import ast
+import importlib.util
 import os
+import sys
 from collections.abc import Callable, Iterator
 from dataclasses import asdict, dataclass
 from typing import Any
@@ -251,6 +253,22 @@ def generate(source: str, limit: int = 60) -> list[Mutant]:
     return mutants
 
 
+def write_source(path: str, text: str) -> None:
+    """Replace a program's source and drop its cached bytecode.
+
+    Python trusts a cached .pyc while the source's size and mtime (in whole seconds) match.
+    A gremlin is often the same size as the one before it and is written within the same
+    second, so without this the tests could run the previous gremlin's code, and how often
+    that happened depended on the machine's speed.
+    """
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(text)
+    try:
+        os.remove(importlib.util.cache_from_source(path))
+    except FileNotFoundError:
+        pass
+
+
 def run_mutants(
     chapter_dir: str,
     program: str,
@@ -271,12 +289,13 @@ def run_mutants(
     mutants = generate(original, limit)
     rows = []
     shim.LINE_BUDGET = line_budget
+    write_bytecode = sys.dont_write_bytecode
+    sys.dont_write_bytecode = True
     try:
         for i, m in enumerate(mutants):
             if progress:
                 progress(i, len(mutants))
-            with open(path, "w", encoding="utf-8") as fh:
-                fh.write(m.source)
+            write_source(path, m.source)
             res = run_tests(chapter_dir, test_files)
             killers = [t["name"] for t in res["tests"] if t["outcome"] != "passed"]
             # pytest exit codes 2-4 mean the run itself broke (e.g. the mutant exits while
@@ -291,8 +310,8 @@ def run_mutants(
             rows.append(row)
     finally:
         shim.LINE_BUDGET = None
-        with open(path, "w", encoding="utf-8") as fh:
-            fh.write(original)
+        sys.dont_write_bytecode = write_bytecode
+        write_source(path, original)
 
     killed = sum(r["killed"] for r in rows)
     return {

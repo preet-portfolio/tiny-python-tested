@@ -32,6 +32,8 @@ jobs:
         run: python -m pip install "pip>=25.1" && python -m pip install --group dev
       - name: ruff
         run: ruff check
+      - name: Gremlins run their own code, not cached bytecode
+        run: python scripts/check_fresh_source.py
       - name: mypy
         # Every chapter has a book.py, so one mypy run sees duplicate modules named "book".
         # Check tptl, then each chapter folder on its own (pyproject's settings still apply).
