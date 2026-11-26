@@ -45,6 +45,30 @@ jobs:
             if compgen -G "$d*.py" > /dev/null; then mypy "$d"; fi
           done
 
+  licences-and-secrets:
+    # Every file says who owns it (REUSE), no secret is in any commit (gitleaks, full
+    # history), and the workflows pass zizmor's security audit. Tools at exact versions;
+    # the gitleaks download is checked against its published SHA-256.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: REUSE
+        run: pipx run --spec "reuse[charset-normalizer]==6.3.0" reuse lint
+      - name: zizmor
+        run: pipx run zizmor==1.33.1 --offline .github/workflows
+      - name: gitleaks
+        run: |
+          curl -sSfL -o gitleaks.tgz https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz gitleaks
+          ./gitleaks git --log-opts="--all" --redact --no-banner .
+
   test:
     # The book's tests and the real-world tests, natively, with real subprocesses: each
     # chapter in its own build dir, invoked as tptl.parity.native_outcomes invokes pytest
@@ -176,7 +200,7 @@ jobs:
     # the jobs that run project code against untrusted input, and means a failing check never
     # publishes numbers. Commits made with GITHUB_TOKEN don't start another workflow run.
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [lint, test, parity, pyodide, metrics]
+    needs: [lint, licences-and-secrets, test, parity, pyodide, metrics]
     runs-on: ubuntu-24.04
     permissions:
       contents: write
