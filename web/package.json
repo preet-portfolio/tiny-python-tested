@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "bundle": "cd ../python && ../.venv/bin/python -m tptl.stage --web ../web/public",
+    "bundle": "cd ../python && $([ -x ../.venv/bin/python ] && echo ../.venv/bin/python || echo python3) -m tptl.stage --web ../web/public",
     "dev": "next dev -p 3210",
     "build": "next build",
     "start": "npx serve out -l 3210",
     "pyodide": "node scripts/fetch-pyodide.mjs",
-    "prebuild": "node scripts/fetch-pyodide.mjs",
+    "prebuild": "npm run bundle && node scripts/fetch-pyodide.mjs",
     "postbuild": "node scripts/check-moments.mjs",
     "predev": "node scripts/fetch-pyodide.mjs"
   },
