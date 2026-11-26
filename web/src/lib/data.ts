@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import type { Bundle } from "./py";
+import FLAGSHIP from "@/data/flagship.json";
 
 const PUBLIC = path.join(process.cwd(), "public");
 
@@ -57,9 +58,10 @@ export type Moments = { generated: string; python: string; chapters: MomentEntry
 export const loadMoments = () => readJSON<Moments>("metrics/moments.json");
 export const loadMoment = (id: string) => loadMoments()?.chapters.find((c) => c.id === id) ?? null;
 
-/** The first screen's toy: the one where the book's rules miss the most gremlins that real life
- * catches, among toys whose gremlin says something wrong rather than crashing. */
+/** The first screen's toy, chosen by hand in src/data/flagship.json (see its "why"). Only a toy
+ * whose recorded gremlin says something wrong, rather than crashing, can be shown; the build
+ * check fails if the chosen one isn't. */
 export function flagship(m: Moments | null): MomentEntry | null {
-  const ok = (m?.chapters ?? []).filter((c) => c.moment?.real?.status === 0 && c.moment?.gremlin?.status === 0);
-  return ok.sort((a, b) => b.gremlins.book_missed_real_life_caught - a.gremlins.book_missed_real_life_caught)[0] ?? null;
+  const c = m?.chapters.find((x) => x.id === FLAGSHIP.id);
+  return c?.moment?.real?.status === 0 && c.moment.gremlin?.status === 0 ? c : null;
 }

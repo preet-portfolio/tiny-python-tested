@@ -1,0 +1,4 @@
+{
+  "id": "02_crowsnest",
+  "why": "Chosen by a person, not by a count. Polly's gremlin changes a word a child can say ('an hour' becomes 'a hour'), and the fix is one word. Tic and Tac have more gremlins the book misses, but theirs are about game boards. The build fails if this toy's recorded moment stops being one where the gremlin says something wrong."
+}
