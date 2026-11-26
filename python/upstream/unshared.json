@@ -1,0 +1,22 @@
+{
+  "why": "Texts in the book's repository that its MIT licence can't cover, because the author doesn't own them. They are not in this repository and never reach the site. CI and local runs download them from the book's repository at a fixed commit and check each file's SHA-256 (python -m tptl.unshared); the book's tests that read them are skipped when they are absent, as in the browser.",
+  "commit": "bcf4b241712f2cec1fe87e3599b4c82d3151b5ef",
+  "base": "https://raw.githubusercontent.com/kyclark/tiny_python_projects",
+  "files": [
+    {
+      "path": "07_gashlycrumb/gashlycrumb.txt",
+      "sha256": "c96647387dd0fa2a9c88d6c16287315322a7a7fd9145e58d5a268854c1812852",
+      "owner": "Edward Gorey, The Gashlycrumb Tinies (1963); still in copyright"
+    },
+    {
+      "path": "inputs/spiders.txt",
+      "sha256": "2c864819a2edcc9586bbc44b3061e0cdf3683975bbc797d2e532b7b36dc3ceed",
+      "owner": "Issa's haiku in an English translation that appears to be Robert Hass's (1994); the translation is in copyright"
+    },
+    {
+      "path": "17_mad_libs/inputs/help.txt",
+      "sha256": "4036d4ae738841ed4675054abdff625747aca7e61266e0f0893d5229f5c05a33",
+      "owner": "Built on the lyric of the Beatles' \"Help!\" (1965); the lyric is in copyright"
+    }
+  ]
+}

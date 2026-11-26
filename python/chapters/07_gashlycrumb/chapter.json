@@ -80,7 +80,8 @@
   "book_program": "book.py",
   "chapter_files": [
     "kind.txt",
-    "messy.txt"
+    "messy.txt",
+    "conftest.py"
   ],
   "moment_args": [
     "-f kind.txt s a m",

@@ -54,6 +54,9 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Download the book's texts we can't share (pinned, SHA-256 checked)
+        working-directory: python
+        run: python -m tptl.unshared
       - name: Stage chapters
         working-directory: python
         run: python -m tptl.stage
@@ -70,6 +73,9 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Download the book's texts we can't share (pinned, SHA-256 checked)
+        working-directory: python
+        run: python -m tptl.unshared
       - name: Shim vs subprocess
         working-directory: python
         run: python -m tptl.parity ../web/public/metrics
@@ -133,6 +139,9 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Download the book's texts we can't share (pinned, SHA-256 checked)
+        working-directory: python
+        run: python -m tptl.unshared
       - name: Coverage
         run: python scripts/native_tests.py --coverage web/public/metrics
       - name: Mutation scores
