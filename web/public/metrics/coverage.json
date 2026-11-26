@@ -1,0 +1,196 @@
+{
+ "generated": "2026-11-26T12:07Z",
+ "python": "3.14.10",
+ "tests": "book + real world, real subprocess",
+ "chapters": [
+  {
+   "id": "02_crowsnest",
+   "program": "crowsnest.py",
+   "statements": 35,
+   "covered": 34,
+   "branches": 16,
+   "covered_branches": 14,
+   "percent": 94.1
+  },
+  {
+   "id": "03_picnic",
+   "program": "picnic.py",
+   "statements": 37,
+   "covered": 37,
+   "branches": 12,
+   "covered_branches": 11,
+   "percent": 98.0
+  },
+  {
+   "id": "04_jump_the_five",
+   "program": "jump.py",
+   "statements": 16,
+   "covered": 16,
+   "branches": 4,
+   "covered_branches": 3,
+   "percent": 95.0
+  },
+  {
+   "id": "05_howler",
+   "program": "howler.py",
+   "statements": 30,
+   "covered": 30,
+   "branches": 8,
+   "covered_branches": 7,
+   "percent": 97.4
+  },
+  {
+   "id": "06_wc",
+   "program": "wc.py",
+   "statements": 34,
+   "covered": 34,
+   "branches": 8,
+   "covered_branches": 7,
+   "percent": 97.6
+  },
+  {
+   "id": "07_gashlycrumb",
+   "program": "gashlycrumb.py",
+   "statements": 29,
+   "covered": 29,
+   "branches": 10,
+   "covered_branches": 9,
+   "percent": 97.4
+  },
+  {
+   "id": "08_apples_and_bananas",
+   "program": "apples.py",
+   "statements": 25,
+   "covered": 25,
+   "branches": 6,
+   "covered_branches": 5,
+   "percent": 96.8
+  },
+  {
+   "id": "09_abuse",
+   "program": "abuse.py",
+   "statements": 44,
+   "covered": 44,
+   "branches": 16,
+   "covered_branches": 15,
+   "percent": 98.3
+  },
+  {
+   "id": "10_telephone",
+   "program": "telephone.py",
+   "statements": 33,
+   "covered": 33,
+   "branches": 10,
+   "covered_branches": 10,
+   "percent": 100.0
+  },
+  {
+   "id": "11_bottles_of_beer",
+   "program": "bottles.py",
+   "statements": 19,
+   "covered": 19,
+   "branches": 6,
+   "covered_branches": 6,
+   "percent": 100.0
+  },
+  {
+   "id": "12_ransom",
+   "program": "ransom.py",
+   "statements": 24,
+   "covered": 24,
+   "branches": 4,
+   "covered_branches": 4,
+   "percent": 100.0
+  },
+  {
+   "id": "13_twelve_days",
+   "program": "twelve_days.py",
+   "statements": 29,
+   "covered": 29,
+   "branches": 8,
+   "covered_branches": 7,
+   "percent": 97.3
+  },
+  {
+   "id": "14_rhymer",
+   "program": "rhymer.py",
+   "statements": 35,
+   "covered": 34,
+   "branches": 12,
+   "covered_branches": 10,
+   "percent": 93.6
+  },
+  {
+   "id": "15_kentucky_friar",
+   "program": "friar.py",
+   "statements": 26,
+   "covered": 26,
+   "branches": 10,
+   "covered_branches": 9,
+   "percent": 97.2
+  },
+  {
+   "id": "16_scrambler",
+   "program": "scrambler.py",
+   "statements": 30,
+   "covered": 30,
+   "branches": 8,
+   "covered_branches": 8,
+   "percent": 100.0
+  },
+  {
+   "id": "17_mad_libs",
+   "program": "mad.py",
+   "statements": 41,
+   "covered": 41,
+   "branches": 10,
+   "covered_branches": 9,
+   "percent": 98.0
+  },
+  {
+   "id": "18_gematria",
+   "program": "gematria.py",
+   "statements": 26,
+   "covered": 26,
+   "branches": 6,
+   "covered_branches": 5,
+   "percent": 96.9
+  },
+  {
+   "id": "19_wod",
+   "program": "wod.py",
+   "statements": 52,
+   "covered": 52,
+   "branches": 14,
+   "covered_branches": 14,
+   "percent": 100.0
+  },
+  {
+   "id": "20_password",
+   "program": "password.py",
+   "statements": 47,
+   "covered": 47,
+   "branches": 16,
+   "covered_branches": 16,
+   "percent": 100.0
+  },
+  {
+   "id": "21_tictactoe",
+   "program": "tictactoe.py",
+   "statements": 52,
+   "covered": 52,
+   "branches": 22,
+   "covered_branches": 22,
+   "percent": 100.0
+  },
+  {
+   "id": "22_itictactoe",
+   "program": "itictactoe.py",
+   "statements": 60,
+   "covered": 55,
+   "branches": 22,
+   "covered_branches": 19,
+   "percent": 90.2
+  }
+ ]
+}
