@@ -9,7 +9,14 @@ import type { MomentEntry } from "@/lib/data";
 import type { Bundle } from "@/lib/py";
 
 // Python, the editor and the toys only load when someone asks to run it live.
-const Playground = dynamic(() => import("./Playground").then((m) => m.Playground), { ssr: false });
+const Playground = dynamic(() => import("./Playground").then((m) => m.Playground), {
+  ssr: false,
+  loading: () => (
+    <p className="waking" role="status">
+      Waking up…
+    </p>
+  ),
+});
 
 const SHOWN_LINES = 8;
 const NOTHING = "(says nothing)";
