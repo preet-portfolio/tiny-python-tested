@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26T19:00Z",
- "python": "3.14.10",
+ "generated": "2026-11-26T18:03Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -687,7 +687,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "nO SEEd, DIfFEreNt EvERY TimE\n"
+     "stdout": "nO sEED, DIffERENt evErY TiMe\n"
     }
    ],
    "moment": null
@@ -950,7 +950,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mses eervy time\n"
+     "stdout": "no seed, new mses evrey time\n"
     }
    ],
    "moment": {
@@ -965,17 +965,7 @@
     "rules": [
      "Numbers and punctuation don't move",
      "Spaces, numbers and punctuation always stay in place"
-    ],
-    "args": "'no seed, new mess every time'",
-    "label": "no seed, new mess every time",
-    "real": {
-     "status": 0,
-     "line": "no seed, new mses eervy time"
-    },
-    "gremlin": {
-     "status": 0,
-     "line": "no seed, new mses every tmie"
-    }
+    ]
    }
   },
   {
@@ -1003,10 +993,10 @@
      "stdout": "The quick surly car jumps under the lazy bicycle.\n"
     },
     {
-     "args": "inputs/help.txt -i Hey tacos Oi salsa Hola queso Arriba",
-     "label": "help tacos Oi salsa Hola queso Arriba",
+     "args": "inputs/romeo_juliet.txt -i penguins Paris pancake socks spoon wobbly dance 7 elbow giggle",
+     "label": "romeo_juliet Paris pancake socks spoon wobbly dance 7 elbow giggle",
      "status": 0,
-     "stdout": "Hey! I need tacos!\nOi! Not just salsa!\nHola! You know I need queso!\nArriba!\n"
+     "stdout": "Two penguins, both alike in dignity,\nIn fair Paris, where we lay our scene,\nFrom ancient pancake break to new mutiny,\nWhere civil blood makes civil hands unclean.\nFrom forth the fatal loins of these two foes\nA pair of star-cross'd socks take their life;\nWhose misadventur'd piteous overthrows\nDoth with their spoon bury their parents' strife.\nThe fearful passage of their wobbly love,\nAnd the continuance of their parents' rage,\nWhich, but their children's end, nought could dance,\nIs now the 7 hours' traffic of our stage;\nThe which if you with patient elbow attend,\nWhat here shall giggle, our toil shall strive to mend.\n"
     },
     {
      "args": "inputs/fox.txt -i only two",

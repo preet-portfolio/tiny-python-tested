@@ -63,11 +63,29 @@
     "test_seed_means_same_line": "Any sentence: the same lucky number gives the same mess"
   },
   "examples": [
-    ["🧠", "Your brain is amazing at reading"],
-    ["🍮", "crème brûlée"],
-    ["🚀", "NASA launches rockets"],
-    ["👋", "привет друзья"],
-    ["🕷️", "Don't worry, spiders"]
+    [
+      "🧠",
+      "Your brain is amazing at reading"
+    ],
+    [
+      "🍮",
+      "crème brûlée"
+    ],
+    [
+      "🚀",
+      "NASA launches rockets"
+    ],
+    [
+      "👋",
+      "привет друзья"
+    ],
+    [
+      "🌻",
+      "Sunflowers follow the sun"
+    ]
   ],
-  "book_program": "book.py"
+  "book_program": "book.py",
+  "chapter_files": [
+    "conftest.py"
+  ]
 }

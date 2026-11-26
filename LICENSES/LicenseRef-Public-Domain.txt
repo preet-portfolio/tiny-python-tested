@@ -1,0 +1,5 @@
+Public domain
+
+These texts are out of copyright: their authors died long ago and they were first
+published before 1931, or they are traditional songs. Anyone may copy, change and share
+them for any purpose. The REUSE.toml entry for each file names its author and year.

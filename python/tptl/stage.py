@@ -12,6 +12,8 @@ import stat
 import sys
 from pathlib import Path
 
+from . import unshared
+
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = ROOT / "chapters"
 UPSTREAM = ROOT / "upstream"
@@ -35,8 +37,11 @@ def stage(ch: dict, program_source: Path | None = None) -> Path:
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
     up = UPSTREAM / ch["id"]
+    skip = unshared.paths()
     for name in ch["upstream_tests"] + ch.get("inputs", []):
         src = up / name
+        if f"{ch['id']}/{name}" in skip and not src.exists():
+            continue  # not downloaded (python -m tptl.unshared); its tests skip themselves
         target = dest / name
         target.parent.mkdir(parents=True, exist_ok=True)
         if src.is_dir():
@@ -48,6 +53,9 @@ def stage(ch: dict, program_source: Path | None = None) -> Path:
     shared = BUILD / "inputs"
     shared.mkdir(parents=True, exist_ok=True)
     for name in ch.get("shared_inputs", []):
+        if f"inputs/{name}" in skip and not (UPSTREAM / "inputs" / name).exists():
+            (shared / name).unlink(missing_ok=True)  # don't leave a copy from an earlier run
+            continue
         shutil.copy2(UPSTREAM / "inputs" / name, shared / name)
     prog = dest / ch["program"]
     shutil.copy2(program_source or ch["_dir"] / ch["program"], prog)
@@ -60,18 +68,22 @@ def bundle(ch: dict) -> dict:
     d: Path = ch["_dir"]
     up = UPSTREAM / ch["id"]
     files: dict[str, str] = {}
+    # Texts we can't share never go into what the site serves, even when downloaded.
+    skip = unshared.paths()
     for name in ch["upstream_tests"]:
         files[name] = (up / name).read_text()
     for name in ch.get("inputs", []):
         p = up / name
         paths = [p] if p.is_file() else sorted(x for x in p.rglob("*") if x.is_file())
         for x in paths:
-            files[str(x.relative_to(up))] = x.read_text()
+            if str(x.relative_to(UPSTREAM)) not in skip:
+                files[str(x.relative_to(up))] = x.read_text()
     for name in ch["scenario_tests"] + ch.get("chapter_files", []):
         files[name] = (d / name).read_text()
     # Paths are relative to the chapter folder, as the tests use them.
     for name in ch.get("shared_inputs", []):
-        files[f"../inputs/{name}"] = (UPSTREAM / "inputs" / name).read_text()
+        if f"inputs/{name}" not in skip:
+            files[f"../inputs/{name}"] = (UPSTREAM / "inputs" / name).read_text()
     meta = {k: v for k, v in ch.items() if not k.startswith("_")}
     return {
         **meta,

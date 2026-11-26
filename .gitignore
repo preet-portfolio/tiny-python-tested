@@ -14,3 +14,9 @@ web/public/runtime/
 web/public/pyodide/
 .claude/
 web/tsconfig.tsbuildinfo
+
+# Texts the book's MIT licence can't cover; downloaded by python -m tptl.unshared
+python/upstream/07_gashlycrumb/gashlycrumb.txt
+python/upstream/inputs/spiders.txt
+python/upstream/17_mad_libs/inputs/help.txt
+web/playthrough/

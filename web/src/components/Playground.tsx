@@ -136,7 +136,7 @@ export function Playground({ bundle, brainRequest }: { bundle: Bundle; brainRequ
       await p.call("write", { name: bundle.program, text: code(brain) });
       const res = await p.call<TestResult>("test", { files: allFiles });
       setResults({ brain, res });
-      const bookGreen = res.tests.filter((t) => bundle.upstream_tests.includes(t.file)).every((t) => t.outcome === "passed");
+      const bookGreen = res.tests.filter((t) => bundle.upstream_tests.includes(t.file)).every((t) => t.outcome !== "failed");
       const allGreen = res.failed === 0;
       if (!bookGreen) return;
       roundRef.current = "the book's rules";
@@ -275,8 +275,13 @@ function RuleBoard({
       files.some((f) => (bundle.files[f] ?? "").includes(`def ${n}(`)),
     );
   const outcome = (list: TestResult["tests"] | null, n: string) => list?.find((t) => t.name === n)?.outcome;
-  const score = (list: TestResult["tests"] | null) =>
-    list ? `${list.filter((t) => t.outcome === "passed").length} of ${list.length}` : null;
+  // A skipped rule needs a book text we can't share here (see its conftest.py); CI runs it.
+  const score = (list: TestResult["tests"] | null) => {
+    if (!list) return null;
+    const here = list.filter((t) => t.outcome !== "skipped");
+    return `${here.filter((t) => t.outcome === "passed").length} of ${here.length}`;
+  };
+  const skippedCount = (list: TestResult["tests"] | null) => list?.filter((t) => t.outcome === "skipped").length ?? 0;
 
   const column = (title: string, sub: string, files: string[], list: TestResult["tests"] | null) => (
     <div className="rule-col">
@@ -290,14 +295,28 @@ function RuleBoard({
           return (
             <li key={n} className={`rule ${o ?? "unknown"}`}>
               <span className="stamp" aria-hidden="true">
-                {o === "passed" ? "✔" : o ? "✘" : "?"}
+                {o === "passed" ? "✔" : o === "skipped" ? "–" : o ? "✘" : "?"}
               </span>
               <span className="rule-text">{bundle.rules[n] ?? n.replace(/_/g, " ")}</span>
-              <span className="sr-only">{o === "passed" ? "follows this rule" : o ? "breaks this rule" : "not checked yet"}</span>
+              <span className="sr-only">
+                {o === "passed"
+                  ? "follows this rule"
+                  : o === "skipped"
+                    ? "checked on the server, not here"
+                    : o
+                      ? "breaks this rule"
+                      : "not checked yet"}
+              </span>
             </li>
           );
         })}
       </ul>
+      {skippedCount(list) > 0 && (
+        <p className="rule-sub">
+          – {skippedCount(list) === 1 ? "This rule needs" : `These ${skippedCount(list)} rules need`} words someone
+          else wrote, which we can&apos;t share, so it&apos;s checked on our server instead of here.
+        </p>
+      )}
     </div>
   );
 

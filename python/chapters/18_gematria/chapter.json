@@ -58,11 +58,29 @@
     "test_blank_lines_stay": "A blank line stays a blank line"
   },
   "examples": [
-    ["👂", "listen silent"],
-    ["🍎", "Apple apple"],
-    ["☕", "café cafe caf"],
-    ["😶", "wait -- what"],
-    ["🔢", "7 seven"]
+    [
+      "👂",
+      "listen silent"
+    ],
+    [
+      "🍎",
+      "Apple apple"
+    ],
+    [
+      "☕",
+      "café cafe caf"
+    ],
+    [
+      "😶",
+      "wait -- what"
+    ],
+    [
+      "🔢",
+      "7 seven"
+    ]
   ],
-  "book_program": "book.py"
+  "book_program": "book.py",
+  "chapter_files": [
+    "conftest.py"
+  ]
 }

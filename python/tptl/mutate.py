@@ -297,7 +297,8 @@ def run_mutants(
                 progress(i, len(mutants))
             write_source(path, m.source)
             res = run_tests(chapter_dir, test_files)
-            killers = [t["name"] for t in res["tests"] if t["outcome"] != "passed"]
+            # A skipped test (it needs a text we can't share, see unshared.json) catches nothing.
+            killers = [t["name"] for t in res["tests"] if t["outcome"] not in ("passed", "skipped")]
             # pytest exit codes 2-4 mean the run itself broke (e.g. the mutant exits while
             # a test imports it). Fewer results than the baseline means tests never ran.
             # Either way the mutant was caught, by the suite as a whole.
