@@ -1,0 +1,63 @@
+# Who owns each file, and under which licence. Checked in CI by `reuse lint`.
+# Later entries win over earlier ones for the files they match.
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Preet Panchal"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "python/upstream/**"
+precedence = "override"
+SPDX-FileCopyrightText = "2019 Ken Youens-Clark"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["python/upstream/inputs/preamble.txt", "python/upstream/05_howler/test-outs/preamble.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "Preamble to the United States Constitution (1787); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = ["python/upstream/inputs/sonnet-29.txt", "python/upstream/05_howler/test-outs/sonnet-29.txt", "python/upstream/15_kentucky_friar/inputs/shakespeare.txt", "python/upstream/15_kentucky_friar/inputs/shakespeare.txt.out", "python/upstream/17_mad_libs/inputs/romeo_juliet.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "William Shakespeare (sonnets 1609; Romeo and Juliet 1597); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = ["python/upstream/inputs/the-bustle.txt", "python/upstream/05_howler/test-outs/the-bustle.txt", "python/upstream/15_kentucky_friar/inputs/dickinson.txt", "python/upstream/15_kentucky_friar/inputs/dickinson.txt.out"]
+precedence = "override"
+SPDX-FileCopyrightText = "Emily Dickinson (first published 1890); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = ["python/upstream/15_kentucky_friar/inputs/blake.txt", "python/upstream/15_kentucky_friar/inputs/blake.txt.out"]
+precedence = "override"
+SPDX-FileCopyrightText = "William Blake, The Little Boy Lost (1789); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = ["python/upstream/15_kentucky_friar/inputs/raven.txt", "python/upstream/15_kentucky_friar/inputs/raven.txt.out"]
+precedence = "override"
+SPDX-FileCopyrightText = "Edgar Allan Poe, The Raven (1845); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = ["python/upstream/15_kentucky_friar/inputs/banner.txt", "python/upstream/15_kentucky_friar/inputs/banner.txt.out"]
+precedence = "override"
+SPDX-FileCopyrightText = "Francis Scott Key, The Star-Spangled Banner (1814); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = "python/upstream/13_twelve_days/test-out/*.out"
+precedence = "override"
+SPDX-FileCopyrightText = "The Twelve Days of Christmas (traditional, printed 1780); public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
+
+[[annotations]]
+path = "python/upstream/inputs/words.txt"
+precedence = "override"
+SPDX-FileCopyrightText = "Webster's Second International Dictionary (1934) word list, as shipped in BSD's /usr/share/dict/web2; public domain"
+SPDX-License-Identifier = "LicenseRef-Public-Domain"
