@@ -32,7 +32,7 @@ def fetch() -> None:
         dest = UPSTREAM / f["path"]
         if not dest.exists():
             url = f"{m['base']}/{m['commit']}/{f['path']}"
-            with urllib.request.urlopen(url, timeout=30) as r:  # noqa: S310 (fixed https URL)
+            with urllib.request.urlopen(url, timeout=30) as r:
                 data = r.read()
             if hashlib.sha256(data).hexdigest() != f["sha256"]:
                 raise SystemExit(f"{f['path']}: downloaded file doesn't match its SHA-256")
