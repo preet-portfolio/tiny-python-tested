@@ -1,0 +1,1356 @@
+{
+ "generated": "2026-11-26T11:20Z",
+ "python": "3.14.0",
+ "chapters": [
+  {
+   "id": "02_crowsnest",
+   "character": {
+    "name": "Polly",
+    "emoji": "🦜",
+    "role": "the lookout"
+   },
+   "rules": {
+    "book": 6,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 22,
+    "all_caught": 53,
+    "book_missed_real_life_caught": 31
+   },
+   "chips": [
+    {
+     "args": "narwhal",
+     "label": "narwhal",
+     "status": 0,
+     "stdout": "Ahoy, Captain, a narwhal off the larboard bow!\n"
+    },
+    {
+     "args": "octopus",
+     "label": "octopus",
+     "status": 0,
+     "stdout": "Ahoy, Captain, an octopus off the larboard bow!\n"
+    },
+    {
+     "args": "hour",
+     "label": "hour",
+     "status": 0,
+     "stdout": "Ahoy, Captain, an hour off the larboard bow!\n"
+    },
+    {
+     "args": "FBI",
+     "label": "FBI",
+     "status": 0,
+     "stdout": "Ahoy, Captain, an FBI off the larboard bow!\n"
+    },
+    {
+     "args": "8-ball",
+     "label": "8-ball",
+     "status": 0,
+     "stdout": "Ahoy, Captain, an 8-ball off the larboard bow!\n"
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 11,
+    "before": "'hour'",
+    "after": "'XXhourXX'",
+    "caught_by": [
+     "test_silent_h"
+    ],
+    "rules": [
+     "\"An hour\", not \"a hour\" (the h is shy)"
+    ],
+    "args": "hour",
+    "label": "hour",
+    "real": {
+     "status": 0,
+     "line": "Ahoy, Captain, an hour off the larboard bow!"
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "Ahoy, Captain, a hour off the larboard bow!"
+    }
+   }
+  },
+  {
+   "id": "03_picnic",
+   "character": {
+    "name": "Pip",
+    "emoji": "🐜",
+    "role": "an ant who packs the picnic basket"
+   },
+   "rules": {
+    "book": 7,
+    "real_life": 8
+   },
+   "gremlins": {
+    "total": 38,
+    "book_caught": 34,
+    "all_caught": 37,
+    "book_missed_real_life_caught": 3
+   },
+   "chips": [
+    {
+     "args": "chips",
+     "label": "chips",
+     "status": 0,
+     "stdout": "You are bringing chips.\n"
+    },
+    {
+     "args": "soda 'french fries'",
+     "label": "soda french fries",
+     "status": 0,
+     "stdout": "You are bringing soda and french fries.\n"
+    },
+    {
+     "args": "-s bananas apples dates cherries",
+     "label": "apples dates cherries",
+     "status": 0,
+     "stdout": "You are bringing apples, bananas, cherries, and dates.\n"
+    },
+    {
+     "args": "-s apple Banana",
+     "label": "Banana",
+     "status": 0,
+     "stdout": "You are bringing apple and Banana.\n"
+    },
+    {
+     "args": "'' chips '  '",
+     "label": " chips   ",
+     "status": 0,
+     "stdout": "You are bringing chips.\n"
+    },
+    {
+     "args": "'salt, pepper' chips cake",
+     "label": "salt, pepper chips cake",
+     "status": 0,
+     "stdout": "You are bringing salt, pepper; chips; and cake.\n"
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 48,
+    "before": "'; '",
+    "after": "'XX; XX'",
+    "caught_by": [
+     "test_items_with_commas_use_semicolons"
+    ],
+    "rules": [
+     "When a thing has its own comma, the list uses semicolons so it isn't confusing"
+    ],
+    "args": "'salt, pepper' chips cake",
+    "label": "salt, pepper chips cake",
+    "real": {
+     "status": 0,
+     "line": "You are bringing salt, pepper; chips; and cake."
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "You are bringing salt, pepperXX; XXchipsXX; XXand cake."
+    }
+   }
+  },
+  {
+   "id": "04_jump_the_five",
+   "character": {
+    "name": "Hopscotch",
+    "emoji": "🦘",
+    "role": "a kangaroo who hides phone numbers"
+   },
+   "rules": {
+    "book": 4,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 27,
+    "book_caught": 27,
+    "all_caught": 27,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "123-456-7890",
+     "label": "123-456-7890",
+     "status": 0,
+     "stdout": "987-604-3215\n"
+    },
+    {
+     "args": "'Call 1-800-329-8044 today!'",
+     "label": "Call 1-800-329-8044 today!",
+     "status": 0,
+     "stdout": "Call 9-255-781-2566 today!\n"
+    },
+    {
+     "args": "'電話 ０９０-１２３４'",
+     "label": "電話 ０９０-１２３４",
+     "status": 0,
+     "stdout": "電話 ５１５-９８７６\n"
+    },
+    {
+     "args": "'رقم ٠١٢٣٤'",
+     "label": "رقم ٠١٢٣٤",
+     "status": 0,
+     "stdout": "رقم ٥٩٨٧٦\n"
+    },
+    {
+     "args": "'Room 4½'",
+     "label": "Room 4½",
+     "status": 0,
+     "stdout": "Room 6½\n"
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "05_howler",
+   "character": {
+    "name": "Howie",
+    "emoji": "🐒",
+    "role": "a howler monkey who SHOUTS EVERYTHING"
+   },
+   "rules": {
+    "book": 5,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 21,
+    "book_caught": 16,
+    "all_caught": 19,
+    "book_missed_real_life_caught": 3
+   },
+   "chips": [
+    {
+     "args": "'How dare you steal that car!'",
+     "label": "How dare you steal that car!",
+     "status": 0,
+     "stdout": "HOW DARE YOU STEAL THAT CAR!\n"
+    },
+    {
+     "args": "../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
+    },
+    {
+     "args": "- < ../inputs/the-bustle.txt",
+     "label": "the-bustle",
+     "status": 0,
+     "stdout": "THE BUSTLE IN A HOUSE\nTHE MORNING AFTER DEATH\nIS SOLEMNEST OF INDUSTRIES\nENACTED UPON EARTH,--\n\nTHE SWEEPING UP THE HEART,\nAND PUTTING LOVE AWAY\nWE SHALL NOT WANT TO USE AGAIN\nUNTIL ETERNITY.\n"
+    },
+    {
+     "args": "-o loud.txt 'quiet please'",
+     "label": "quiet please",
+     "status": 0,
+     "stdout": ""
+    },
+    {
+     "args": "-o no/such/folder/loud.txt 'oops'",
+     "label": "oops",
+     "status": 1,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 24,
+    "before": "'-'",
+    "after": "'XX-XX'",
+    "caught_by": [
+     "test_reads_a_pipe",
+     "test_pipe_into_a_file",
+     "test_notepad_mark_is_dropped"
+    ],
+    "rules": [
+     "A dash (-) means \"shout whatever comes down the pipe\"",
+     "Can take from the pipe and shout onto a file",
+     "Ignores the invisible mark Windows Notepad hides at the start of files"
+    ],
+    "args": "- < ../inputs/the-bustle.txt",
+    "label": "the-bustle",
+    "real": {
+     "status": 0,
+     "line": "THE BUSTLE IN A HOUSE"
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "-"
+    }
+   }
+  },
+  {
+   "id": "06_wc",
+   "character": {
+    "name": "Professor Hoot",
+    "emoji": "🦉",
+    "role": "an owl who counts everything"
+   },
+   "rules": {
+    "book": 9,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 26,
+    "book_caught": 24,
+    "all_caught": 24,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "       1       9      45 ../inputs/fox.txt\n"
+    },
+    {
+     "args": "../inputs/fox.txt ../inputs/sonnet-29.txt",
+     "label": "fox sonnet-29",
+     "status": 0,
+     "stdout": "       1       9      45 ../inputs/fox.txt\n      17     118     661 ../inputs/sonnet-29.txt\n      18     127     706 total\n"
+    },
+    {
+     "args": "< ../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "       1       9      45 <stdin>\n"
+    },
+    {
+     "args": "nope.txt",
+     "label": "nope",
+     "status": 1,
+     "stdout": ""
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "07_gashlycrumb",
+   "character": {
+    "name": "Lexi",
+    "emoji": "🦙",
+    "role": "a llama who keeps the alphabet scrapbook"
+   },
+   "rules": {
+    "book": 8,
+    "real_life": 7
+   },
+   "gremlins": {
+    "total": 25,
+    "book_caught": 18,
+    "all_caught": 23,
+    "book_missed_real_life_caught": 5
+   },
+   "chips": [
+    {
+     "args": "-f kind.txt s a m",
+     "label": "s a m",
+     "status": 0,
+     "stdout": "S is for Seal who juggles a ball.\nA is for Alpaca who dances all day.\nM is for Mouse who nibbles on cheese.\n"
+    },
+    {
+     "args": "-f messy.txt s a m",
+     "label": "s a m",
+     "status": 0,
+     "stdout": "S is for Seal who juggles a ball.\nA is for Alpaca who dances all day.\nM is for Mouse who nibbles on cheese.\n"
+    },
+    {
+     "args": "-f kind.txt l e x i",
+     "label": "l e x i",
+     "status": 0,
+     "stdout": "L is for Llama, and that llama is me!\nE is for Eel who glows in the dark.\nX is for Xerus, a squirrel, carefree.\nI is for Ibis who fishes with care.\n"
+    },
+    {
+     "args": "-f messy.txt z o e",
+     "label": "z o e",
+     "status": 0,
+     "stdout": "Z is for Zebra who stripes every storm.\nO is for Owl who reads books at night.\nE is for Eel who glows in the dark.\n"
+    },
+    {
+     "args": "-f kind.txt 5 CH",
+     "label": "5 CH",
+     "status": 0,
+     "stdout": "I do not know \"5\".\nI do not know \"CH\".\n"
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 22,
+    "before": "'-'",
+    "after": "'XX-XX'",
+    "caught_by": [
+     "test_table_from_a_pipe"
+    ],
+    "rules": [
+     "Can read the scrapbook from a pipe"
+    ]
+   }
+  },
+  {
+   "id": "08_apples_and_bananas",
+   "character": {
+    "name": "Melody",
+    "emoji": "🐸",
+    "role": "a frog who sings with one vowel"
+   },
+   "rules": {
+    "book": 8,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 21,
+    "book_caught": 19,
+    "all_caught": 19,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "foo",
+     "label": "foo",
+     "status": 0,
+     "stdout": "faa\n"
+    },
+    {
+     "args": "-v i 'APPLES AND BANANAS'",
+     "label": "APPLES AND BANANAS",
+     "status": 0,
+     "stdout": "IPPLIS IND BININIS\n"
+    },
+    {
+     "args": "--vowel o ../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "Tho qoock brown fox jomps ovor tho lozy dog.\n"
+    },
+    {
+     "args": "'Crème brûlée'",
+     "label": "Crème brûlée",
+     "status": 0,
+     "stdout": "Crama bralaa\n"
+    },
+    {
+     "args": "-v O bar",
+     "label": "bar",
+     "status": 0,
+     "stdout": "bor\n"
+    },
+    {
+     "args": "-v x foo",
+     "label": "foo",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "09_abuse",
+   "character": {
+    "name": "Sir Bluster",
+    "emoji": "🎭",
+    "role": "a hammy old actor who hurls Shakespeare's insults"
+   },
+   "rules": {
+    "book": 11,
+    "real_life": 12
+   },
+   "gremlins": {
+    "total": 46,
+    "book_caught": 36,
+    "all_caught": 39,
+    "book_missed_real_life_caught": 3
+   },
+   "chips": [
+    {
+     "args": "-s 1 -n 1",
+     "label": "",
+     "status": 0,
+     "stdout": "You filthsome, cullionly fiend!\n"
+    },
+    {
+     "args": "--seed 2",
+     "label": "",
+     "status": 0,
+     "stdout": "You corrupt, detestable beggar!\nYou peevish, foolish gull!\nYou insatiate, heedless worm!\n"
+    },
+    {
+     "args": "-s 3 -n 5 -a 1",
+     "label": "",
+     "status": 0,
+     "stdout": "You infected villain!\nYou vile braggart!\nYou peevish worm!\nYou sodden-witted villain!\nYou cullionly worm!\n"
+    },
+    {
+     "args": "-a 40",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "-a -1",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "-s 3 -a 1 -n 300",
+     "label": "",
+     "status": 0,
+     "stdout": "You infected villain!\nYou vile braggart!\nYou peevish worm!\nYou sodden-witted villain!\nYou cullionly worm!\nYou bankrupt recreant!\nYou insatiate traitor!\nYou indistinguishable coxcomb!\nYou sodden-witted swine!\nYou wall-eyed recreant!\nYou rotten butt!\nYou indistinguishable butt!\nYou unmannered liar!\nYou bankrupt barbermonger!\nYou foolish villain!\nYou caterwauling gull!\nYou base fishmonger!\nYou sodden-witted worm!\nYou rascaly milksop!\nYou rotten varlet!\nYou scurvy braggart!\nYou peevish block!\nYou caterwauling braggart!\nYou thin-faced cur!\nYou insatiate milksop!\nYou lecherous maw!\nYou toad-spotted liar!\nYou old swine!\nYou ruinous villain!\nYou indistinguishable jack!\nYou foolish harpy!\nYou vile varlet!\nYou dishonest cur!\nYou irksome fool!\nYou false barbermonger!\nYou sodden-witted recreant!\nYou detestable jolthead!\nYou cullionly maw!\nYou filthy Satan!\nYou lascivious milksop!\nYou ruinous boy!\nYou caterwauling worm!\nYou caterwauling liar!\nYou lubbery traitor!\nYou irksome scold!\nYou infected ape!\nYou lecherous Judas!\nYou cullionly block!\nYou vile ape!\nYou gross maw!\nYou lascivious fiend!\nYou filthy ape!\nYou lubbery harpy!\nYou peevish braggart!\nYou rascaly liar!\nYou slanderous slave!\nYou rascaly worm!\nYou wall-eyed block!\nYou toad-spotted fishmonger!\nYou scurilous degenerate!\nYou lecherous milksop!\nYou insatiate slave!\nYou lecherous traitor!\nYou lubbery Judas!\nYou loathsome Satan!\nYou rascaly villain!\nYou filthsome ass!\nYou lubbery ratcatcher!\nYou old jolthead!\nYou irksome rogue!\nYou base villain!\nYou corrupt Satan!\nYou peevish fiend!\nYou slanderous gull!\nYou loathsome coward!\nYou peevish coward!\nYou loathsome knave!\nYou insatiate gull!\nYou rascaly block!\nYou base varlet!\nYou filthsome gull!\nYou toad-spotted dandy!\nYou irksome degenerate!\nYou scurilous block!\nYou dishonest worm!\nYou loathsome jack!\nYou indistinguishable minion!\nYou foolish beggar!\nYou lubbery cur!\nYou scurvy fishmonger!\nYou indistinguishable boy!\nYou caterwauling slave!\nYou gross harpy!\nYou foul fishmonger!\nYo"
+    }
+   ],
+   "moment": {
+    "op": "comparison",
+    "line": 39,
+    "before": "args.adjectives > len(ADJECTIVES)",
+    "after": "args.adjectives >= len(ADJECTIVES)",
+    "caught_by": [
+     "test_every_word_at_once"
+    ],
+    "rules": [
+     "All 36 fancy words in one insult is fine"
+    ]
+   }
+  },
+  {
+   "id": "10_telephone",
+   "character": {
+    "name": "Mumbles",
+    "emoji": "🐹",
+    "role": "a hamster who is a little hard of hearing"
+   },
+   "rules": {
+    "book": 10,
+    "real_life": 10
+   },
+   "gremlins": {
+    "total": 34,
+    "book_caught": 29,
+    "all_caught": 33,
+    "book_missed_real_life_caught": 4
+   },
+   "chips": [
+    {
+     "args": "-s 1 ../inputs/now.txt",
+     "label": "now",
+     "status": 0,
+     "stdout": "You said: \"Now is the time for all good men to come to the aid of the party.\"\nI heard : \"Now is Ege time [dr all good me- to come to the jid of the party.\"\n"
+    },
+    {
+     "args": "--seed 2 --mutations .6 ../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "You said: \"The quick brown fox jumps over the lazy dog.\"\nI heard : \"ZoA@qric` HwdTB Alx$jumIslolXs th^Yl?dy<YoA.\"\n"
+    },
+    {
+     "args": "-m 0 'Pass it on'",
+     "label": "Pass it on",
+     "status": 0,
+     "stdout": "You said: \"Pass it on\"\nI heard : \"Pass it on\"\n"
+    },
+    {
+     "args": "-s 1 'Hi!'",
+     "label": "Hi!",
+     "status": 0,
+     "stdout": "You said: \"Hi!\"\nI heard : \"ti!\"\n"
+    },
+    {
+     "args": "-m 10 oops",
+     "label": "oops",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "number",
+    "line": 37,
+    "before": "1",
+    "after": "2",
+    "caught_by": [
+     "test_short_message_still_changes",
+     "test_half_rounds_the_same_way",
+     "test_same_length",
+     "test_some_change_whenever_asked",
+     "test_newlines_never_move"
+    ],
+    "rules": [
+     "A tiny message still gets at least one mistake",
+     "Half a mistake rounds up to one",
+     "Any message: it never grows or shrinks",
+     "Any noise above zero makes at least one mistake",
+     "Line breaks are always exactly where they were"
+    ],
+    "args": "-s 1 'Hi!'",
+    "label": "Hi!",
+    "real": {
+     "status": 0,
+     "line": "I heard : \"ti!\""
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "I heard : \"Li;\""
+    }
+   }
+  },
+  {
+   "id": "11_bottles_of_beer",
+   "character": {
+    "name": "The Bottle Choir",
+    "emoji": "🍾",
+    "role": "who sing very, very long songs"
+   },
+   "rules": {
+    "book": 8,
+    "real_life": 8
+   },
+   "gremlins": {
+    "total": 30,
+    "book_caught": 29,
+    "all_caught": 30,
+    "book_missed_real_life_caught": 1
+   },
+   "chips": [
+    {
+     "args": "-n 2",
+     "label": "",
+     "status": 0,
+     "stdout": "2 bottles of beer on the wall,\n2 bottles of beer,\nTake one down, pass it around,\n1 bottle of beer on the wall!\n\n1 bottle of beer on the wall,\n1 bottle of beer,\nTake one down, pass it around,\nNo more bottles of beer on the wall!\n"
+    },
+    {
+     "args": "-n 0",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "-n 2.5",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "--num 21",
+     "label": "",
+     "status": 0,
+     "stdout": "21 bottles of beer on the wall,\n21 bottles of beer,\nTake one down, pass it around,\n20 bottles of beer on the wall!\n\n20 bottles of beer on the wall,\n20 bottles of beer,\nTake one down, pass it around,\n19 bottles of beer on the wall!\n\n19 bottles of beer on the wall,\n19 bottles of beer,\nTake one down, pass it around,\n18 bottles of beer on the wall!\n\n18 bottles of beer on the wall,\n18 bottles of beer,\nTake one down, pass it around,\n17 bottles of beer on the wall!\n\n17 bottles of beer on the wall,\n17 bottles of beer,\nTake one down, pass it around,\n16 bottles of beer on the wall!\n\n16 bottles of beer on the wall,\n16 bottles of beer,\nTake one down, pass it around,\n15 bottles of beer on the wall!\n\n15 bottles of beer on the wall,\n15 bottles of beer,\nTake one down, pass it around,\n14 bottles of beer on the wall!\n\n14 bottles of beer on the wall,\n14 bottles of beer,\nTake one down, pass it around,\n13 bottles of beer on the wall!\n\n13 bottles of beer on the wall,\n13 bottles of beer,\nTake one down, pass it around,\n12 bottles of beer on the wall!\n\n12 bottles of beer on the wall,\n12 bottles of beer,\nTake one down, pass it around,\n11 bottles of beer on the wall!\n\n11 bottles of beer on the wall,\n11 bottles of beer,\nTake one down, pass it around,\n10 bottles of beer on the wall!\n\n10 bottles of beer on the wall,\n10 bottles of beer,\nTake one down, pass it around,\n9 bottles of beer on the wall!\n\n9 bottles of beer on the wall,\n9 bottles of beer,\nTake one down, pass it around,\n8 bottles of beer on the wall!\n\n8 bottles of beer on the wall,\n8 bottles of beer,\nTake one down, pass it around,\n7 bottles of beer on the wall!\n\n7 bottles of beer on the wall,\n7 bottles of beer,\nTake one down, pass it around,\n6 bottles of beer on the wall!\n\n6 bottles of beer on the wall,\n6 bottles of beer,\nTake one down, pass it around,\n5 bottles of beer on the wall!\n\n5 bottles of beer on the wall,\n5 bottles of beer,\nTake one down, pass it around,\n4 bottles of beer on the wall!\n\n4 bottles of beer on the wall,\n4 bottles of "
+    }
+   ],
+   "moment": {
+    "op": "number",
+    "line": 14,
+    "before": "10",
+    "after": "11",
+    "caught_by": [
+     "test_default_is_ten_verses"
+    ],
+    "rules": [
+     "With no number, sings 10 verses"
+    ]
+   }
+  },
+  {
+   "id": "12_ransom",
+   "character": {
+    "name": "Whiskers",
+    "emoji": "🐱",
+    "role": "a cat who writes ransom notes"
+   },
+   "rules": {
+    "book": 6,
+    "real_life": 10
+   },
+   "gremlins": {
+    "total": 17,
+    "book_caught": 16,
+    "all_caught": 16,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "-s 1 'The quick brown fox'",
+     "label": "The quick brown fox",
+     "status": 0,
+     "stdout": "thE QUICk BrOWn Fox\n"
+    },
+    {
+     "args": "--seed 3 ../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "thE quICk BROwn Fox jUmPS OVEr the lAZY DOG.\n"
+    },
+    {
+     "args": "-s 9 Straße",
+     "label": "Straße",
+     "status": 0,
+     "stdout": "STRaße\n"
+    },
+    {
+     "args": "'no seed, different every time'",
+     "label": "no seed, different every time",
+     "status": 0,
+     "stdout": "NO SeeD, diFFERENt eVeRy TIME\n"
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "13_twelve_days",
+   "character": {
+    "name": "Percy",
+    "emoji": "🐦",
+    "role": "a partridge who sings from a pear tree"
+   },
+   "rules": {
+    "book": 7,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 59,
+    "all_caught": 60,
+    "book_missed_real_life_caught": 1
+   },
+   "chips": [
+    {
+     "args": "-n 3",
+     "label": "",
+     "status": 0,
+     "stdout": "On the first day of Christmas,\nMy true love gave to me,\nA partridge in a pear tree.\n\nOn the second day of Christmas,\nMy true love gave to me,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the third day of Christmas,\nMy true love gave to me,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n"
+    },
+    {
+     "args": "--num 12",
+     "label": "",
+     "status": 0,
+     "stdout": "On the first day of Christmas,\nMy true love gave to me,\nA partridge in a pear tree.\n\nOn the second day of Christmas,\nMy true love gave to me,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the third day of Christmas,\nMy true love gave to me,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the fourth day of Christmas,\nMy true love gave to me,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the fifth day of Christmas,\nMy true love gave to me,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the sixth day of Christmas,\nMy true love gave to me,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the seventh day of Christmas,\nMy true love gave to me,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the eighth day of Christmas,\nMy true love gave to me,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the ninth day of Christmas,\nMy true love gave to me,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the tenth day of Christmas,\nMy true love gave to me,\nTen lords a leaping,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the eleventh day of Christmas,\nMy true love gave to me,\nEleven pipers piping,\nTen lords a leaping,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds"
+    },
+    {
+     "args": "-n 2 -o song.txt",
+     "label": "",
+     "status": 0,
+     "stdout": ""
+    },
+    {
+     "args": "-n 13",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "-n 0",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "number",
+    "line": 38,
+    "before": "12",
+    "after": "13",
+    "caught_by": [
+     "test_only_days_1_to_12"
+    ],
+    "rules": [
+     "Only days 1 to 12: no \"zeroth\" day and no thirteenth"
+    ],
+    "args": "-n 13",
+    "label": "",
+    "real": {
+     "status": 2,
+     "line": ""
+    },
+    "gremlin": {
+     "status": 1,
+     "line": "IndexError: tuple index out of range"
+    }
+   }
+  },
+  {
+   "id": "14_rhymer",
+   "character": {
+    "name": "Rocky",
+    "emoji": "🦝",
+    "role": "a raccoon who raps"
+   },
+   "rules": {
+    "book": 7,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 57,
+    "all_caught": 58,
+    "book_missed_real_life_caught": 1
+   },
+   "chips": [
+    {
+     "args": "cake",
+     "label": "cake",
+     "status": 0,
+     "stdout": "bake\nblake\nbrake\nchake\nclake\ncrake\ndake\ndrake\nfake\nflake\nfrake\ngake\nglake\ngrake\nhake\njake\nkake\nlake\nmake\nnake\npake\nplake\nprake\nquake\nrake\nsake\nscake\nschake\nscrake\nshake\nshrake\nskake\nslake\nsmake\nsnake\nspake\nsphake\nsplake\nsprake\nsquake\nstake\nstrake\nswake\ntake\nthake\nthrake\nthwake\ntrake\ntwake\nvake\nwake\nwhake\nwrake\nxake\nyake\nzake\n"
+    },
+    {
+     "args": "chair",
+     "label": "chair",
+     "status": 0,
+     "stdout": "bair\nblair\nbrair\ncair\nclair\ncrair\ndair\ndrair\nfair\nflair\nfrair\ngair\nglair\ngrair\nhair\njair\nkair\nlair\nmair\nnair\npair\nplair\nprair\nquair\nrair\nsair\nscair\nschair\nscrair\nshair\nshrair\nskair\nslair\nsmair\nsnair\nspair\nsphair\nsplair\nsprair\nsquair\nstair\nstrair\nswair\ntair\nthair\nthrair\nthwair\ntrair\ntwair\nvair\nwair\nwhair\nwrair\nxair\nyair\nzair\n"
+    },
+    {
+     "args": "apple",
+     "label": "apple",
+     "status": 0,
+     "stdout": "bapple\nblapple\nbrapple\ncapple\nchapple\nclapple\ncrapple\ndapple\ndrapple\nfapple\nflapple\nfrapple\ngapple\nglapple\ngrapple\nhapple\njapple\nkapple\nlapple\nmapple\nnapple\npapple\nplapple\nprapple\nquapple\nrapple\nsapple\nscapple\nschapple\nscrapple\nshapple\nshrapple\nskapple\nslapple\nsmapple\nsnapple\nspapple\nsphapple\nsplapple\nsprapple\nsquapple\nstapple\nstrapple\nswapple\ntapple\nthapple\nthrapple\nthwapple\ntrapple\ntwapple\nvapple\nwapple\nwhapple\nwrapple\nxapple\nyapple\nzapple\n"
+    },
+    {
+     "args": "queen",
+     "label": "queen",
+     "status": 0,
+     "stdout": "been\nbleen\nbreen\nceen\ncheen\ncleen\ncreen\ndeen\ndreen\nfeen\nfleen\nfreen\ngeen\ngleen\ngreen\nheen\njeen\nkeen\nleen\nmeen\nneen\npeen\npleen\npreen\nreen\nseen\nsceen\nscheen\nscreen\nsheen\nshreen\nskeen\nsleen\nsmeen\nsneen\nspeen\nspheen\nspleen\nspreen\nsqueen\nsteen\nstreen\nsween\nteen\ntheen\nthreen\nthween\ntreen\ntween\nveen\nween\nwheen\nwreen\nxeen\nyeen\nzeen\n"
+    },
+    {
+     "args": "éclair",
+     "label": "éclair",
+     "status": 0,
+     "stdout": "béclair\nbléclair\nbréclair\ncéclair\nchéclair\ncléclair\ncréclair\ndéclair\ndréclair\nféclair\nfléclair\nfréclair\ngéclair\ngléclair\ngréclair\nhéclair\njéclair\nkéclair\nléclair\nméclair\nnéclair\npéclair\npléclair\npréclair\nquéclair\nréclair\nséclair\nscéclair\nschéclair\nscréclair\nshéclair\nshréclair\nskéclair\nsléclair\nsméclair\nsnéclair\nspéclair\nsphéclair\nspléclair\nspréclair\nsquéclair\nstéclair\nstréclair\nswéclair\ntéclair\nthéclair\nthréclair\nthwéclair\ntréclair\ntwéclair\nvéclair\nwéclair\nwhéclair\nwréclair\nxéclair\nyéclair\nzéclair\n"
+    },
+    {
+     "args": "RDNZL",
+     "label": "RDNZL",
+     "status": 0,
+     "stdout": "Cannot rhyme \"RDNZL\"\n"
+    }
+   ],
+   "moment": {
+    "op": "method",
+    "line": 40,
+    "before": "word.strip",
+    "after": "word.lstrip",
+    "caught_by": [
+     "test_spaces_around_are_ignored"
+    ],
+    "rules": [
+     "Extra spaces around the word don't matter"
+    ]
+   }
+  },
+  {
+   "id": "15_kentucky_friar",
+   "character": {
+    "name": "Brother Biscuit",
+    "emoji": "🧑‍🌾",
+    "role": "a friar from Kentucky who talks real slow"
+   },
+   "rules": {
+    "book": 10,
+    "real_life": 5
+   },
+   "gremlins": {
+    "total": 33,
+    "book_caught": 28,
+    "all_caught": 30,
+    "book_missed_real_life_caught": 2
+   },
+   "chips": [
+    {
+     "args": "'Are you cooking?'",
+     "label": "Are you cooking?",
+     "status": 0,
+     "stdout": "Are y'all cookin'?\n"
+    },
+    {
+     "args": "inputs/blake.txt",
+     "label": "blake",
+     "status": 0,
+     "stdout": "Father, father, where are y'all goin'?\n Oh do not walk so fast!\nSpeak, father, speak to your little boy,\n Or else I shall be lost.\n"
+    },
+    {
+     "args": "'YOU ARE SHOUTING'",
+     "label": "YOU ARE SHOUTING",
+     "status": 0,
+     "stdout": "Y'ALL ARE SHOUTIN'\n"
+    },
+    {
+     "args": "inputs/dickinson.txt",
+     "label": "dickinson",
+     "status": 0,
+     "stdout": "Much madness is divinest sense\nTo a discernin' eye;\nMuch sense the starkest madness.\n'T is the majority\nIn this, as all, prevails.\nAssent, and y'all are sane;\nDemur, — y'all're straightway dangerous,\nAnd handled with a chain.\n"
+    },
+    {
+     "args": "inputs/raven.txt",
+     "label": "raven",
+     "status": 0,
+     "stdout": "Presently my soul grew stronger; hesitatin' then no longer,\n\"Sir,\" said I, \"or Madam, truly your forgiveness I implore;\nBut the fact is I was nappin', and so gently y'all came rappin',\nAnd so faintly y'all came tappin', tappin' at my chamber door,\nThat I scarce was sure I heard y'all\" - here I opened wide the door: -\nDarkness there and nothin' more.\n"
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 31,
+    "before": "\"'ALL\"",
+    "after": "\"XX'ALLXX\"",
+    "caught_by": [
+     "test_shouted_you"
+    ],
+    "rules": [
+     "Shout YOU and he shouts back Y'ALL"
+    ],
+    "args": "'YOU ARE SHOUTING'",
+    "label": "YOU ARE SHOUTING",
+    "real": {
+     "status": 0,
+     "line": "Y'ALL ARE SHOUTIN'"
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "YXX'ALLXX ARE SHOUTIN'"
+    }
+   }
+  },
+  {
+   "id": "16_scrambler",
+   "character": {
+    "name": "Scramble",
+    "emoji": "🐙",
+    "role": "an octopus who juggles letters"
+   },
+   "rules": {
+    "book": 7,
+    "real_life": 9
+   },
+   "gremlins": {
+    "total": 27,
+    "book_caught": 25,
+    "all_caught": 26,
+    "book_missed_real_life_caught": 1
+   },
+   "chips": [
+    {
+     "args": "-s 1 foobar",
+     "label": "foobar",
+     "status": 0,
+     "stdout": "faobor\n"
+    },
+    {
+     "args": "--seed 3 ../inputs/the-bustle.txt",
+     "label": "the-bustle",
+     "status": 0,
+     "stdout": "The blutse in a hosue\nThe mrinong afetr daeth\nIs seosnmelt of iinuetdrss\nEtecand upon etrah,--\n\nThe sweenipg up the herat,\nAnd pniuttg lvoe away\nWe slahl not want to use again\nUnitl eettnriy.\n"
+    },
+    {
+     "args": "-s 2 'crème brûlée'",
+     "label": "crème brûlée",
+     "status": 0,
+     "stdout": "cèmre bléûre\n"
+    },
+    {
+     "args": "-s 5 'NASA loves HTML'",
+     "label": "NASA loves HTML",
+     "status": 0,
+     "stdout": "NASA loves HTML\n"
+    },
+    {
+     "args": "'no seed, new mess every time'",
+     "label": "no seed, new mess every time",
+     "status": 0,
+     "stdout": "no seed, new mses ervey time\n"
+    }
+   ],
+   "moment": {
+    "op": "arithmetic",
+    "line": 44,
+    "before": "i % 2",
+    "after": "i * 2",
+    "caught_by": [
+     "test_numbers_and_punctuation_stay",
+     "test_only_letters_move"
+    ],
+    "rules": [
+     "Numbers and punctuation don't move",
+     "Spaces, numbers and punctuation always stay in place"
+    ],
+    "args": "'no seed, new mess every time'",
+    "label": "no seed, new mess every time",
+    "real": {
+     "status": 0,
+     "line": "no seed, new mses ervey time"
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "no seed, new mess eevry tmie"
+    }
+   }
+  },
+  {
+   "id": "17_mad_libs",
+   "character": {
+    "name": "Mabel",
+    "emoji": "🦙",
+    "role": "a llama who tells silly stories"
+   },
+   "rules": {
+    "book": 7,
+    "real_life": 9
+   },
+   "gremlins": {
+    "total": 37,
+    "book_caught": 16,
+    "all_caught": 31,
+    "book_missed_real_life_caught": 15
+   },
+   "chips": [
+    {
+     "args": "inputs/fox.txt -i surly car under bicycle",
+     "label": "fox car under bicycle",
+     "status": 0,
+     "stdout": "The quick surly car jumps under the lazy bicycle.\n"
+    },
+    {
+     "args": "inputs/help.txt -i Hey tacos Oi salsa Hola queso Arriba",
+     "label": "help tacos Oi salsa Hola queso Arriba",
+     "status": 0,
+     "stdout": "Hey! I need tacos!\nOi! Not just salsa!\nHola! You know I need queso!\nArriba!\n"
+    },
+    {
+     "args": "inputs/fox.txt -i only two",
+     "label": "fox two",
+     "status": 1,
+     "stdout": ""
+    },
+    {
+     "args": "inputs/no_blanks.txt",
+     "label": "no_blanks",
+     "status": 1,
+     "stdout": ""
+    },
+    {
+     "args": "nope.txt",
+     "label": "nope",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "method",
+    "line": 59,
+    "before": "fh.read().rstrip",
+    "after": "fh.read().lstrip",
+    "caught_by": [
+     "test_asks_at_the_keyboard"
+    ],
+    "rules": [
+     "With no words given, she asks for each one: \"Give me an adjective\""
+    ],
+    "args": "inputs/fox.txt -i surly car under bicycle",
+    "label": "fox car under bicycle",
+    "real": {
+     "status": 0,
+     "line": ""
+    },
+    "gremlin": {
+     "status": 0,
+     "line": ""
+    }
+   }
+  },
+  {
+   "id": "18_gematria",
+   "character": {
+    "name": "Abacus Annie",
+    "emoji": "🐿️",
+    "role": "a squirrel who counts letters like nuts"
+   },
+   "rules": {
+    "book": 6,
+    "real_life": 6
+   },
+   "gremlins": {
+    "total": 11,
+    "book_caught": 11,
+    "all_caught": 11,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "'foo bar baz'",
+     "label": "foo bar baz",
+     "status": 0,
+     "stdout": "324 309 317\n"
+    },
+    {
+     "args": "../inputs/fox.txt",
+     "label": "fox",
+     "status": 0,
+     "stdout": "289 541 552 333 559 444 321 448 314\n"
+    },
+    {
+     "args": "'listen silent'",
+     "label": "listen silent",
+     "status": 0,
+     "stdout": "655 655\n"
+    },
+    {
+     "args": "'café cafe caf'",
+     "label": "café cafe caf",
+     "status": 0,
+     "stdout": "399 399 298\n"
+    },
+    {
+     "args": "'wait -- what'",
+     "label": "wait -- what",
+     "status": 0,
+     "stdout": "437 436\n"
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "19_wod",
+   "character": {
+    "name": "Coach Boing",
+    "emoji": "🦘",
+    "role": "a kangaroo who runs a very silly gym"
+   },
+   "rules": {
+    "book": 9,
+    "real_life": 9
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 46,
+    "all_caught": 53,
+    "book_missed_real_life_caught": 7
+   },
+   "chips": [
+    {
+     "args": "-s 1",
+     "label": "",
+     "status": 0,
+     "stdout": "Exercise      Reps\n----------  ------\nPushups         56\nSitups          88\nCrunches        27\nBurpees         35\n"
+    },
+    {
+     "args": "-s 1 --easy",
+     "label": "",
+     "status": 0,
+     "stdout": "Exercise      Reps\n----------  ------\nPushups         28\nSitups          44\nCrunches        13\nBurpees         17\n"
+    },
+    {
+     "args": "-n 3 -s 4 -f inputs/silly-exercises.csv",
+     "label": "",
+     "status": 0,
+     "stdout": "Exercise             Reps\n-----------------  ------\nHanging Chads          86\nRed Barchettas         50\nSquatting Chinups      35\n"
+    },
+    {
+     "args": "-n 20",
+     "label": "",
+     "status": 1,
+     "stdout": ""
+    },
+    {
+     "args": "-f inputs/bad-headers.csv",
+     "label": "",
+     "status": 1,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "number",
+    "line": 28,
+    "before": "1",
+    "after": "2",
+    "caught_by": [
+     "test_spaces_after_commas",
+     "test_backwards_range",
+     "test_easy_never_means_zero"
+    ],
+    "rules": [
+     "\"Hops, 10 - 20\" with extra spaces still works",
+     "\"50-20\" means between 20 and 50",
+     "Easy mode never asks for zero of something"
+    ]
+   }
+  },
+  {
+   "id": "20_password",
+   "character": {
+    "name": "Shh",
+    "emoji": "🐌",
+    "role": "a snail who makes secret passwords"
+   },
+   "rules": {
+    "book": 17,
+    "real_life": 12
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 60,
+    "all_caught": 60,
+    "book_missed_real_life_caught": 0
+   },
+   "chips": [
+    {
+     "args": "-s 1 ../inputs/words.txt",
+     "label": "words",
+     "status": 0,
+     "stdout": "DuniteBoonLociDefat\nWegaTitmalUnplatSatire\nIdeanClipsVitiArriet\n"
+    },
+    {
+     "args": "-s 1 -w 2 -n 5 ../inputs/words.txt",
+     "label": "words",
+     "status": 0,
+     "stdout": "DuniteBoon\nLociDefat\nWegaTitmal\nUnplatSatire\nIdeanClips\n"
+    },
+    {
+     "args": "-s 1 -l ../inputs/words.txt",
+     "label": "words",
+     "status": 0,
+     "stdout": "DUn1Teb0onloCiDef4T/\nWeg4TiTm@LuNPl4T54+1r3_\niD3@Ncl1P5v1+14rrie+/\n"
+    },
+    {
+     "args": "-m 8 -x 4 ../inputs/words.txt",
+     "label": "words",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "'no seed, new ones every time' ../inputs/words.txt",
+     "label": "no seed, new ones every time words",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": null
+  },
+  {
+   "id": "21_tictactoe",
+   "character": {
+    "name": "Ref Robo",
+    "emoji": "🤖",
+    "role": "the strictest referee in town"
+   },
+   "rules": {
+    "book": 19,
+    "real_life": 8
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 56,
+    "all_caught": 57,
+    "book_missed_real_life_caught": 1
+   },
+   "chips": [
+    {
+     "args": "",
+     "label": "",
+     "status": 0,
+     "stdout": "-------------\n| 1 | 2 | 3 |\n-------------\n| 4 | 5 | 6 |\n-------------\n| 7 | 8 | 9 |\n-------------\nNo winner.\n"
+    },
+    {
+     "args": "-b XXO...OOX -p O -c 5",
+     "label": "",
+     "status": 0,
+     "stdout": "-------------\n| X | X | O |\n-------------\n| 4 | O | 6 |\n-------------\n| O | O | X |\n-------------\nO has won!\n"
+    },
+    {
+     "args": "-b XXXOOO...",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    },
+    {
+     "args": "-b XO.XO.... -p X -c 7",
+     "label": "",
+     "status": 0,
+     "stdout": "-------------\n| X | O | 3 |\n-------------\n| X | O | 6 |\n-------------\n| X | 8 | 9 |\n-------------\nX has won!\n"
+    },
+    {
+     "args": "-p X",
+     "label": "",
+     "status": 2,
+     "stdout": ""
+    }
+   ],
+   "moment": {
+    "op": "number",
+    "line": 28,
+    "before": "1",
+    "after": "2",
+    "caught_by": [
+     "test_two_winners_is_impossible"
+    ],
+    "rules": [
+     "X and O can't BOTH have won"
+    ],
+    "args": "-b XXXOOO...",
+    "label": "",
+    "real": {
+     "status": 2,
+     "line": ""
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "-------------"
+    }
+   }
+  },
+  {
+   "id": "22_itictactoe",
+   "character": {
+    "name": "Tic and Tac",
+    "emoji": "🐯",
+    "role": "two tiger cubs who never stop playing"
+   },
+   "rules": {
+    "book": 4,
+    "real_life": 18
+   },
+   "gremlins": {
+    "total": 60,
+    "book_caught": 34,
+    "all_caught": 57,
+    "book_missed_real_life_caught": 23
+   },
+   "chips": [
+    {
+     "args": "",
+     "label": "",
+     "status": 0,
+     "stdout": "-------------\n| 1 | 2 | 3 |\n-------------\n| 4 | 5 | 6 |\n-------------\n| 7 | 8 | 9 |\n-------------\nPlayer X, what is your move? [q to quit]: \nNo more moves. Bye!\n"
+    }
+   ],
+   "moment": {
+    "op": "string",
+    "line": 13,
+    "before": "'.'",
+    "after": "'XX.XX'",
+    "caught_by": [
+     "test_new_game_is_empty",
+     "test_players_take_turns",
+     "test_taken_cell_is_an_error",
+     "test_bad_cells_are_errors",
+     "test_spaces_around_a_move_are_fine",
+     "test_ninth_move_win_is_a_win_not_a_draw",
+     "test_a_real_draw",
+     "test_turns_stay_fair"
+    ],
+    "rules": [
+     "A new game is empty and X goes first",
+     "X, then O, then X again",
+     "No playing on a square that's taken (and it's still your turn)",
+     "\"biscuit\", 0 and 10 aren't squares",
+     "\" 5 \" with spaces still means square 5",
+     "Winning with the very last square is a win, not a draw",
+     "A full board with no winner is a draw",
+     "Whatever anyone types, X never gets two turns in a row"
+    ],
+    "args": "",
+    "label": "",
+    "real": {
+     "status": 0,
+     "line": "| 1 | 2 | 3 |"
+    },
+    "gremlin": {
+     "status": 0,
+     "line": "| X | X | 3 |"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.monkey {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.shake {
+  animation: howl 0.25s linear infinite;
+}
+@keyframes howl {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shake { animation: none; }
+}
+.shout {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-weight: 600;
+}
+.modes legend {
+  padding: 0;
+  margin-bottom: 4px;
+}

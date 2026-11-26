@@ -13,3 +13,4 @@ web/public/runtime/
 .DS_Store
 web/public/pyodide/
 .claude/
+web/tsconfig.tsbuildinfo

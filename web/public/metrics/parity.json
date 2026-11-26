@@ -1,0 +1,626 @@
+{
+ "python": "3.14.0",
+ "mismatches": 0,
+ "rows": [
+  {
+   "chapter": "02_crowsnest",
+   "variant": "reference",
+   "tests": 12,
+   "native_passed": 12,
+   "shim_passed": 12,
+   "commands_compared": 79,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "02_crowsnest",
+   "variant": "starter",
+   "tests": 12,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 12,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "02_crowsnest",
+   "variant": "book",
+   "tests": 12,
+   "native_passed": 7,
+   "shim_passed": 7,
+   "commands_compared": 59,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "03_picnic",
+   "variant": "reference",
+   "tests": 15,
+   "native_passed": 15,
+   "shim_passed": 15,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "03_picnic",
+   "variant": "starter",
+   "tests": 15,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 15,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "03_picnic",
+   "variant": "book",
+   "tests": 15,
+   "native_passed": 8,
+   "shim_passed": 8,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "04_jump_the_five",
+   "variant": "reference",
+   "tests": 10,
+   "native_passed": 10,
+   "shim_passed": 10,
+   "commands_compared": 15,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "04_jump_the_five",
+   "variant": "starter",
+   "tests": 10,
+   "native_passed": 3,
+   "shim_passed": 3,
+   "commands_compared": 12,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "04_jump_the_five",
+   "variant": "book",
+   "tests": 10,
+   "native_passed": 6,
+   "shim_passed": 6,
+   "commands_compared": 15,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "05_howler",
+   "variant": "reference",
+   "tests": 11,
+   "native_passed": 11,
+   "shim_passed": 11,
+   "commands_compared": 15,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "05_howler",
+   "variant": "starter",
+   "tests": 11,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 12,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "05_howler",
+   "variant": "book",
+   "tests": 11,
+   "native_passed": 7,
+   "shim_passed": 7,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "06_wc",
+   "variant": "reference",
+   "tests": 15,
+   "native_passed": 15,
+   "shim_passed": 15,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "06_wc",
+   "variant": "starter",
+   "tests": 15,
+   "native_passed": 3,
+   "shim_passed": 3,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "06_wc",
+   "variant": "book",
+   "tests": 15,
+   "native_passed": 11,
+   "shim_passed": 11,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "07_gashlycrumb",
+   "variant": "reference",
+   "tests": 15,
+   "native_passed": 15,
+   "shim_passed": 15,
+   "commands_compared": 13,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "07_gashlycrumb",
+   "variant": "starter",
+   "tests": 15,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 13,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "07_gashlycrumb",
+   "variant": "book",
+   "tests": 15,
+   "native_passed": 12,
+   "shim_passed": 12,
+   "commands_compared": 13,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "08_apples_and_bananas",
+   "variant": "reference",
+   "tests": 14,
+   "native_passed": 14,
+   "shim_passed": 14,
+   "commands_compared": 17,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "08_apples_and_bananas",
+   "variant": "starter",
+   "tests": 14,
+   "native_passed": 3,
+   "shim_passed": 3,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "08_apples_and_bananas",
+   "variant": "book",
+   "tests": 14,
+   "native_passed": 11,
+   "shim_passed": 11,
+   "commands_compared": 15,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "09_abuse",
+   "variant": "reference",
+   "tests": 23,
+   "native_passed": 23,
+   "shim_passed": 23,
+   "commands_compared": 25,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "09_abuse",
+   "variant": "starter",
+   "tests": 23,
+   "native_passed": 7,
+   "shim_passed": 7,
+   "commands_compared": 25,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "09_abuse",
+   "variant": "book",
+   "tests": 23,
+   "native_passed": 18,
+   "shim_passed": 18,
+   "commands_compared": 25,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "10_telephone",
+   "variant": "reference",
+   "tests": 20,
+   "native_passed": 20,
+   "shim_passed": 20,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "10_telephone",
+   "variant": "starter",
+   "tests": 20,
+   "native_passed": 4,
+   "shim_passed": 4,
+   "commands_compared": 17,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "10_telephone",
+   "variant": "book",
+   "tests": 20,
+   "native_passed": 15,
+   "shim_passed": 15,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "11_bottles_of_beer",
+   "variant": "reference",
+   "tests": 16,
+   "native_passed": 16,
+   "shim_passed": 16,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "11_bottles_of_beer",
+   "variant": "starter",
+   "tests": 16,
+   "native_passed": 4,
+   "shim_passed": 4,
+   "commands_compared": 12,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "12_ransom",
+   "variant": "reference",
+   "tests": 16,
+   "native_passed": 16,
+   "shim_passed": 16,
+   "commands_compared": 58,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "12_ransom",
+   "variant": "starter",
+   "tests": 16,
+   "native_passed": 7,
+   "shim_passed": 7,
+   "commands_compared": 54,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "12_ransom",
+   "variant": "book",
+   "tests": 16,
+   "native_passed": 12,
+   "shim_passed": 12,
+   "commands_compared": 22,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "13_twelve_days",
+   "variant": "reference",
+   "tests": 13,
+   "native_passed": 13,
+   "shim_passed": 13,
+   "commands_compared": 38,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "13_twelve_days",
+   "variant": "starter",
+   "tests": 13,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 9,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "13_twelve_days",
+   "variant": "book",
+   "tests": 13,
+   "native_passed": 10,
+   "shim_passed": 10,
+   "commands_compared": 37,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "14_rhymer",
+   "variant": "reference",
+   "tests": 13,
+   "native_passed": 13,
+   "shim_passed": 13,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "14_rhymer",
+   "variant": "starter",
+   "tests": 13,
+   "native_passed": 2,
+   "shim_passed": 2,
+   "commands_compared": 14,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "14_rhymer",
+   "variant": "book",
+   "tests": 13,
+   "native_passed": 9,
+   "shim_passed": 9,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "15_kentucky_friar",
+   "variant": "reference",
+   "tests": 15,
+   "native_passed": 15,
+   "shim_passed": 15,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "15_kentucky_friar",
+   "variant": "starter",
+   "tests": 15,
+   "native_passed": 5,
+   "shim_passed": 5,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "15_kentucky_friar",
+   "variant": "book",
+   "tests": 15,
+   "native_passed": 13,
+   "shim_passed": 13,
+   "commands_compared": 18,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "16_scrambler",
+   "variant": "reference",
+   "tests": 16,
+   "native_passed": 16,
+   "shim_passed": 16,
+   "commands_compared": 30,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "16_scrambler",
+   "variant": "starter",
+   "tests": 16,
+   "native_passed": 9,
+   "shim_passed": 9,
+   "commands_compared": 30,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "16_scrambler",
+   "variant": "book",
+   "tests": 16,
+   "native_passed": 12,
+   "shim_passed": 12,
+   "commands_compared": 22,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "17_mad_libs",
+   "variant": "reference",
+   "tests": 16,
+   "native_passed": 16,
+   "shim_passed": 16,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "17_mad_libs",
+   "variant": "starter",
+   "tests": 16,
+   "native_passed": 3,
+   "shim_passed": 3,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "17_mad_libs",
+   "variant": "book",
+   "tests": 16,
+   "native_passed": 10,
+   "shim_passed": 10,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "18_gematria",
+   "variant": "reference",
+   "tests": 12,
+   "native_passed": 12,
+   "shim_passed": 12,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "18_gematria",
+   "variant": "starter",
+   "tests": 12,
+   "native_passed": 4,
+   "shim_passed": 4,
+   "commands_compared": 13,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "18_gematria",
+   "variant": "book",
+   "tests": 12,
+   "native_passed": 10,
+   "shim_passed": 10,
+   "commands_compared": 13,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "19_wod",
+   "variant": "reference",
+   "tests": 18,
+   "native_passed": 18,
+   "shim_passed": 18,
+   "commands_compared": 28,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "19_wod",
+   "variant": "starter",
+   "tests": 18,
+   "native_passed": 4,
+   "shim_passed": 4,
+   "commands_compared": 16,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "19_wod",
+   "variant": "book",
+   "tests": 18,
+   "native_passed": 11,
+   "shim_passed": 11,
+   "commands_compared": 19,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "20_password",
+   "variant": "reference",
+   "tests": 29,
+   "native_passed": 29,
+   "shim_passed": 29,
+   "commands_compared": 21,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "20_password",
+   "variant": "starter",
+   "tests": 29,
+   "native_passed": 9,
+   "shim_passed": 9,
+   "commands_compared": 21,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "20_password",
+   "variant": "book",
+   "tests": 29,
+   "native_passed": 24,
+   "shim_passed": 24,
+   "commands_compared": 21,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "21_tictactoe",
+   "variant": "reference",
+   "tests": 27,
+   "native_passed": 27,
+   "shim_passed": 27,
+   "commands_compared": 49,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "21_tictactoe",
+   "variant": "starter",
+   "tests": 27,
+   "native_passed": 8,
+   "shim_passed": 8,
+   "commands_compared": 29,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "21_tictactoe",
+   "variant": "book",
+   "tests": 27,
+   "native_passed": 23,
+   "shim_passed": 23,
+   "commands_compared": 48,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "22_itictactoe",
+   "variant": "reference",
+   "tests": 22,
+   "native_passed": 22,
+   "shim_passed": 22,
+   "commands_compared": 2,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "22_itictactoe",
+   "variant": "starter",
+   "tests": 22,
+   "native_passed": 7,
+   "shim_passed": 7,
+   "commands_compared": 2,
+   "mismatches": [],
+   "output_mismatches": []
+  },
+  {
+   "chapter": "22_itictactoe",
+   "variant": "book",
+   "tests": 22,
+   "native_passed": 17,
+   "shim_passed": 17,
+   "commands_compared": 2,
+   "mismatches": [],
+   "output_mismatches": []
+  }
+ ]
+}
