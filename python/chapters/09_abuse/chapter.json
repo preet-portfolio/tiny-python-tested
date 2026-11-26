@@ -1,0 +1,69 @@
+{
+  "id": "09_abuse",
+  "number": 9,
+  "title": "Dial-a-Curse",
+  "program": "abuse.py",
+  "mechanic": "Seeded random choices and parser.error",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Reproducible fake test data",
+    "body": "Programs like this fill test databases with fake names and fake reviews. That needs promises: the same seed gives the same rows, asking for more rows doesn't change the first ones, and no row repeats (a column that must be unique would reject it). The book's version repeats itself about once every 30 lines, and asking for 40 adjectives when there are only 36 crashes it. Keep every seeded answer the author expects and make those promises too."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py",
+    "test_props.py"
+  ],
+  "inputs": [],
+  "try_args": [
+    "-s 1 -n 1",
+    "--seed 2",
+    "-s 3 -n 5 -a 1",
+    "-a 40",
+    "-a -1",
+    "-s 3 -a 1 -n 300"
+  ],
+  "toy": "abuse",
+  "character": {
+    "name": "Sir Bluster",
+    "emoji": "🎭",
+    "role": "a hammy old actor who hurls Shakespeare's insults"
+  },
+  "tagline": "Sir Bluster has been on the stage for 400 years and can't stop insulting people the way Shakespeare did: \"You peevish, foolish gull!\" Choose how many insults, how many fancy words in each, and a lucky number. Same lucky number, same insults.",
+  "brains": {
+    "book": "Book Bluster",
+    "real": "Never-Repeats Bluster"
+  },
+  "brain_blurbs": {
+    "book": "Picks words at random, one insult after another.",
+    "real": "Picks the same way, but never says the same insult twice and knows when it's run out of words."
+  },
+  "rules": {
+    "test_exists": "Sir Bluster is on stage",
+    "test_usage": "Explains himself when you ask for help",
+    "test_bad_adjective_str": "\"How many words?\" needs a whole number, not letters",
+    "test_bad_adjective_num": "…and it has to be more than 0",
+    "test_bad_number_str": "\"How many insults?\" needs a whole number",
+    "test_bad_number_int": "…and it has to be more than 0",
+    "test_bad_seed": "The lucky number has to be a whole number",
+    "test_01": "Lucky number 1, one insult: exactly the book's insult",
+    "test_02": "Lucky number 2: exactly the book's three insults",
+    "test_03": "Lucky number 3, five insults with one word each: exactly the book's",
+    "test_04": "Lucky number 4, two insults with four words each: exactly the book's",
+    "test_same_seed_same_insults": "Same lucky number, same insults, every time",
+    "test_more_insults_keep_the_first_ones": "Asking for more insults doesn't change the first ones",
+    "test_no_repeated_insults": "300 insults and not one said twice",
+    "test_no_repeated_adjective_in_one_insult": "Never \"You vile, vile worm!\"",
+    "test_too_many_adjectives_is_polite": "Asking for 40 fancy words (there are only 36) gets a polite no",
+    "test_too_many_insults_is_polite": "Asking for more insults than exist gets a polite no",
+    "test_different_seeds_differ": "Different lucky numbers give different insults",
+    "test_every_insult_is_well_formed": "Every insult is \"You …, … noun!\" made of real Shakespeare words",
+    "test_never_repeats": "Any lucky number, any amount: no insult twice",
+    "test_longer_batch_starts_the_same": "A long list always starts like the short one",
+    "test_every_word_at_once": "All 36 fancy words in one insult is fine",
+    "test_every_possible_insult": "Can say every one of the 1,404 one-word insults, each once"
+  },
+  "book_program": "book.py"
+}

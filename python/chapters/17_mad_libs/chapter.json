@@ -1,0 +1,63 @@
+{
+  "id": "17_mad_libs",
+  "number": 17,
+  "title": "Mad Libs",
+  "program": "mad.py",
+  "mechanic": "Finding and replacing with regular expressions",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "A template engine meets real answers",
+    "body": "\"Hi <first name>, your <item> has shipped\" is a Mad Lib with real customers. The book drops each answer into re.sub, so a backslash someone types gets eaten, and a blank called <noun (plural)> is never found. It also treats \"5 < 6 and 7 > 3\" as a blank, and quietly keeps going when an answer is missing or extra. A half-filled email must never go out."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "inputs"
+  ],
+  "shared_inputs": [],
+  "try_args": [
+    "inputs/fox.txt -i surly car under bicycle",
+    "inputs/help.txt -i Hey tacos Oi salsa Hola queso Arriba",
+    "inputs/fox.txt -i only two",
+    "inputs/no_blanks.txt",
+    "nope.txt"
+  ],
+  "toy": "madlibs",
+  "character": {
+    "name": "Mabel",
+    "emoji": "🦙",
+    "role": "a llama who tells silly stories"
+  },
+  "tagline": "Mabel has a story with holes in it. Fill each hole with any word you like, then hear what she makes of it.",
+  "brains": {
+    "book": "Book Mabel",
+    "real": "Careful Mabel"
+  },
+  "brain_blurbs": {
+    "book": "Finds each <hole> and swaps your word in with a find-and-replace.",
+    "real": "Puts your words in exactly as typed, and stops if a word is missing."
+  },
+  "rules": {
+    "test_exists": "Mabel is here",
+    "test_usage": "Explains the game when you ask for help",
+    "test_bad_file": "Says so when the story file doesn't exist",
+    "test_no_blanks": "A story with no holes? She tells you, and stops",
+    "test_fox": "Fills the fox story: \"The quick surly car jumps under the lazy bicycle.\"",
+    "test_help": "Fills the same kind of hole many times, in order",
+    "test_verona": "Fills all ten holes in Romeo and Juliet (\"stick shift\" counts as one word!)",
+    "test_backslashes_are_kept": "Words with a \\ in them go in exactly as typed",
+    "test_odd_blank_names_work": "Holes with brackets or + in their name still get filled",
+    "test_maths_is_not_a_blank": "\"5 < 6 and 7 > 3\" is maths, not a hole",
+    "test_too_few_answers_is_an_error": "Not enough words? She stops instead of telling half a story",
+    "test_too_many_answers_is_an_error": "Too many words? She says so instead of losing one",
+    "test_same_blank_twice_gets_two_answers": "Two <noun> holes get two different words",
+    "test_story_from_stdin": "Can read the story you type, not just a file",
+    "test_asks_at_the_keyboard": "With no words given, she asks for each one: \"Give me an adjective\"",
+    "test_running_out_of_answers_at_the_keyboard": "If you stop typing early, she says which word is missing"
+  },
+  "book_program": "book.py"
+}

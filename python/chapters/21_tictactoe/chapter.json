@@ -1,0 +1,72 @@
+{
+  "id": "21_tictactoe",
+  "number": 21,
+  "title": "Tic-Tac-Toe",
+  "program": "tictactoe.py",
+  "mechanic": "Validating board state",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "The board comes from a share link",
+    "body": "A link like ?board=XXXOOO... is someone else's input. It can be nine perfectly valid characters and still describe a game nobody could play: two winners, five Xs and no Os, a move after the game is over. The book checks the shape. These tests check that it makes sense."
+  },
+  "upstream_tests": [
+    "test.py",
+    "unit.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py",
+    "test_props.py"
+  ],
+  "inputs": [],
+  "try_args": [
+    "",
+    "-b XXO...OOX -p O -c 5",
+    "-b XXXOOO...",
+    "-b XO.XO.... -p X -c 7",
+    "-p X"
+  ],
+  "note": "One of the book's tests expects argparse's error message as Python 3.8 wrote it (invalid choice: 10). Python 3.12 and later quote the value ('10'), so a solution that leans on choices= fails on a modern Python. Tests can pin more than they mean to.",
+  "toy": "tictactoe",
+  "character": {
+    "name": "Ref Robo",
+    "emoji": "🤖",
+    "role": "the strictest referee in town"
+  },
+  "tagline": "Play noughts and crosses. Ref Robo checks every move and shouts when someone wins. Then try sneaking it a board that could never happen.",
+  "brains": {
+    "book": "Book Robo",
+    "real": "Sharp Robo"
+  },
+  "brain_blurbs": {
+    "book": "Checks the board has the right letters.",
+    "real": "Also checks the game could really have happened."
+  },
+  "rules": {
+    "test_exists": "Ref Robo is on the field",
+    "test_usage": "Explains the rules when you ask",
+    "test_no_input": "Draws an empty board numbered 1 to 9",
+    "test_bad_board": "Rejects boards with odd letters or the wrong size",
+    "test_bad_player": "Only X and O can play",
+    "test_bad_cell_int": "Cells go from 1 to 9, not 0 or 10",
+    "test_bad_cell_str": "A cell has to be a number",
+    "test_both_player_and_cell": "A move needs a player and a cell",
+    "test_good_board_01": "Draws an empty board",
+    "test_good_board_02": "Draws a board with moves on it",
+    "test_mutate_board_01": "Puts X in cell 1",
+    "test_mutate_board_02": "Spots O winning",
+    "test_mutate_cell_taken": "No playing on a taken cell",
+    "test_winning": "Spots every way to win: rows, columns, diagonals",
+    "test_losing": "Doesn't call a winner too early",
+    "test_board_no_board": "Draws the empty grid",
+    "test_board_with_board": "Draws the grid with X and O",
+    "test_two_winners_is_impossible": "X and O can't BOTH have won",
+    "test_turns_alternate": "Five X and no O? Somebody cheated",
+    "test_no_moves_after_a_win": "No more moves once someone has won",
+    "test_lowercase_is_rejected_not_guessed": "A small x isn't an X",
+    "test_a_real_game_still_plays": "A normal game still works",
+    "test_rotating_keeps_the_winner": "Turn the board around: same winner",
+    "test_mirroring_keeps_the_winner": "Look in a mirror: same winner",
+    "test_swapping_players_swaps_the_winner": "Swap X and O: the other one wins"
+  },
+  "book_program": "book.py"
+}

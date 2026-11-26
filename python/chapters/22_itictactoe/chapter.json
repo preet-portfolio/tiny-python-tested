@@ -1,0 +1,65 @@
+{
+  "id": "22_itictactoe",
+  "number": 22,
+  "title": "Tic-Tac-Toe Redux",
+  "program": "itictactoe.py",
+  "mechanic": "Typed game state and a game loop",
+  "world_label": "Game state and real world",
+  "scenario": {
+    "title": "A game state you can trust",
+    "body": "This program asks questions instead of taking arguments, so the book has no command-line tests for it, only checks of the board drawing and the winner. These tests play real games: one move at a time through get_move(), whole games typed in at the keyboard, and hundreds of made-up move lists from Hypothesis. A natural first version keeps one game object and changes it with each move. That version calls a ninth-move win a draw, lets O move after X has won, and crashes when the keyboard runs out."
+  },
+  "upstream_tests": [
+    "unit.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py",
+    "test_props.py"
+  ],
+  "inputs": [],
+  "shared_inputs": [],
+  "try_args": [
+    ""
+  ],
+  "note": "The book doesn't give this chapter any command-line tests, because the program asks for moves while it runs. Here a whole game is typed in at once by sending the moves through STDIN, one per line.",
+  "toy": "itictactoe",
+  "character": {
+    "name": "Tic and Tac",
+    "emoji": "🐯",
+    "role": "two tiger cubs who never stop playing"
+  },
+  "tagline": "Play a whole game of noughts and crosses against a friend (or yourself). Tic and Tac keep score and shout when somebody wins.",
+  "brains": {
+    "book": "First-try Tic",
+    "real": "Careful Tac"
+  },
+  "brain_blurbs": {
+    "book": "Keeps one game and scribbles every move onto it.",
+    "real": "Makes a fresh copy of the game for every move, and checks for a win first."
+  },
+  "rules": {
+    "test_board_no_state": "Draws an empty board numbered 1 to 9",
+    "test_board_with_state": "Draws X and O where they've been played",
+    "test_winning": "Spots every way to win: rows, columns and diagonals",
+    "test_losing": "Doesn't call a winner too early",
+    "test_new_game_is_empty": "A new game is empty and X goes first",
+    "test_players_take_turns": "X, then O, then X again",
+    "test_taken_cell_is_an_error": "No playing on a square that's taken (and it's still your turn)",
+    "test_bad_cells_are_errors": "\"biscuit\", 0 and 10 aren't squares",
+    "test_spaces_around_a_move_are_fine": "\" 5 \" with spaces still means square 5",
+    "test_q_quits": "Type q to stop playing",
+    "test_a_win": "Three X's across the top: X wins!",
+    "test_ninth_move_win_is_a_win_not_a_draw": "Winning with the very last square is a win, not a draw",
+    "test_a_real_draw": "A full board with no winner is a draw",
+    "test_no_moves_after_the_game_is_won": "Once someone has won, no more sneaky moves",
+    "test_old_state_is_never_changed": "Every move makes a new copy of the game; the old one never changes",
+    "test_whole_game_at_the_keyboard": "A whole game typed in ends with \"X has won!\"",
+    "test_keyboard_runs_out_of_moves": "If the moves stop early, it says bye instead of crashing",
+    "test_turns_stay_fair": "Whatever anyone types, X never gets two turns in a row",
+    "test_each_move_fills_at_most_one_square": "A move fills one empty square, or none, and never rubs one out",
+    "test_never_two_winners": "X and O can never both win",
+    "test_draw_means_full_and_no_winner": "A draw only happens when the board is full and nobody won",
+    "test_game_over_means_nothing_changes": "When the game is over, more typing changes nothing"
+  },
+  "book_program": "book.py"
+}

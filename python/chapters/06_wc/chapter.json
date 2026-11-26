@@ -1,0 +1,64 @@
+{
+  "id": "06_wc",
+  "number": 6,
+  "title": "Words Count",
+  "program": "wc.py",
+  "mechanic": "STDIN and column formatting",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Agree with Unix wc on real files",
+    "body": "The book's files are ASCII and end in a newline, so counting characters and counting bytes agree. Real files don't: 'café' is five bytes, a CSV export often has no final newline, and Windows files end lines with \\r\\n. The book says the answer should match wc. These tests hold it to that."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "inputs"
+  ],
+  "shared_inputs": [
+    "fox.txt",
+    "sonnet-29.txt"
+  ],
+  "try_args": [
+    "../inputs/fox.txt",
+    "../inputs/fox.txt ../inputs/sonnet-29.txt",
+    "< ../inputs/fox.txt",
+    "nope.txt"
+  ],
+  "toy": "wc",
+  "character": {
+    "name": "Professor Hoot",
+    "emoji": "🦉",
+    "role": "an owl who counts everything"
+  },
+  "tagline": "Type or paste anything. Professor Hoot counts the lines, the words and the bytes (the tiny pieces a computer stores text in).",
+  "brains": {
+    "book": "Book Hoot",
+    "real": "Precise Hoot"
+  },
+  "brain_blurbs": {
+    "book": "Counts letters and calls them bytes.",
+    "real": "Counts real bytes, like the computer's own counter."
+  },
+  "rules": {
+    "test_exists": "The professor is in",
+    "test_usage": "Explains itself when you ask for help",
+    "test_bad_file": "Says so when a file doesn't exist",
+    "test_empty": "An empty file is 0, 0, 0",
+    "test_one": "Counts a one-line file",
+    "test_two": "Counts a two-line file",
+    "test_fox": "Counts the fox sentence: 1 line, 9 words, 45 bytes",
+    "test_more": "Counts two files and adds a total",
+    "test_stdin": "Counts text that's piped in",
+    "test_utf8_counts_bytes": "\"café crème\" is 13 bytes (é takes two!)",
+    "test_no_final_newline": "A last line with no Enter isn't counted as a line, like the real counter",
+    "test_windows_line_endings": "Windows text: the hidden \\r counts as a byte",
+    "test_tabs_and_runs_of_spaces": "Tabs and lots of spaces still split words",
+    "test_missing_file_among_good_ones": "One missing file doesn't stop the others being counted",
+    "test_utf8_on_stdin": "Piped text is counted in bytes too"
+  },
+  "book_program": "book.py"
+}

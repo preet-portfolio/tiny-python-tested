@@ -1,0 +1,26 @@
+[project]
+name = "tiny-python-tested"
+version = "0.1.0"
+requires-python = ">=3.14,<3.15"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "pytest==9.0.2",
+  "hypothesis==6.170.15",
+  "mypy>=1.18",
+  "ruff>=0.14",
+  "coverage>=7.10",
+  "mutmut>=3.3",
+]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["python/upstream", "python/build", "python/chapters/*/starter.py"]
+
+[tool.mypy]
+files = ["python/tptl", "python/chapters"]
+mypy_path = "python"
+explicit_package_bases = true
+exclude = ["test_.*\\.py$", "starter\\.py$"]
+ignore_missing_imports = true

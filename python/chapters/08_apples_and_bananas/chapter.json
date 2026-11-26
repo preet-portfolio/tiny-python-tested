@@ -1,0 +1,80 @@
+{
+  "id": "08_apples_and_bananas",
+  "number": 8,
+  "title": "Apples and Bananas",
+  "program": "apples.py",
+  "mechanic": "Find and replace, many ways",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Refactoring under tests",
+    "body": "The book writes this program eight different ways, and the same tests keep every version honest. That only works if the tests ask the right questions. The book's replace() never sees the vowels in \"crème brûlée\" or \"Éclair\", and \"-v O\" is turned away for being a capital. Rewrite it however you like, as long as every test stays green."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [],
+  "shared_inputs": [
+    "fox.txt"
+  ],
+  "try_args": [
+    "foo",
+    "-v i 'APPLES AND BANANAS'",
+    "--vowel o ../inputs/fox.txt",
+    "'Crème brûlée'",
+    "-v O bar",
+    "-v x foo"
+  ],
+  "toy": "apples",
+  "character": {
+    "name": "Melody",
+    "emoji": "🐸",
+    "role": "a frog who sings with one vowel"
+  },
+  "tagline": "Melody the frog knows one song: \"I like to eat apples and bananas.\" Pick a vowel and Melody sings any words you give her with that vowel only. Oo-ploos ond bononos!",
+  "brains": {
+    "book": "Book Melody",
+    "real": "Fancy Melody"
+  },
+  "brain_blurbs": {
+    "book": "Swaps a, e, i, o and u.",
+    "real": "Swaps accented vowels too, like é and û, and doesn't mind a capital vowel."
+  },
+  "rules": {
+    "test_exists": "Melody is at the pond",
+    "test_usage": "Explains herself when you ask for help",
+    "test_bad_vowel": "X isn't a vowel, so Melody says no",
+    "test_command_line": "\"foo\" sung with a is \"faa\"",
+    "test_command_line_with_vowel": "\"foo\" sung with i is \"fii\"",
+    "test_command_line_with_vowel_preserve_case": "CAPITAL vowels become capital vowels",
+    "test_file": "Can sing a whole file",
+    "test_file_with_vowel": "…with any vowel you pick",
+    "test_accented_vowels": "é, è and û are vowels too: \"Crème brûlée\" becomes \"Crama bralaa\"",
+    "test_accents_typed_as_two_pieces": "An accent typed as a separate piece still counts",
+    "test_capital_vowel_option": "Picking a capital O works as well as a small o",
+    "test_still_rejects_non_vowels": "A capital X still isn't a vowel",
+    "test_only_vowels_change": "Everything that isn't a vowel stays put (y too)",
+    "test_singing_twice": "Singing the song twice gives the same song"
+  },
+  "examples": [
+    [
+      "🍎",
+      "Apples and Bananas"
+    ],
+    [
+      "🍮",
+      "Crème brûlée"
+    ],
+    [
+      "🥐",
+      "Éclair"
+    ],
+    [
+      "🎸",
+      "Rhythm and blues"
+    ]
+  ],
+  "book_program": "book.py"
+}
