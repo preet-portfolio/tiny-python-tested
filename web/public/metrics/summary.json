@@ -1,0 +1,405 @@
+{
+ "generated": "2026-11-26T11:20Z",
+ "python": "3.14.0",
+ "chapters": [
+  {
+   "id": "02_crowsnest",
+   "tests": {
+    "book": 6,
+    "world": 6,
+    "passed": 12,
+    "total": 12
+   },
+   "mutation": {
+    "book": {
+     "killed": 22,
+     "total": 60
+    },
+    "world": {
+     "killed": 53,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "03_picnic",
+   "tests": {
+    "book": 7,
+    "world": 8,
+    "passed": 15,
+    "total": 15
+   },
+   "mutation": {
+    "book": {
+     "killed": 34,
+     "total": 38
+    },
+    "world": {
+     "killed": 37,
+     "total": 38
+    }
+   }
+  },
+  {
+   "id": "04_jump_the_five",
+   "tests": {
+    "book": 4,
+    "world": 6,
+    "passed": 10,
+    "total": 10
+   },
+   "mutation": {
+    "book": {
+     "killed": 27,
+     "total": 27
+    },
+    "world": {
+     "killed": 27,
+     "total": 27
+    }
+   }
+  },
+  {
+   "id": "05_howler",
+   "tests": {
+    "book": 5,
+    "world": 6,
+    "passed": 11,
+    "total": 11
+   },
+   "mutation": {
+    "book": {
+     "killed": 16,
+     "total": 21
+    },
+    "world": {
+     "killed": 19,
+     "total": 21
+    }
+   }
+  },
+  {
+   "id": "06_wc",
+   "tests": {
+    "book": 9,
+    "world": 6,
+    "passed": 15,
+    "total": 15
+   },
+   "mutation": {
+    "book": {
+     "killed": 24,
+     "total": 26
+    },
+    "world": {
+     "killed": 24,
+     "total": 26
+    }
+   }
+  },
+  {
+   "id": "07_gashlycrumb",
+   "tests": {
+    "book": 8,
+    "world": 7,
+    "passed": 15,
+    "total": 15
+   },
+   "mutation": {
+    "book": {
+     "killed": 18,
+     "total": 25
+    },
+    "world": {
+     "killed": 23,
+     "total": 25
+    }
+   }
+  },
+  {
+   "id": "08_apples_and_bananas",
+   "tests": {
+    "book": 8,
+    "world": 6,
+    "passed": 14,
+    "total": 14
+   },
+   "mutation": {
+    "book": {
+     "killed": 19,
+     "total": 21
+    },
+    "world": {
+     "killed": 19,
+     "total": 21
+    }
+   }
+  },
+  {
+   "id": "09_abuse",
+   "tests": {
+    "book": 11,
+    "world": 12,
+    "passed": 23,
+    "total": 23
+   },
+   "mutation": {
+    "book": {
+     "killed": 36,
+     "total": 46
+    },
+    "world": {
+     "killed": 39,
+     "total": 46
+    }
+   }
+  },
+  {
+   "id": "10_telephone",
+   "tests": {
+    "book": 10,
+    "world": 10,
+    "passed": 20,
+    "total": 20
+   },
+   "mutation": {
+    "book": {
+     "killed": 29,
+     "total": 34
+    },
+    "world": {
+     "killed": 33,
+     "total": 34
+    }
+   }
+  },
+  {
+   "id": "11_bottles_of_beer",
+   "tests": {
+    "book": 8,
+    "world": 8,
+    "passed": 16,
+    "total": 16
+   },
+   "mutation": {
+    "book": {
+     "killed": 29,
+     "total": 30
+    },
+    "world": {
+     "killed": 30,
+     "total": 30
+    }
+   }
+  },
+  {
+   "id": "12_ransom",
+   "tests": {
+    "book": 6,
+    "world": 10,
+    "passed": 16,
+    "total": 16
+   },
+   "mutation": {
+    "book": {
+     "killed": 16,
+     "total": 17
+    },
+    "world": {
+     "killed": 16,
+     "total": 17
+    }
+   }
+  },
+  {
+   "id": "13_twelve_days",
+   "tests": {
+    "book": 7,
+    "world": 6,
+    "passed": 13,
+    "total": 13
+   },
+   "mutation": {
+    "book": {
+     "killed": 59,
+     "total": 60
+    },
+    "world": {
+     "killed": 60,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "14_rhymer",
+   "tests": {
+    "book": 7,
+    "world": 6,
+    "passed": 13,
+    "total": 13
+   },
+   "mutation": {
+    "book": {
+     "killed": 57,
+     "total": 60
+    },
+    "world": {
+     "killed": 58,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "15_kentucky_friar",
+   "tests": {
+    "book": 10,
+    "world": 5,
+    "passed": 15,
+    "total": 15
+   },
+   "mutation": {
+    "book": {
+     "killed": 28,
+     "total": 33
+    },
+    "world": {
+     "killed": 30,
+     "total": 33
+    }
+   }
+  },
+  {
+   "id": "16_scrambler",
+   "tests": {
+    "book": 7,
+    "world": 9,
+    "passed": 16,
+    "total": 16
+   },
+   "mutation": {
+    "book": {
+     "killed": 25,
+     "total": 27
+    },
+    "world": {
+     "killed": 26,
+     "total": 27
+    }
+   }
+  },
+  {
+   "id": "17_mad_libs",
+   "tests": {
+    "book": 7,
+    "world": 9,
+    "passed": 16,
+    "total": 16
+   },
+   "mutation": {
+    "book": {
+     "killed": 16,
+     "total": 37
+    },
+    "world": {
+     "killed": 31,
+     "total": 37
+    }
+   }
+  },
+  {
+   "id": "18_gematria",
+   "tests": {
+    "book": 6,
+    "world": 6,
+    "passed": 12,
+    "total": 12
+   },
+   "mutation": {
+    "book": {
+     "killed": 11,
+     "total": 11
+    },
+    "world": {
+     "killed": 11,
+     "total": 11
+    }
+   }
+  },
+  {
+   "id": "19_wod",
+   "tests": {
+    "book": 9,
+    "world": 9,
+    "passed": 18,
+    "total": 18
+   },
+   "mutation": {
+    "book": {
+     "killed": 46,
+     "total": 60
+    },
+    "world": {
+     "killed": 53,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "20_password",
+   "tests": {
+    "book": 17,
+    "world": 12,
+    "passed": 29,
+    "total": 29
+   },
+   "mutation": {
+    "book": {
+     "killed": 60,
+     "total": 60
+    },
+    "world": {
+     "killed": 60,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "21_tictactoe",
+   "tests": {
+    "book": 19,
+    "world": 8,
+    "passed": 27,
+    "total": 27
+   },
+   "mutation": {
+    "book": {
+     "killed": 56,
+     "total": 60
+    },
+    "world": {
+     "killed": 57,
+     "total": 60
+    }
+   }
+  },
+  {
+   "id": "22_itictactoe",
+   "tests": {
+    "book": 4,
+    "world": 18,
+    "passed": 22,
+    "total": 22
+   },
+   "mutation": {
+    "book": {
+     "killed": 34,
+     "total": 60
+    },
+    "world": {
+     "killed": 57,
+     "total": 60
+    }
+   }
+  }
+ ]
+}

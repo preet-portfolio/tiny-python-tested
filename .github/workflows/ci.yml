@@ -1,0 +1,202 @@
+# Every number the site shows comes from this workflow. No secrets are used.
+# Python 3.14 to match Pyodide 314 (CPython 3.14.2) in the browser.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  PYTHON_VERSION: "3.14"
+  NODE_VERSION: "24"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Install dev tools
+        run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: ruff
+        run: ruff check
+      - name: mypy
+        # Every chapter has a book.py, so one mypy run sees duplicate modules named "book".
+        # Check tptl, then each chapter folder on its own (pyproject's settings still apply).
+        run: |
+          mypy python/tptl
+          for d in python/chapters/*/; do
+            if compgen -G "$d*.py" > /dev/null; then mypy "$d"; fi
+          done
+
+  test:
+    # The book's tests and the real-world tests, natively, with real subprocesses: each
+    # chapter in its own build dir, invoked as tptl.parity.native_outcomes invokes pytest
+    # (--rootdir=<dir>, -c os.devnull).
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Stage chapters
+        working-directory: python
+        run: python -m tptl.stage
+      - name: Run every chapter's tests
+        run: python scripts/native_tests.py
+
+  parity:
+    # The in-process shim against a real subprocess: same outcome for every test and the
+    # same bytes for every command, or the job fails.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Shim vs subprocess
+        working-directory: python
+        run: python -m tptl.parity ../web/public/metrics
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: metrics-parity
+          path: web/public/metrics/parity.json
+          if-no-files-found: error
+
+  pyodide:
+    # The in-process test runner and the seeded programs inside Pyodide under Node, compared
+    # with native CPython: test outcomes must match and seeded stdout must be byte-identical.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: npm ci
+        working-directory: web
+        run: npm ci
+      - name: Fetch Pyodide wheels (SHA-256 checked)
+        working-directory: web
+        run: node scripts/fetch-pyodide.mjs
+      - name: Pyodide vs native
+        working-directory: web
+        env:
+          PYTHON: python
+        run: node scripts/pyodide-check.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: metrics-pyodide
+          path: web/public/metrics/pyodide.json
+          if-no-files-found: error
+
+  metrics:
+    # Coverage of the reference solutions (book + real-world tests, including the runs the
+    # tests start through subprocess) and the mutation scores the site shows (tptl.mutate,
+    # via tptl.metrics -> summary.json), and each toy's recorded gremlin moment for the first
+    # screen (tptl.moments -> moments.json).
+    #
+    # mutmut is not run. Tried locally with mutmut 3.8.1 on Python 3.14 (12_ransom): it runs,
+    # but 55 of its 71 mutants came back "no tests", because the book's tests drive the
+    # program through subprocess and mutmut only maps tests to code it sees in-process. Its
+    # score would only cover the few functions test_props.py imports. Two layout problems
+    # on top: tests run from mutants/, so ../inputs points somewhere else, and its config
+    # warnings go to the mutated program's stderr, which the book's tests compare. The
+    # tptl.mutate score (what the site shows) runs every mutant through the full suite.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: python -m pip install "pip>=25.1" && python -m pip install --group dev
+      - name: Coverage
+        run: python scripts/native_tests.py --coverage web/public/metrics
+      - name: Mutation scores
+        working-directory: python
+        run: python -m tptl.metrics ../web/public/metrics
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: metrics-scores
+          path: |
+            web/public/metrics/coverage.json
+            web/public/metrics/summary.json
+            web/public/metrics/moments.json
+          if-no-files-found: error
+
+  publish:
+    # On main only, after every check passed: commit the JSON back so the static site (built
+    # from the repo) shows exactly what CI measured. A separate job keeps write access out of
+    # the jobs that run project code against untrusted input, and means a failing check never
+    # publishes numbers. Commits made with GITHUB_TOKEN don't start another workflow run.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, test, parity, pyodide, metrics]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    concurrency:
+      group: publish-metrics
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: metrics-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/metrics
+      - name: Copy files whose numbers changed
+        # Timestamps and timings change on every run; ignore them so an unchanged result
+        # doesn't make a commit.
+        shell: python
+        run: |
+          import json, os, pathlib, shutil
+          src = pathlib.Path(os.environ["RUNNER_TEMP"]) / "metrics"
+          dst = pathlib.Path("web/public/metrics")
+          dst.mkdir(parents=True, exist_ok=True)
+          VOLATILE = {"generated", "seconds"}
+          def norm(x):
+              if isinstance(x, dict):
+                  return {k: norm(v) for k, v in x.items() if k not in VOLATILE}
+              if isinstance(x, list):
+                  return [norm(v) for v in x]
+              return x
+          for f in sorted(src.glob("*.json")):
+              old = dst / f.name
+              if old.exists() and norm(json.loads(old.read_text())) == norm(json.loads(f.read_text())):
+                  print(f"{f.name}: unchanged")
+                  continue
+              shutil.copy2(f, old)
+              print(f"{f.name}: updated")
+      - name: Commit
+        run: |
+          git add web/public/metrics/*.json
+          if git diff --cached --quiet; then
+            echo "Metrics unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update metrics from CI" -m "Measured by run ${{ github.run_id }} for ${{ github.sha }}."
+          git push

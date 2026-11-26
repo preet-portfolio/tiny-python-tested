@@ -1,0 +1,68 @@
+{
+  "id": "18_gematria",
+  "number": 18,
+  "title": "Gematria",
+  "program": "gematria.py",
+  "mechanic": "Character codes, map and sum",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "The simplest checksum there is",
+    "body": "Adding up character codes is a checksum: a number that changes when the text changes (most of the time). These tests pin down what it can't tell apart (listen and silent get the same number). They also catch two quiet mistakes: the book throws away accented letters, so café scores the same as caf, and a lone \"--\" gets the number 0."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [],
+  "shared_inputs": [
+    "spiders.txt",
+    "fox.txt",
+    "sonnet-29.txt"
+  ],
+  "try_args": [
+    "'foo bar baz'",
+    "../inputs/fox.txt",
+    "'listen silent'",
+    "'café cafe caf'",
+    "'wait -- what'"
+  ],
+  "toy": "gematria",
+  "character": {
+    "name": "Abacus Annie",
+    "emoji": "🐿️",
+    "role": "a squirrel who counts letters like nuts"
+  },
+  "tagline": "Every letter has a secret number inside the computer (A is 65, a is 97). Annie adds them up, so every word gets its own number. Can you find two words with the same one?",
+  "brains": {
+    "book": "Book Annie",
+    "real": "Careful Annie"
+  },
+  "brain_blurbs": {
+    "book": "Keeps only A to Z and 0 to 9, and adds them up.",
+    "real": "Counts é as e, and skips bits that aren't words at all."
+  },
+  "rules": {
+    "test_exists": "Annie is here",
+    "test_usage": "Explains herself when you ask for help",
+    "test_text": "\"foo bar baz\" gives 324 309 317",
+    "test_fox": "Gives every word of the fox sentence its number",
+    "test_spiders": "Ignores the ' in \"Don't\" and keeps the lines",
+    "test_sonnet": "Counts a whole sonnet, blank line and all",
+    "test_anagrams_collide": "\"listen\" and \"silent\" get the same number (same letters, mixed up!)",
+    "test_case_matters": "\"Apple\" and \"apple\" get different numbers",
+    "test_accents_count_as_their_letter": "\"café\" counts like \"cafe\", not like \"caf\"",
+    "test_lone_punctuation_is_not_a_word": "A lone \"--\" or 🙂 isn't a word, so it gets no number",
+    "test_digits_count": "Digits count too: 7 is worth 55",
+    "test_blank_lines_stay": "A blank line stays a blank line"
+  },
+  "examples": [
+    ["👂", "listen silent"],
+    ["🍎", "Apple apple"],
+    ["☕", "café cafe caf"],
+    ["😶", "wait -- what"],
+    ["🔢", "7 seven"]
+  ],
+  "book_program": "book.py"
+}

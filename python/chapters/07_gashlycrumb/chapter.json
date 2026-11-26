@@ -1,0 +1,92 @@
+{
+  "id": "07_gashlycrumb",
+  "number": 7,
+  "title": "Gashlycrumb",
+  "program": "gashlycrumb.py",
+  "mechanic": "A lookup table read from a file",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Lookup tables people edit by hand",
+    "body": "The program reads any alphabet file, so it works for the NATO alphabet (Alfa, Bravo, Charlie) or any small config table. Files people edit by hand have '# comments', indented lines, blank lines, Windows line endings and, from Notepad, an invisible mark before the first letter. The book takes the first character of every line, whatever it is. Read real files without breaking any of the author's tests."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "gashlycrumb.txt",
+    "alternate.txt"
+  ],
+  "try_args": [
+    "a",
+    "b c",
+    "o P q -f alternate.txt",
+    "5 CH",
+    "-f - x y z < alternate.txt",
+    "a -f nope.txt"
+  ],
+  "toy": "gashlycrumb",
+  "character": {
+    "name": "Lexi",
+    "emoji": "🦙",
+    "role": "a llama who keeps the alphabet scrapbook"
+  },
+  "tagline": "Lexi the llama keeps a scrapbook with one page for every letter. Type a name and Lexi finds the page for each of its letters.",
+  "brains": {
+    "book": "Book Lexi",
+    "real": "Careful Lexi"
+  },
+  "brain_blurbs": {
+    "book": "Files each line under its very first character, whatever it is.",
+    "real": "Skips notes, blank lines and hidden marks before filing a line."
+  },
+  "rules": {
+    "test_exists": "Lexi is in the library",
+    "test_usage": "Explains itself when you ask for help",
+    "test_bad_file": "Says so when the scrapbook file doesn't exist",
+    "test_a": "Finds the page for A",
+    "test_b_c": "Finds two pages, B and C, in order",
+    "test_y": "A capital Y works as well as a small one",
+    "test_o_alternate": "Can read a different scrapbook file",
+    "test_bad_letter": "Says \"I do not know\" for 5 and CH",
+    "test_nato_alphabet": "Works with any alphabet, like Alfa, Bravo, Charlie",
+    "test_notepad_mark_is_ignored": "Ignores the invisible mark Windows Notepad hides at the start of a file",
+    "test_indented_lines": "Spaces before a line don't hide it",
+    "test_comments_are_not_entries": "A line starting with # is a note, not a page",
+    "test_blank_lines_are_ignored": "Empty lines don't mess anything up",
+    "test_windows_line_endings": "Files made on Windows work too",
+    "test_table_from_a_pipe": "Can read the scrapbook from a pipe"
+  },
+  "examples": [
+    [
+      "🧒",
+      "SAM"
+    ],
+    [
+      "🐶",
+      "REX"
+    ],
+    [
+      "🌈",
+      "JOY"
+    ],
+    [
+      "🔢",
+      "R2D2"
+    ]
+  ],
+  "book_program": "book.py",
+  "chapter_files": [
+    "kind.txt",
+    "messy.txt"
+  ],
+  "moment_args": [
+    "-f kind.txt s a m",
+    "-f messy.txt s a m",
+    "-f kind.txt l e x i",
+    "-f messy.txt z o e",
+    "-f kind.txt 5 CH"
+  ]
+}

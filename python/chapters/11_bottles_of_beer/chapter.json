@@ -1,0 +1,60 @@
+{
+  "id": "11_bottles_of_beer",
+  "number": 11,
+  "title": "Bottles of Beer",
+  "program": "bottles.py",
+  "mechanic": "Test-driving one function",
+  "world_label": "Unit and real world",
+  "scenario": {
+    "title": "Plural copy breaks at the edges",
+    "body": "Write verse() first and test it directly, then check the whole song the way a shop checks \"1 item left\" and \"No more items\": 11, 21 and 101 stay plural, and nothing ever says 0 bottles. The property tests try dozens of numbers Hypothesis picks for you."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_unit.py",
+    "test_props.py",
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "sums.txt"
+  ],
+  "try_args": [
+    "-n 2",
+    "-n 0",
+    "-n 2.5",
+    "--num 21"
+  ],
+  "toy": "bottles",
+  "character": {
+    "name": "The Bottle Choir",
+    "emoji": "🍾",
+    "role": "who sing very, very long songs"
+  },
+  "tagline": "Pick how many bottles are on the wall. The choir sings one verse per bottle, all the way down to none.",
+  "brains": {
+    "real": "The Choir"
+  },
+  "brain_blurbs": {
+    "real": "Counts down and sings each verse."
+  },
+  "rules": {
+    "test_exists": "The choir showed up",
+    "test_usage": "Explains itself when you ask for help",
+    "test_bad_int": "Refuses to sing for zero or fewer bottles",
+    "test_float": "Refuses 2.5 bottles (nobody has half a bottle)",
+    "test_str": "Refuses \"banana\" bottles",
+    "test_one": "Sings the one-bottle song exactly right",
+    "test_two": "Sings the two-bottle song exactly right",
+    "test_random": "Sings 1 to 5 bottles word-for-word",
+    "test_verse_last": "The last verse says \"1 bottle\" and \"No more\"",
+    "test_verse_two": "Two bottles goes down to \"1 bottle\", not \"1 bottles\"",
+    "test_counts_down_by_one": "Any number: each verse goes down by exactly one",
+    "test_never_says_1_bottles_or_0_bottles": "Never sings \"1 bottles\" or \"0 bottles\", whatever the number",
+    "test_default_is_ten_verses": "With no number, sings 10 verses",
+    "test_one_verse_per_bottle": "99 bottles means 99 verses",
+    "test_numbers_ending_in_one_stay_plural": "21, 11 and 101 bottles are still \"bottles\"",
+    "test_ends_with_no_more": "Always ends on \"No more bottles\""
+  }
+}

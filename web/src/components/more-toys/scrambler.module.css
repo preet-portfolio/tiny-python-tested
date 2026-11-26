@@ -1,0 +1,33 @@
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 0;
+  background: var(--surface);
+  border: 2px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.same {
+  color: var(--ink);
+}
+.moved {
+  color: var(--sea);
+  display: inline-block;
+  animation: wiggle 420ms ease-in-out both;
+}
+.space {
+  display: inline-block;
+  width: 0.5em;
+}
+@keyframes wiggle {
+  0% {
+    transform: translateY(-10px) rotate(-12deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(2px) rotate(6deg);
+  }
+}

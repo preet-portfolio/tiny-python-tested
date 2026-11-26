@@ -1,0 +1,60 @@
+.days {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+.day {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--ink);
+  border: 3px solid var(--rule);
+  border-radius: var(--radius);
+}
+.day[aria-pressed="true"] {
+  border-color: var(--sea-ink);
+  background: var(--sun);
+  color: #1f2a44;
+}
+.dayIcon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.pile {
+  display: grid;
+  gap: 2px;
+  background: var(--surface);
+  border: 2px dashed var(--rule);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+.pileRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+.pileRow span {
+  display: inline-block;
+  animation: drop 260ms ease-out both;
+}
+@keyframes drop {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}
+.total {
+  margin: 0;
+  font-weight: 700;
+}
+@media (max-width: 520px) {
+  .days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

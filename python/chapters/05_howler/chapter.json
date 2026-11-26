@@ -1,0 +1,63 @@
+{
+  "id": "05_howler",
+  "number": 5,
+  "title": "Howler",
+  "program": "howler.py",
+  "mechanic": "Files, STDIN and STDOUT",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Clean up a file or a pipe",
+    "body": "A text tool is most useful in a pipeline: cat notes.txt | ./howler.py - -o loud.txt. The book reads a word or a file, but not a pipe. Files saved by Windows Notepad start with an invisible mark that shouldn't end up in the output, and a typo in the output folder shouldn't crash the program. Handle all three without breaking any of the author's tests."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "test-outs"
+  ],
+  "shared_inputs": [
+    "fox.txt",
+    "preamble.txt",
+    "sonnet-29.txt",
+    "the-bustle.txt"
+  ],
+  "try_args": [
+    "'How dare you steal that car!'",
+    "../inputs/fox.txt",
+    "- < ../inputs/the-bustle.txt",
+    "-o loud.txt 'quiet please'",
+    "-o no/such/folder/loud.txt 'oops'"
+  ],
+  "toy": "howler",
+  "character": {
+    "name": "Howie",
+    "emoji": "🐒",
+    "role": "a howler monkey who SHOUTS EVERYTHING"
+  },
+  "tagline": "Howie is a howler monkey. Whatever you whisper, Howie SHOUTS. Howie can shout what you type, what you pour down the pipe, or shout it onto a scroll to keep.",
+  "brains": {
+    "book": "Book Howie",
+    "real": "Plumber Howie"
+  },
+  "brain_blurbs": {
+    "book": "Shouts words and files.",
+    "real": "Shouts words, files and pipes, and never trips over a bad folder."
+  },
+  "rules": {
+    "test_exists": "Howie is in the jungle",
+    "test_usage": "Explains itself when you ask for help",
+    "test_text_stdout": "Shouts what you type: \"foo bar baz\" becomes \"FOO BAR BAZ\"",
+    "test_text_outfile": "Can shout onto a file instead of the screen",
+    "test_file": "Can shout a whole file (three poems) onto another file",
+    "test_reads_a_pipe": "A dash (-) means \"shout whatever comes down the pipe\"",
+    "test_pipe_into_a_file": "Can take from the pipe and shout onto a file",
+    "test_notepad_mark_is_dropped": "Ignores the invisible mark Windows Notepad hides at the start of files",
+    "test_bad_output_folder_is_a_polite_error": "A folder that doesn't exist gets a polite message, not a crash",
+    "test_keeps_every_line": "Empty lines in the middle stay put",
+    "test_shouting_twice_changes_nothing": "Shouting something already shouted changes nothing"
+  },
+  "book_program": "book.py"
+}

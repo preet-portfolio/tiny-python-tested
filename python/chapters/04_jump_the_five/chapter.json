@@ -1,0 +1,76 @@
+{
+  "id": "04_jump_the_five",
+  "number": 4,
+  "title": "Jump the Five",
+  "program": "jump.py",
+  "mechanic": "A dictionary as a secret code",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Masking phone numbers in logs",
+    "body": "Scrambling every digit is a cheap way to keep phone numbers out of log files. A mask that misses digits leaks them, and the book's dictionary only knows '0' to '9'. People type numbers on Arabic, Hindi and Japanese keyboards too: ٠١٢, ०१२, ０１２. Mask those without breaking any of the author's tests."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [],
+  "try_args": [
+    "123-456-7890",
+    "'Call 1-800-329-8044 today!'",
+    "'電話 ０９０-１２３４'",
+    "'رقم ٠١٢٣٤'",
+    "'Room 4½'"
+  ],
+  "toy": "jump",
+  "character": {
+    "name": "Hopscotch",
+    "emoji": "🦘",
+    "role": "a kangaroo who hides phone numbers"
+  },
+  "tagline": "Hopscotch keeps phone numbers secret by hopping every digit over the 5 on a phone keypad: 1 lands on 9, 2 on 8, and 5 and 0 swap places. Hop twice and you're back where you started.",
+  "brains": {
+    "book": "Book Hopscotch",
+    "real": "World-traveller Hopscotch"
+  },
+  "brain_blurbs": {
+    "book": "Knows the ten digits 0 to 9.",
+    "real": "Knows digits from every alphabet, like ٣ and ３."
+  },
+  "rules": {
+    "test_exists": "Hopscotch is here",
+    "test_usage": "Explains itself when you ask for help",
+    "test_01": "123-456-7890 hops to 987-604-3215",
+    "test_02": "Numbers inside a sentence hop, the words stay put",
+    "test_jumping_twice_gives_it_back": "Hop twice and you get the real number back",
+    "test_fullwidth_digits": "Wide Japanese digits like ０９０ hop too (and stay wide)",
+    "test_arabic_indic_digits": "Arabic digits like ٠١٢ hop too",
+    "test_devanagari_digits": "Hindi digits like ९८७ hop too",
+    "test_no_digit_survives": "No digit is ever left where it was",
+    "test_only_digits_change": "Letters, emoji, ½ and ² don't hop"
+  },
+  "examples": [
+    [
+      "📞",
+      "867-5309"
+    ],
+    [
+      "🗾",
+      "電話 ０９０-１２３４"
+    ],
+    [
+      "🌙",
+      "رقم ٠١٢٣٤٥"
+    ],
+    [
+      "🪔",
+      "फ़ोन ९८७६५"
+    ],
+    [
+      "🍕",
+      "Room 4½"
+    ]
+  ],
+  "book_program": "book.py"
+}

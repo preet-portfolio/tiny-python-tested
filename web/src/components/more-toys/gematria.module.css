@@ -1,0 +1,32 @@
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 1.5rem;
+}
+.card {
+  display: grid;
+  justify-items: center;
+  min-width: 70px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 3px solid var(--rule);
+}
+.card strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.card span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.twin {
+  border-color: var(--sun-deep);
+  background: var(--mutant-wash);
+}
+.lines {
+  display: grid;
+  gap: 10px;
+}

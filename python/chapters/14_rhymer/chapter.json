@@ -1,0 +1,69 @@
+{
+  "id": "14_rhymer",
+  "number": 14,
+  "title": "Rhymer",
+  "program": "rhymer.py",
+  "mechanic": "Regular expressions and capture groups",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "Sound-alike names for a new product",
+    "body": "Feed in a brand name, get a list of sound-alikes to check. The book splits a word at its first a, e, i, o or u. That gives 'qake' instead of 'quake', turns 'queen' into 'bueen', gives up on 'éclair', and can't rhyme a name pasted with a space in front. Fix those without changing a single line the book's tests look at."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [],
+  "shared_inputs": [],
+  "try_args": [
+    "cake",
+    "chair",
+    "apple",
+    "queen",
+    "éclair",
+    "RDNZL"
+  ],
+  "toy": "rhymer",
+  "character": {
+    "name": "Rocky",
+    "emoji": "🦝",
+    "role": "a raccoon who raps"
+  },
+  "tagline": "Give Rocky a word and he drops a whole verse of rhymes: he keeps the end of the word and swaps the sound at the front.",
+  "brains": {
+    "book": "Book Rocky",
+    "real": "Smooth Rocky"
+  },
+  "brain_blurbs": {
+    "book": "Chops the word at the first a, e, i, o or u.",
+    "real": "Knows q comes with u, and that é is still a vowel."
+  },
+  "rules": {
+    "test_exists": "Rocky is on stage",
+    "test_usage": "Explains himself when you ask for help",
+    "test_take": "\"take\" gives 56 rhymes, from bake to zake",
+    "test_chair": "\"chair\" swaps the whole \"ch\": blair, fair, hair…",
+    "test_chair_uppercase": "…even when you shout CHAIR",
+    "test_apple": "\"apple\" starts with a vowel, so every sound goes in front: 57 rhymes",
+    "test_no_vowels": "A word with no vowels can't be rhymed, and Rocky says so",
+    "test_q_brings_its_u": "Says \"quake\", never \"qake\": a Q always brings its U",
+    "test_qu_is_one_sound": "\"queen\" rhymes with green and screen, not \"bueen\"",
+    "test_accented_vowels_are_vowels": "\"éclair\" starts with a vowel too (é counts!)",
+    "test_accent_after_a_consonant": "\"café\" rhymes: bafé, chafé",
+    "test_spaces_around_are_ignored": "Extra spaces around the word don't matter",
+    "test_never_rhymes_with_itself_or_repeats": "Never repeats a rhyme, and never rhymes a word with itself"
+  },
+  "examples": [
+    ["🎂", "cake"],
+    ["🪑", "chair"],
+    ["🍎", "apple"],
+    ["👑", "queen"],
+    ["🥐", "éclair"],
+    ["☕", "café"],
+    ["🦑", "squid"],
+    ["🤐", "RDNZL"]
+  ],
+  "book_program": "book.py"
+}

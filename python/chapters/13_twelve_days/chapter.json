@@ -1,0 +1,86 @@
+{
+  "id": "13_twelve_days",
+  "number": 13,
+  "title": "Twelve Days of Christmas",
+  "program": "twelve_days.py",
+  "mechanic": "Counting up, then counting down",
+  "world_label": "Real world",
+  "scenario": {
+    "title": "The song file is a snapshot",
+    "body": "The book's tests trim the end of the output before comparing, so a song file that forgets its very last line ending still passes. A snapshot (golden-file) test compares every byte, the way diff and wc -l do: the full song is 113 lines, and the file has to say so."
+  },
+  "upstream_tests": [
+    "test.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "test-out"
+  ],
+  "shared_inputs": [],
+  "try_args": [
+    "-n 3",
+    "--num 12",
+    "-n 2 -o song.txt",
+    "-n 13",
+    "-n 0"
+  ],
+  "toy": "twelvedays",
+  "character": {
+    "name": "Percy",
+    "emoji": "🐦",
+    "role": "a partridge who sings from a pear tree"
+  },
+  "tagline": "Pick a day and Percy sings the song up to it. Every day brings one more gift, and the pile of presents keeps growing.",
+  "brains": {
+    "book": "Book Percy",
+    "real": "Tidy Percy"
+  },
+  "brain_blurbs": {
+    "book": "Glues the verses together and writes them out.",
+    "real": "Also finishes the song with a proper last line, just like the saved copy."
+  },
+  "rules": {
+    "test_exists": "Percy is in his pear tree",
+    "test_usage": "Explains himself when you ask for help",
+    "test_bad_num": "Refuses days below 1 or above 12",
+    "test_one": "Day one is just the partridge",
+    "test_two": "Day two adds two turtle doves (and \"And a partridge\")",
+    "test_all_stdout": "The whole song is 113 lines long",
+    "test_all": "Every day matches the saved copy, on screen and in a file",
+    "test_matches_snapshot_byte_for_byte": "The song file matches the saved copy exactly, down to the very last Enter",
+    "test_wc_counts_113_lines": "A line counter finds all 113 lines",
+    "test_file_ends_with_exactly_one_newline": "The file ends with one Enter: not zero, not two",
+    "test_each_day_adds_one_gift": "Each day has exactly one more gift than the day before",
+    "test_shorter_song_is_the_start_of_the_longer": "Singing 5 days gives the first 5 verses of the full song",
+    "test_only_days_1_to_12": "Only days 1 to 12: no \"zeroth\" day and no thirteenth"
+  },
+  "examples": [
+    [
+      "🐦",
+      "1"
+    ],
+    [
+      "🕊️",
+      "2"
+    ],
+    [
+      "💍",
+      "5"
+    ],
+    [
+      "🥁",
+      "12"
+    ],
+    [
+      "🤔",
+      "0"
+    ],
+    [
+      "😱",
+      "13"
+    ]
+  ],
+  "book_program": "book.py"
+}

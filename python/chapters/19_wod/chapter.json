@@ -1,0 +1,66 @@
+{
+  "id": "19_wod",
+  "number": 19,
+  "title": "Workout of the Day",
+  "program": "wod.py",
+  "mechanic": "Reading CSV files and printing tables",
+  "world_label": "Unit and real world",
+  "scenario": {
+    "title": "A plan made from a spreadsheet",
+    "body": "The book's CSV files are tidy. Real ones come out of a spreadsheet with an invisible mark at the very start, spaces after the commas, a range typed backwards (50-20) and a row pasted twice. People also ask for more exercises than the list has. Every one of those should still give a sensible plan or a clear message, never a crash."
+  },
+  "upstream_tests": [
+    "test.py",
+    "unit.py"
+  ],
+  "scenario_tests": [
+    "test_scenarios.py"
+  ],
+  "inputs": [
+    "inputs"
+  ],
+  "shared_inputs": [],
+  "try_args": [
+    "-s 1",
+    "-s 1 --easy",
+    "-n 3 -s 4 -f inputs/silly-exercises.csv",
+    "-n 20",
+    "-f inputs/bad-headers.csv"
+  ],
+  "toy": "wod",
+  "character": {
+    "name": "Coach Boing",
+    "emoji": "🦘",
+    "role": "a kangaroo who runs a very silly gym"
+  },
+  "tagline": "Coach Boing picks today's exercises from a list and how many of each to do. Pick a lucky number, or write your own list of silly moves.",
+  "brains": {
+    "book": "Book Boing",
+    "real": "Patient Boing"
+  },
+  "brain_blurbs": {
+    "book": "Reads tidy lists perfectly.",
+    "real": "Also copes with messy lists from a spreadsheet."
+  },
+  "rules": {
+    "test_exists": "Coach Boing is in the gym",
+    "test_usage": "Explains the workout when you ask for help",
+    "test_bad_num": "Won't plan zero or fewer exercises",
+    "test_bad_file": "Says so when the list file doesn't exist",
+    "test_seed1": "Lucky number 1 always gives the same 4 exercises",
+    "test_seed1_easy": "Easy mode does half the reps",
+    "test_seed2_num8": "Can plan 8 exercises from the full list",
+    "test_seed4_num3_input2": "Can read the silly exercise list too",
+    "test_read_csv": "Reads the good rows of a list and skips the broken ones",
+    "test_too_many_exercises_is_a_clear_error": "Ask for 20 exercises from a list of 9? He tells you nicely",
+    "test_spreadsheet_byte_order_mark": "Reads a list saved by a spreadsheet (it hides an invisible mark at the start)",
+    "test_spaces_after_commas": "\"Hops, 10 - 20\" with extra spaces still works",
+    "test_backwards_range": "\"50-20\" means between 20 and 50",
+    "test_easy_never_means_zero": "Easy mode never asks for zero of something",
+    "test_no_exercise_twice": "Never puts the same exercise in the plan twice",
+    "test_empty_file_is_a_clear_error": "An empty list gets a clear message",
+    "test_table_lines_up_for_long_names": "The table stays neat even with long names",
+    "test_read_csv_forgives_a_messy_stream": "\"Hops\" and \"hops \" are the same exercise, listed once"
+  },
+  "book_program": "book.py"
+}

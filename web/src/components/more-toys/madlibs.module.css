@@ -1,0 +1,22 @@
+.blanks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.blank {
+  display: grid;
+  gap: 4px;
+  font-weight: 700;
+}
+.story {
+  margin: 0;
+  background: #fff7d6;
+  color: #1f2a44;
+  border-radius: 8px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 0 #e3cf8f, 0 8px 18px rgba(31, 42, 68, 0.15);
+  white-space: pre-wrap;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  transform: rotate(-0.4deg);
+}
