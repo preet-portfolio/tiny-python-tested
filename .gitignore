@@ -19,3 +19,4 @@ web/tsconfig.tsbuildinfo
 python/upstream/07_gashlycrumb/gashlycrumb.txt
 python/upstream/inputs/spiders.txt
 python/upstream/17_mad_libs/inputs/help.txt
+web/playthrough/
