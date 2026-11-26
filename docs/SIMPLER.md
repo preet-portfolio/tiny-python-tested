@@ -63,18 +63,18 @@ run yet; they need you.** Anything two or more people stall on moves to "Peek in
 ## 2. The flagship gremlin
 
 CI's metrics run (`python -m tptl.metrics`, which now also writes `moments.json` through `tptl/moments.py`) runs every chapter's gremlins twice, once against the book's rules
-and once against all rules, and kept the ones the book missed and real life caught. That's 105
+and once against all rules, and kept the ones the book missed and real life caught. That's 101
 gremlins across 15 chapters.
 
 | Chapter | Gremlins the book misses that real life catches |
 |---|---|
 | Polly (a or an) | **31** of 60 |
-| Tic and Tac | 26 |
+| Tic and Tac | 23 |
 | Mabel (mad libs) | 15 |
 | Coach Boing | 7 |
 | Lexi | 5 |
-| Sir Bluster, Mumbles | 4 each |
-| Pip, Howie | 3 each |
+| Mumbles | 4 |
+| Pip, Howie, Sir Bluster | 3 each |
 | Brother Biscuit | 2 |
 | Choir, Percy, Rocky, Scramble, Ref Robo | 1 each |
 
@@ -83,7 +83,7 @@ gremlins across 15 chapters.
 - It's the most surprising: Polly passes all 6 of the book's rules and still lets 31 of 60
   gremlins through, more than any other toy.
 - It's the most explainable. Most of Polly's 31 change a word a child can say out loud ("hour",
-  "honest", "unicorn", "one"). Tic and Tac's 26 are about game state, and Mabel's need a story file.
+  "honest", "unicorn", "one"). Tic and Tac's 23 are about game state, and Mabel's need a story file.
 - Within Polly, "hour" wins over "unicorn" and "one" because it fails in the most obvious way and
   the fix is one word. Checked by running both: the real Polly says
   `Ahoy, Captain, an hour off the larboard bow!`; the gremlin says
@@ -109,9 +109,18 @@ another; Tic and Tac and Ref Robo moved too). Two causes, both in how tests run,
 - Even then, gremlins from one chapter could leave state that nudged a later chapter's count
   when many chapters ran in one process. CI now measures each chapter in a fresh Python process,
   the way the browser gives each page its own Python.
+- **The big one, found after merging.** CI's first run on `main` disagreed with the Mac: Tic and
+  Tac's book rules caught 20 gremlins on CI and 34 locally. Python keeps a compiled copy of each
+  program and trusts it while the source's size and modification time (in whole seconds) match.
+  Gremlins are written one after another, two thirds of them the same size as the one before,
+  about 65 ms apart, so the tests often ran the *previous* gremlin's code. The Mac had bytecode
+  caching turned off in its shell; CI had it on, so the count there depended on timing.
+  `tptl.mutate.write_source` now deletes the compiled copy whenever a gremlin is written, and no
+  new copies are written while gremlins run. This matters in the browser too, which runs the same
+  code. `scripts/check_fresh_source.py` runs in CI and fails if a rewrite isn't what runs next.
 
-Checked: Tic and Tac measured twice in fresh processes gave 34 and 57 both times, and Ref Robo
-56 and 57, matching the full run.
+Checked: Tic and Tac gives the same count (34 of 60 by the book's rules, 57 with real-life ones)
+with bytecode caching on, twice, and off.
 
 ## 3. Cut list
 
@@ -167,8 +176,10 @@ gremlin". They don't get an invented one.
    says something wrong over one that crashes. Lexi's examples use the friendly alphabet
    (`moment_args` in her `chapter.json`).
 2. **The first screen** (`ToyStage.tsx`) reads only that file: Guess, Try, Gremlin!, then
-   "Run it live". The home page shows the toy where the book's rules miss the most gremlins that
-   real life catches (`flagship()` in `lib/data.ts`), which is Polly.
+   "Run it live". The home page shows Polly, chosen by hand in `web/src/data/flagship.json` for the
+   reasons in section 2. It used to be picked by count, and a counting bug (section 2) put Tic
+   and Tac there for one deploy. The build fails if the chosen toy's gremlin stops saying
+   something wrong.
 3. **`npm run build` checks the pages** (`scripts/check-moments.mjs`, run after every build): the
    counts in `moments.json` must equal `summary.json`, and each toy's page must show its recorded
    lines and counts.

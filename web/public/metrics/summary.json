@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26T12:11Z",
- "python": "3.14.10",
+ "generated": "2026-11-26T12:28Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -373,7 +373,7 @@
    },
    "mutation": {
     "book": {
-     "killed": 55,
+     "killed": 56,
      "total": 60
     },
     "world": {
@@ -392,7 +392,7 @@
    },
    "mutation": {
     "book": {
-     "killed": 20,
+     "killed": 34,
      "total": 60
     },
     "world": {

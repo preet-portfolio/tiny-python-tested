@@ -10,7 +10,7 @@ export default function Home() {
     .filter((b) => b !== null);
   const moments = loadMoments();
   const parity = loadParity();
-  // The first screen's toy is picked by CI's data, not by hand (see flagship()).
+  // The first screen's toy is chosen in src/data/flagship.json; its answers come from CI.
   const star = flagship(moments);
   const starBundle = star ? loadBundle(star.id) : null;
   const shown = moments?.chapters.filter((c) => built.has(c.id)) ?? [];

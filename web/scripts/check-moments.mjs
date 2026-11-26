@@ -48,12 +48,14 @@ for (const c of moments.chapters) {
   for (const m of must) if (!text.includes(esc(m))) problems.push(`${c.id}: page doesn't show “${m}”`);
 }
 
-// The home page shows the flagship (same rule as flagship() in src/lib/data.ts).
-const star = moments.chapters
-  .filter((c) => c.moment?.real?.status === 0 && c.moment?.gremlin?.status === 0)
-  .sort((a, b) => b.gremlins.book_missed_real_life_caught - a.gremlins.book_missed_real_life_caught)[0];
+// The home page shows the toy chosen in src/data/flagship.json, and that toy's recorded gremlin
+// must say something wrong (not crash), or the first screen has no guess to make.
+const chosen = JSON.parse(readFileSync("src/data/flagship.json", "utf8")).id;
+const star = moments.chapters.find((c) => c.id === chosen);
 const home = html("out/index.html")?.replace(/<!-- -->/g, "") ?? "";
-if (star)
+if (!(star?.moment?.real?.status === 0 && star.moment.gremlin?.status === 0))
+  problems.push(`flagship ${chosen} has no recorded gremlin that says something wrong; choose another in src/data/flagship.json`);
+else
   for (const m of [mask(star.moment.real.line), mask(star.moment.gremlin.line), `passes all ${star.rules.book} of the book`])
     if (!home.includes(esc(m))) problems.push(`home page doesn't show “${m}”`);
 

@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from . import shim
-from .mutate import CRASHED, generate
+from .mutate import CRASHED, generate, write_source
 
 # Which gremlins a child can follow, best first. A changed word or number is easier to explain
 # than a flipped branch.
@@ -88,7 +88,7 @@ def record(ch: dict, d: Path, book: dict, world: dict) -> dict[str, Any]:
         best = None
         try:
             for m in caught_later:
-                path.write_text(sources[m["id"]], encoding="utf-8")
+                write_source(str(path), sources[m["id"]])
                 for chip in chips:
                     g = _run(d, program, chip["args"])
                     if g["stdout"] == chip["stdout"] and g["status"] == chip["status"]:
@@ -102,7 +102,7 @@ def record(ch: dict, d: Path, book: dict, world: dict) -> dict[str, Any]:
                 if best and best[2]["status"] == 0 and best[1]["status"] == 0:
                     break
         finally:
-            path.write_text(original, encoding="utf-8")
+            write_source(str(path), original)
         m = best[0] if best else caught_later[0]
         killers = [t for t in by_id[m["id"]]["killed_by"] if t != CRASHED]
         moment = {
