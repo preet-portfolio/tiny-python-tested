@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-26T12:11Z",
- "python": "3.14.10",
+ "generated": "2026-11-26T12:28Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -687,7 +687,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "No Seed, diffERent eVErY TIME\n"
+     "stdout": "NO seeD, DIFFErENt EveRY tiMe\n"
     }
    ],
    "moment": null
@@ -950,7 +950,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mses erevy time\n"
+     "stdout": "no seed, new mess erevy tmie\n"
     }
    ],
    "moment": {
@@ -970,11 +970,11 @@
     "label": "no seed, new mess every time",
     "real": {
      "status": 0,
-     "line": "no seed, new mses erevy time"
+     "line": "no seed, new mess erevy tmie"
     },
     "gremlin": {
      "status": 0,
-     "line": "no seed, new mess eevry tmie"
+     "line": "no seed, new mses eervy time"
     }
    }
   },
@@ -1231,9 +1231,9 @@
    },
    "gremlins": {
     "total": 60,
-    "book_caught": 55,
+    "book_caught": 56,
     "all_caught": 57,
-    "book_missed_real_life_caught": 2
+    "book_missed_real_life_caught": 1
    },
    "chips": [
     {
@@ -1303,9 +1303,9 @@
    },
    "gremlins": {
     "total": 60,
-    "book_caught": 20,
+    "book_caught": 34,
     "all_caught": 57,
-    "book_missed_real_life_caught": 38
+    "book_missed_real_life_caught": 23
    },
    "chips": [
     {
