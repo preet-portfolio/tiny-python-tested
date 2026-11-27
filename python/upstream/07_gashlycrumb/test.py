@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """tests for gashlycrumb.py"""
 
+# Changed from the book (kyclark/tiny_python_projects @ bcf4b24): test_a, test_b_c and
+# test_y quoted lines of Edward Gorey's The Gashlycrumb Tinies, which is still in
+# copyright. They now compare the SHA-256 of the output with the SHA-256 of the book's
+# expected text, so each rule is exactly as strict without quoting him.
+
+import hashlib
 import os
 import re
 import random
@@ -52,8 +58,9 @@ def test_a():
 
     rv, out = getstatusoutput(f'{prg} a')
     assert rv == 0
-    expected = 'A is for Amy who fell down the stairs.'
-    assert out.strip() == expected
+    # Amy, and a tumble down the stairs.
+    expected = '29a587b6ef262b477ff4e0e4d31e7ea28d76acc757eb87867bc7e39596a4236e'
+    assert sha256(out.strip()) == expected
 
 
 # --------------------------------------------------
@@ -62,9 +69,9 @@ def test_b_c():
 
     rv, out = getstatusoutput(f'{prg} b c')
     assert rv == 0
-    expected = ('B is for Basil assaulted by bears.\n'
-                'C is for Clara who wasted away.')
-    assert out.strip() == expected
+    # Basil and some bears, then Clara fading away: two lines.
+    expected = '95fe9bcaf5a684073adb20f42994ccab45c2943f4f911832d21fb9b805879956'
+    assert sha256(out.strip()) == expected
 
 
 # --------------------------------------------------
@@ -73,8 +80,9 @@ def test_y():
 
     rv, out = getstatusoutput(f'{prg} Y')
     assert rv == 0
-    expected = 'Y is for Yorick whose head was bashed in.'
-    assert out.strip() == expected
+    # Yorick, and a nasty knock on the head.
+    expected = 'd31c0de86d8e2fa1587b17a71936b414c2763c4bc58b688db53ca3c7cf83a419'
+    assert sha256(out.strip()) == expected
 
 
 # --------------------------------------------------
@@ -97,6 +105,13 @@ def test_bad_letter():
     assert rv == 0
     expected = ('I do not know "5".\n' 'I do not know "CH".')
     assert out.strip() == expected
+
+
+# --------------------------------------------------
+def sha256(text):
+    """SHA-256 of text, so a test can check a line without quoting it"""
+
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
 
 # --------------------------------------------------

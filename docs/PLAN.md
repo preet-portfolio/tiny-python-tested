@@ -7,14 +7,18 @@ doesn't cover, where the visitor decides whether the spec or the world is right.
 ## Sources and licensing
 - Spec: `test.py` and input files from github.com/kyclark/tiny_python_projects (MIT,
   © 2019 Ken Youens-Clark), vendored unchanged into `python/upstream/<chapter>/` at commit
-  `bcf4b24`, with the LICENSE kept beside them. The site credits the book and links to it.
+  `bcf4b24`, with the LICENSE kept beside them. One exception: three of
+  `07_gashlycrumb/test.py`'s tests quoted four lines of Edward Gorey's *The Gashlycrumb
+  Tinies* (still in copyright), so they compare SHA-256 digests of the output with digests
+  of the book's expected text instead. Each rule is exactly as strict; the file says so at
+  the top. The site credits the book and links to it.
 - Not used: the book's prose and the repo's `solution*.py` files. Solutions in
   `python/chapters/` are written from the tests.
 
 ## Architecture
 ```
 python/
-  upstream/<ch>/test.py      author's tests, untouched (MIT)
+  upstream/<ch>/test.py      author's tests, untouched but for Gorey's quotes (MIT)
   chapters/<ch>/<prog>.py    my solution (argparse CLI)
   chapters/<ch>/test_scenarios.py   real-world cases (mine)
   chapters/<ch>/test_props.py       Hypothesis properties (seeded programs)
