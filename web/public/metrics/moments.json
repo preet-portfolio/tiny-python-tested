@@ -978,8 +978,8 @@
      "test_only_letters_move"
     ],
     "rules": [
-     "Numbers and punctuation don't move",
-     "Spaces, numbers and punctuation always stay in place"
+     "Numbers, commas and dots don't move",
+     "Spaces, numbers, commas and dots stay put"
     ]
    }
   },

@@ -21,7 +21,8 @@ const flag = (name) => {
 };
 const fast = args.includes("--fast") && args.splice(args.indexOf("--fast"), 1);
 const out = flag("--out") ?? "playthrough";
-const toys = (flag("--toys") ?? "02_crowsnest,07_gashlycrumb,17_mad_libs,16_scrambler").split(",");
+// Twelve Days is here because its scrolling songbook once failed axe and no CI run noticed.
+const toys = (flag("--toys") ?? "02_crowsnest,07_gashlycrumb,17_mad_libs,16_scrambler,13_twelve_days").split(",");
 const base = (args[0] ?? "http://localhost:4310").replace(/\/$/, "");
 mkdirSync(out, { recursive: true });
 

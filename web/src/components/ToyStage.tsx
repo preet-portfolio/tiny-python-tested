@@ -170,9 +170,10 @@ export function ToyStage({
         </p>
         {ciOnly > 0 && (
           <p className="ticks-note">
-            {ciOnly === 1 ? "One of the book's rules needs" : `${ciOnly} of the book's rules need`} words someone else
-            wrote, which we can&apos;t share. Our server checks {ciOnly === 1 ? "it" : "them"}, but your browser
-            can&apos;t, so when you play below it has {book - ciOnly} book rules and may catch fewer gremlins.
+            {ciOnly === 1 ? "One of the book's rules uses" : `${ciOnly} of the book's rules use`} words we can&apos;t
+            share here. {ciOnly === 1 ? "It runs" : "They run"} on our computer, not in your browser. So when you play
+            below, there {book - ciOnly === 1 ? "is 1 book rule" : `are ${book - ciOnly} book rules`}, and a gremlin
+            might slip past.
           </p>
         )}
       </section>
@@ -192,7 +193,7 @@ export function ToyStage({
                 <dd className="said">{line(show.real.line)}</dd>
                 <dt>Gremlin {who}</dt>
                 <dd className="said said-bad">
-                  {show.gremlin.status === 0 ? line(show.gremlin.line) : `💥 crashes: ${maskRude(show.gremlin.line)}`}
+                  {show.gremlin.status === 0 ? line(show.gremlin.line) : "💥 crashes: Python gives up!"}
                 </dd>
               </dl>
             )}
@@ -238,6 +239,11 @@ export function ToyStage({
               <p>
                 The gremlin changed line {m.line} of <code>{bundle.program}</code>: <code className="was">{m.before}</code>{" "}
                 <span aria-hidden="true">→</span> <code className="now">{m.after}</code>
+              </p>
+            )}
+            {m?.gremlin && m.gremlin.status !== 0 && (
+              <p>
+                When it gave up, Python said: <code>{maskRude(m.gremlin.line)}</code>
               </p>
             )}
             <h3>The book&apos;s rules</h3>

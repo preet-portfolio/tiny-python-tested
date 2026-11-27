@@ -56,10 +56,10 @@
     "test_other_alphabets_are_words_too": "Russian and Greek words get juggled too",
     "test_acronyms_stay_put": "NASA and HTML stay NASA and HTML",
     "test_same_seed_same_scramble": "Same lucky number, same mess",
-    "test_numbers_and_punctuation_stay": "Numbers and punctuation don't move",
+    "test_numbers_and_punctuation_stay": "Numbers, commas and dots don't move",
     "test_same_letters_first_and_last_kept": "Any word: same letters, same first and last letter",
     "test_short_words_untouched": "Words of three letters or fewer are never touched",
-    "test_only_letters_move": "Spaces, numbers and punctuation always stay in place",
+    "test_only_letters_move": "Spaces, numbers, commas and dots stay put",
     "test_seed_means_same_line": "Any sentence: the same lucky number gives the same mess"
   },
   "examples": [
