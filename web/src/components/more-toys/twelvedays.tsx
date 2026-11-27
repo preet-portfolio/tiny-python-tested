@@ -89,8 +89,9 @@ export default function TwelveDays({ bundle, run, brain, hasBook }: ToyProps) {
           copy.
         </p>
       )}
+      {/* The songbook scrolls on long songs, so it must take keyboard focus (axe: scrollable-region-focusable). */}
       {verses.length > 0 && (
-        <div className="songbook" aria-live="polite">
+        <div className="songbook" aria-live="polite" tabIndex={0} role="region" aria-label="The song">
           <p className="songbook-count">
             {verses.length} {verses.length === 1 ? "verse" : "verses"}, {lineEndings(mine)} lines
           </p>
