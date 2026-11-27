@@ -25,6 +25,12 @@
     "-a -1",
     "-s 3 -a 1 -n 300"
   ],
+  "chip_labels": {
+    "-s 1 -n 1": "one insult",
+    "--seed 2": "three insults",
+    "-s 3 -n 5 -a 1": "five short insults",
+    "-s 3 -a 1 -n 300": "300 short insults"
+  },
   "toy": "abuse",
   "character": {
     "name": "Sir Bluster",

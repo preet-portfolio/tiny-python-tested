@@ -26,6 +26,11 @@
     "-n 13",
     "-n 0"
   ],
+  "chip_labels": {
+    "-n 3": "3 days",
+    "--num 12": "all 12 days",
+    "-n 13": "13 days"
+  },
   "toy": "twelvedays",
   "character": {
     "name": "Percy",

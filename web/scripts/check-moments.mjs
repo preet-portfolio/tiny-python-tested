@@ -32,6 +32,12 @@ for (const c of moments.chapters) {
     ["real-life rules", s.tests.world, c.rules.real_life],
   ];
   for (const [what, a, b] of want) if (a !== b) problems.push(`${c.id}: ${what} is ${b} in moments.json, ${a} in summary.json`);
+  // A chip the first screen shows needs words a child can read, not "Go 1"; name it in the
+  // chapter's chip_labels when its command is all flags.
+  // Same rule as ToyStage: chips that answer, plus the gremlin's chip even when it's refused.
+  for (const ch of c.chips)
+    if (((ch.status === 0 && ch.stdout.trim()) || ch.args === c.moment?.args) && !ch.label.trim())
+      problems.push(`${c.id}: chip “${ch.args}” has no label; add it to chip_labels in its chapter.json`);
 
   const page = html(`out/chapters/${c.id}/index.html`);
   if (!page) {

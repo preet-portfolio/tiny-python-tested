@@ -21,6 +21,9 @@
   "try_args": [
     ""
   ],
+  "chip_labels": {
+    "": "empty board"
+  },
   "note": "The book doesn't give this chapter any command-line tests, because the program asks for moves while it runs. Here a whole game is typed in at once by sending the moves through STDIN, one per line.",
   "toy": "itictactoe",
   "character": {
