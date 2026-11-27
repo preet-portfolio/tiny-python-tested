@@ -61,7 +61,7 @@
     "test_mutate_board_01": "Puts X in cell 1",
     "test_mutate_board_02": "Spots O winning",
     "test_mutate_cell_taken": "No playing on a taken cell",
-    "test_winning": "Spots every way to win: rows, columns, diagonals",
+    "test_winning": "Spots every way to win: rows, columns and corner to corner",
     "test_losing": "Doesn't call a winner too early",
     "test_board_no_board": "Draws the empty grid",
     "test_board_with_board": "Draws the grid with X and O",

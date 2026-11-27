@@ -61,7 +61,7 @@
     "test_l33t": "Secret-code mode swaps letters for look-alikes (a → @, S → 5) and adds a squiggle",
     "test_clean": "Strips out everything that isn't a letter",
     "test_ransom": "Flips a coin for every letter: BIG or small",
-    "test_l33t_adds_one_mark": "Secret-code mode always adds exactly one punctuation mark",
+    "test_l33t_adds_one_mark": "Secret-code mode always adds one squiggle, never two",
     "test_too_few_words_is_a_clear_error": "Only 3 words but 4 needed? Shh explains instead of crashing",
     "test_every_word_filtered_out": "No words of the right length? Shh says so",
     "test_min_bigger_than_max": "\"Shortest 8, longest 4\" can't work, and Shh says why",

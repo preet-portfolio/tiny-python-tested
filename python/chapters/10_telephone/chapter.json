@@ -59,7 +59,7 @@
     "test_line_breaks_stay_put": "Lines stay lines: no line break turns into a letter",
     "test_exact_number_of_mistakes": "40% noise on 20 letters is exactly 8 mistakes",
     "test_same_seed_same_mistakes": "Same lucky number, same mistakes, every time",
-    "test_everything_changes_at_100_percent": "Full noise changes every letter",
+    "test_everything_changes_at_100_percent": "Turn the noise all the way up and every letter changes",
     "test_same_length": "Any message: it never grows or shrinks",
     "test_some_change_whenever_asked": "Any noise above zero makes at least one mistake",
     "test_newlines_never_move": "Line breaks are always exactly where they were",

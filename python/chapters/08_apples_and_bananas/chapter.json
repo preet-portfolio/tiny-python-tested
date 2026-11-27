@@ -48,7 +48,7 @@
     "test_bad_vowel": "X isn't a vowel, so Melody says no",
     "test_command_line": "\"foo\" sung with a is \"faa\"",
     "test_command_line_with_vowel": "\"foo\" sung with i is \"fii\"",
-    "test_command_line_with_vowel_preserve_case": "CAPITAL vowels become capital vowels",
+    "test_command_line_with_vowel_preserve_case": "A capital vowel stays a capital",
     "test_file": "Can sing a whole file",
     "test_file_with_vowel": "…with any vowel you pick",
     "test_accented_vowels": "é, è and û are vowels too: \"Crème brûlée\" becomes \"Crama bralaa\"",

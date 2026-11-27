@@ -43,7 +43,7 @@
   "rules": {
     "test_board_no_state": "Draws an empty board numbered 1 to 9",
     "test_board_with_state": "Draws X and O where they've been played",
-    "test_winning": "Spots every way to win: rows, columns and diagonals",
+    "test_winning": "Spots every way to win: rows, columns and corner to corner",
     "test_losing": "Doesn't call a winner too early",
     "test_new_game_is_empty": "A new game is empty and X goes first",
     "test_players_take_turns": "X, then O, then X again",

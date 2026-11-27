@@ -57,7 +57,7 @@
     "test_notepad_mark_is_dropped": "Ignores the invisible mark Windows Notepad hides at the start of files",
     "test_bad_output_folder_is_a_polite_error": "A folder that doesn't exist gets a polite message, not a crash",
     "test_keeps_every_line": "Empty lines in the middle stay put",
-    "test_shouting_twice_changes_nothing": "Shouting something already shouted changes nothing"
+    "test_shouting_twice_changes_nothing": "Shouting a shout again changes nothing"
   },
   "book_program": "book.py"
 }
