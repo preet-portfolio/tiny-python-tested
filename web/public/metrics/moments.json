@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T11:20Z",
+ "generated": "2026-11-27T11:44Z",
  "python": "3.14.10",
  "chapters": [
   {
@@ -698,7 +698,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "NO SeeD, DiFfErENT evErY TIME\n"
+     "stdout": "no seed, DIFfErENT EVery TiME\n"
     }
    ],
    "moment": null
@@ -965,7 +965,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mses every tmie\n"
+     "stdout": "no seed, new mses erevy tmie\n"
     }
    ],
    "moment": {
@@ -985,11 +985,11 @@
     "label": "no seed, new mess every time",
     "real": {
      "status": 0,
-     "line": "no seed, new mses every tmie"
+     "line": "no seed, new mses erevy tmie"
     },
     "gremlin": {
      "status": 0,
-     "line": "no seed, new mses ervey time"
+     "line": "no seed, new mess erevy tmie"
     }
    }
   },
