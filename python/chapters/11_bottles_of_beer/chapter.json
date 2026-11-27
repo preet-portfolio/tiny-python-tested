@@ -26,6 +26,10 @@
     "-n 2.5 --drink lemonade",
     "--num 21 --drink lemonade"
   ],
+  "chip_labels": {
+    "-n 2 --drink lemonade": "2 bottles",
+    "--num 21 --drink lemonade": "21 bottles"
+  },
   "toy": "bottles",
   "character": {
     "name": "The Bottle Choir",

@@ -25,6 +25,12 @@
     "-b XO.XO.... -p X -c 7",
     "-p X"
   ],
+  "chip_labels": {
+    "": "empty board",
+    "-b XXO...OOX -p O -c 5": "O takes 5 and wins",
+    "-b XXXOOO...": "impossible board",
+    "-b XO.XO.... -p X -c 7": "X takes 7 and wins"
+  },
   "note": "One of the book's tests expects argparse's error message as Python 3.8 wrote it (invalid choice: 10). Python 3.12 and later quote the value ('10'), so a solution that leans on choices= fails on a modern Python. Tests can pin more than they mean to.",
   "toy": "tictactoe",
   "character": {

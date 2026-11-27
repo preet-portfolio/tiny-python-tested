@@ -27,6 +27,11 @@
     "-n 20",
     "-f inputs/bad-headers.csv"
   ],
+  "chip_labels": {
+    "-s 1": "a workout",
+    "-s 1 --easy": "the easy workout",
+    "-n 3 -s 4 -f inputs/silly-exercises.csv": "silly exercises"
+  },
   "toy": "wod",
   "character": {
     "name": "Coach Boing",
