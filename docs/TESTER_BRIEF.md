@@ -24,7 +24,7 @@ Tasks per toy (from the home page, find the toy by its character, not its chapte
 | Toy | Find out what it does | Make it do something funny |
 |---|---|---|
 | Polly 🦜 (Crow's Nest) | Say in your own words what Polly's job is | Make Polly say something wrong or silly ("an unicorn"? "a hour"?), then switch to the cleverer Polly and see her get it right |
-| Bottle Choir 🍾 | Say what the choir sings and when it stops | Make the choir sing a very short song (1 or 2 bottles) and a silly-long one; try a number they refuse (0, 2.5, "banana") |
+| Bottle Choir 🍋 | Say what the choir sings and when it stops | Make the choir sing a very short song (1 or 2 bottles) and a silly-long one; try a number they refuse (0, 2.5, "banana") |
 | Whiskers 🐱 | Say what a ransom note is here and what the lucky number does | Write your own demand ("GIVE ME TUNA"), get a note, then get the *same* note again with the same lucky number, and a different one with another number |
 | Professor Hoot 🦉 | Say what Hoot counts | Paste something with emoji or "café" and find a count that surprises you |
 | Ref Robo 🤖 | Say what Ref Robo checks | Play a few moves; then try to cheat (two winners, X plays twice) and get Robo to object |

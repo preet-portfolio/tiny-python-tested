@@ -154,7 +154,7 @@ function Choir({ run, brain }: ToyProps) {
       <div className="shelf" aria-hidden="true">
         {Array.from({ length: count }, (_, i) => (
           <span key={i} className="bottle" style={{ animationDelay: `${i * 40}ms` }}>
-            🍾
+            🍋
           </span>
         ))}
         {count === 0 && <span className="shelf-empty">empty wall</span>}
