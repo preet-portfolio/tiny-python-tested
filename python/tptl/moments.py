@@ -42,7 +42,9 @@ def label(args: str) -> str:
         if w in ("<", "-"):
             continue
         if w.startswith("-"):
-            skip = "=" not in w and w not in ("-l", "--easy")
+            # A flag hides its one value (a seed, a file), except flags that take none and
+            # Mad Libs' -i, whose values are the very words the chip should show.
+            skip = "=" not in w and w not in ("-l", "--easy", "-i", "--inputs")
             continue
         out.append(Path(w).stem if "/" in w or w.endswith(".txt") else w)
     return " ".join(out)
