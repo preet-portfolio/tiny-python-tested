@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T12:50Z",
- "python": "3.14.10",
+ "generated": "2026-11-27T17:19Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -698,7 +698,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "NO sEeD, DifFeReNT EVery TImE\n"
+     "stdout": "No sEeD, DIfFeRENT eVeRY TIME\n"
     }
    ],
    "moment": null
@@ -965,7 +965,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mess eervy tmie\n"
+     "stdout": "no seed, new mses eervy time\n"
     }
    ],
    "moment": {
@@ -980,17 +980,7 @@
     "rules": [
      "Numbers, commas and dots don't move",
      "Spaces, numbers, commas and dots stay put"
-    ],
-    "args": "'no seed, new mess every time'",
-    "label": "no seed, new mess every time",
-    "real": {
-     "status": 0,
-     "line": "no seed, new mess eervy tmie"
-    },
-    "gremlin": {
-     "status": 0,
-     "line": "no seed, new mses every time"
-    }
+    ]
    }
   },
   {
