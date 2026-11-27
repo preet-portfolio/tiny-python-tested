@@ -11,9 +11,29 @@ import os
 import random
 import sys
 import sysconfig
+from collections.abc import Iterator
 from typing import Any
 
 from . import shim
+
+
+@contextlib.contextmanager
+def repeatable_random() -> Iterator[None]:
+    """Make random.seed(None) use a fixed seed while inside, so results repeat.
+
+    A program run without --seed calls random.seed(None), which reads the OS clock. Tests and
+    CI's recordings map that to one fixed seed; toy runs in the browser keep real randomness.
+    """
+    real_seed = random.seed
+
+    def _repeatable_seed(a: Any = None, version: int = 2) -> None:
+        real_seed("tptl:unseeded" if a is None else a, version)
+
+    random.seed = _repeatable_seed  # type: ignore[assignment]
+    try:
+        yield
+    finally:
+        random.seed = real_seed  # type: ignore[assignment]
 
 
 class _Collector:
@@ -101,20 +121,12 @@ def run_tests(chapter_dir: str, files: list[str], extra_args: list[str] | None =
     os.chdir(chapter_dir)
     before = set(sys.modules)
     log = io.StringIO()
-    # A program run without --seed calls random.seed(None), which reads the OS clock. Under
-    # test, map that to a fixed seed so results repeat; toy runs keep real randomness.
-    real_seed = random.seed
-
-    def _repeatable_seed(a: Any = None, version: int = 2) -> None:
-        real_seed("tptl:unseeded" if a is None else a, version)
-
-    random.seed = _repeatable_seed  # type: ignore[assignment]
     # Some tests call a program's main() in-process, which reads sys.argv. Give them a clean
     # one, or the result depends on how this runner was started (CI script, browser, pytest).
     real_argv = sys.argv
     sys.argv = ["pytest"]
     try:
-        with contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
+        with repeatable_random(), contextlib.redirect_stdout(log), contextlib.redirect_stderr(log):
             code = pytest.main(
                 [
                     "-q",
@@ -129,7 +141,6 @@ def run_tests(chapter_dir: str, files: list[str], extra_args: list[str] | None =
                 plugins=[collector],
             )
     finally:
-        random.seed = real_seed  # type: ignore[assignment]
         sys.argv = real_argv
         os.chdir(cwd)
         _forget_new(before)
