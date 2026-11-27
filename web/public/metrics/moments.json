@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T11:20Z",
- "python": "3.14.10",
+ "generated": "2026-11-27T11:45Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -471,19 +471,19 @@
    "chips": [
     {
      "args": "-s 1 -n 1",
-     "label": "",
+     "label": "one insult",
      "status": 0,
      "stdout": "You filthsome, cullionly fiend!\n"
     },
     {
      "args": "--seed 2",
-     "label": "",
+     "label": "three insults",
      "status": 0,
      "stdout": "You corrupt, detestable beggar!\nYou peevish, foolish gull!\nYou insatiate, heedless worm!\n"
     },
     {
      "args": "-s 3 -n 5 -a 1",
-     "label": "",
+     "label": "five short insults",
      "status": 0,
      "stdout": "You infected villain!\nYou vile braggart!\nYou peevish worm!\nYou sodden-witted villain!\nYou cullionly worm!\n"
     },
@@ -501,7 +501,7 @@
     },
     {
      "args": "-s 3 -a 1 -n 300",
-     "label": "",
+     "label": "300 short insults",
      "status": 0,
      "stdout": "You infected villain!\nYou vile braggart!\nYou peevish worm!\nYou sodden-witted villain!\nYou cullionly worm!\nYou bankrupt recreant!\nYou insatiate traitor!\nYou indistinguishable coxcomb!\nYou sodden-witted swine!\nYou wall-eyed recreant!\nYou rotten butt!\nYou indistinguishable butt!\nYou unmannered liar!\nYou bankrupt barbermonger!\nYou foolish villain!\nYou caterwauling gull!\nYou base fishmonger!\nYou sodden-witted worm!\nYou rascaly milksop!\nYou rotten varlet!\nYou scurvy braggart!\nYou peevish block!\nYou caterwauling braggart!\nYou thin-faced cur!\nYou insatiate milksop!\nYou lecherous maw!\nYou toad-spotted liar!\nYou old swine!\nYou ruinous villain!\nYou indistinguishable jack!\nYou foolish harpy!\nYou vile varlet!\nYou dishonest cur!\nYou irksome fool!\nYou false barbermonger!\nYou sodden-witted recreant!\nYou detestable jolthead!\nYou cullionly maw!\nYou filthy Satan!\nYou lascivious milksop!\nYou ruinous boy!\nYou caterwauling worm!\nYou caterwauling liar!\nYou lubbery traitor!\nYou irksome scold!\nYou infected ape!\nYou lecherous Judas!\nYou cullionly block!\nYou vile ape!\nYou gross maw!\nYou lascivious fiend!\nYou filthy ape!\nYou lubbery harpy!\nYou peevish braggart!\nYou rascaly liar!\nYou slanderous slave!\nYou rascaly worm!\nYou wall-eyed block!\nYou toad-spotted fishmonger!\nYou scurilous degenerate!\nYou lecherous milksop!\nYou insatiate slave!\nYou lecherous traitor!\nYou lubbery Judas!\nYou loathsome Satan!\nYou rascaly villain!\nYou filthsome ass!\nYou lubbery ratcatcher!\nYou old jolthead!\nYou irksome rogue!\nYou base villain!\nYou corrupt Satan!\nYou peevish fiend!\nYou slanderous gull!\nYou loathsome coward!\nYou peevish coward!\nYou loathsome knave!\nYou insatiate gull!\nYou rascaly block!\nYou base varlet!\nYou filthsome gull!\nYou toad-spotted dandy!\nYou irksome degenerate!\nYou scurilous block!\nYou dishonest worm!\nYou loathsome jack!\nYou indistinguishable minion!\nYou foolish beggar!\nYou lubbery cur!\nYou scurvy fishmonger!\nYou indistinguishable boy!\nYou caterwauling slave!\nYou gross harpy!\nYou foul fishmonger!\nYo"
     }
@@ -621,7 +621,7 @@
    "chips": [
     {
      "args": "-n 2 --drink lemonade",
-     "label": "",
+     "label": "2 bottles",
      "status": 0,
      "stdout": "2 bottles of lemonade on the wall,\n2 bottles of lemonade,\nTake one down, pass it around,\n1 bottle of lemonade on the wall!\n\n1 bottle of lemonade on the wall,\n1 bottle of lemonade,\nTake one down, pass it around,\nNo more bottles of lemonade on the wall!\n"
     },
@@ -639,7 +639,7 @@
     },
     {
      "args": "--num 21 --drink lemonade",
-     "label": "",
+     "label": "21 bottles",
      "status": 0,
      "stdout": "21 bottles of lemonade on the wall,\n21 bottles of lemonade,\nTake one down, pass it around,\n20 bottles of lemonade on the wall!\n\n20 bottles of lemonade on the wall,\n20 bottles of lemonade,\nTake one down, pass it around,\n19 bottles of lemonade on the wall!\n\n19 bottles of lemonade on the wall,\n19 bottles of lemonade,\nTake one down, pass it around,\n18 bottles of lemonade on the wall!\n\n18 bottles of lemonade on the wall,\n18 bottles of lemonade,\nTake one down, pass it around,\n17 bottles of lemonade on the wall!\n\n17 bottles of lemonade on the wall,\n17 bottles of lemonade,\nTake one down, pass it around,\n16 bottles of lemonade on the wall!\n\n16 bottles of lemonade on the wall,\n16 bottles of lemonade,\nTake one down, pass it around,\n15 bottles of lemonade on the wall!\n\n15 bottles of lemonade on the wall,\n15 bottles of lemonade,\nTake one down, pass it around,\n14 bottles of lemonade on the wall!\n\n14 bottles of lemonade on the wall,\n14 bottles of lemonade,\nTake one down, pass it around,\n13 bottles of lemonade on the wall!\n\n13 bottles of lemonade on the wall,\n13 bottles of lemonade,\nTake one down, pass it around,\n12 bottles of lemonade on the wall!\n\n12 bottles of lemonade on the wall,\n12 bottles of lemonade,\nTake one down, pass it around,\n11 bottles of lemonade on the wall!\n\n11 bottles of lemonade on the wall,\n11 bottles of lemonade,\nTake one down, pass it around,\n10 bottles of lemonade on the wall!\n\n10 bottles of lemonade on the wall,\n10 bottles of lemonade,\nTake one down, pass it around,\n9 bottles of lemonade on the wall!\n\n9 bottles of lemonade on the wall,\n9 bottles of lemonade,\nTake one down, pass it around,\n8 bottles of lemonade on the wall!\n\n8 bottles of lemonade on the wall,\n8 bottles of lemonade,\nTake one down, pass it around,\n7 bottles of lemonade on the wall!\n\n7 bottles of lemonade on the wall,\n7 bottles of lemonade,\nTake one down, pass it around,\n6 bottles of lemonade on the wall!\n\n6 bottles of lemonade on the wall,\n6 bottles of lemonade,\nTake one down, pass it around,\n5"
     }
@@ -698,7 +698,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "NO SeeD, DiFfErENT evErY TIME\n"
+     "stdout": "nO sEeD, DIFFERent evErY TImE\n"
     }
    ],
    "moment": null
@@ -724,13 +724,13 @@
    "chips": [
     {
      "args": "-n 3",
-     "label": "",
+     "label": "3 days",
      "status": 0,
      "stdout": "On the first day of Christmas,\nMy true love gave to me,\nA partridge in a pear tree.\n\nOn the second day of Christmas,\nMy true love gave to me,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the third day of Christmas,\nMy true love gave to me,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n"
     },
     {
      "args": "--num 12",
-     "label": "",
+     "label": "all 12 days",
      "status": 0,
      "stdout": "On the first day of Christmas,\nMy true love gave to me,\nA partridge in a pear tree.\n\nOn the second day of Christmas,\nMy true love gave to me,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the third day of Christmas,\nMy true love gave to me,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the fourth day of Christmas,\nMy true love gave to me,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the fifth day of Christmas,\nMy true love gave to me,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the sixth day of Christmas,\nMy true love gave to me,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the seventh day of Christmas,\nMy true love gave to me,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the eighth day of Christmas,\nMy true love gave to me,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the ninth day of Christmas,\nMy true love gave to me,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the tenth day of Christmas,\nMy true love gave to me,\nTen lords a leaping,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds,\nThree French hens,\nTwo turtle doves,\nAnd a partridge in a pear tree.\n\nOn the eleventh day of Christmas,\nMy true love gave to me,\nEleven pipers piping,\nTen lords a leaping,\nNine ladies dancing,\nEight maids a milking,\nSeven swans a swimming,\nSix geese a laying,\nFive gold rings,\nFour calling birds"
     },
@@ -742,7 +742,7 @@
     },
     {
      "args": "-n 13",
-     "label": "",
+     "label": "13 days",
      "status": 2,
      "stdout": ""
     },
@@ -765,7 +765,7 @@
      "Only days 1 to 12: no \"zeroth\" day and no thirteenth"
     ],
     "args": "-n 13",
-    "label": "",
+    "label": "13 days",
     "real": {
      "status": 2,
      "line": ""
@@ -965,7 +965,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mses every tmie\n"
+     "stdout": "no seed, new mess erevy tmie\n"
     }
    ],
    "moment": {
@@ -985,11 +985,11 @@
     "label": "no seed, new mess every time",
     "real": {
      "status": 0,
-     "line": "no seed, new mses every tmie"
+     "line": "no seed, new mess erevy tmie"
     },
     "gremlin": {
      "status": 0,
-     "line": "no seed, new mses ervey time"
+     "line": "no seed, new mses evrey tmie"
     }
    }
   },
@@ -1139,19 +1139,19 @@
    "chips": [
     {
      "args": "-s 1",
-     "label": "",
+     "label": "a workout",
      "status": 0,
      "stdout": "Exercise      Reps\n----------  ------\nPushups         56\nSitups          88\nCrunches        27\nBurpees         35\n"
     },
     {
      "args": "-s 1 --easy",
-     "label": "",
+     "label": "the easy workout",
      "status": 0,
      "stdout": "Exercise      Reps\n----------  ------\nPushups         28\nSitups          44\nCrunches        13\nBurpees         17\n"
     },
     {
      "args": "-n 3 -s 4 -f inputs/silly-exercises.csv",
-     "label": "",
+     "label": "silly exercises",
      "status": 0,
      "stdout": "Exercise             Reps\n-----------------  ------\nHanging Chads          86\nRed Barchettas         50\nSquatting Chinups      35\n"
     },
@@ -1258,25 +1258,25 @@
    "chips": [
     {
      "args": "",
-     "label": "",
+     "label": "empty board",
      "status": 0,
      "stdout": "-------------\n| 1 | 2 | 3 |\n-------------\n| 4 | 5 | 6 |\n-------------\n| 7 | 8 | 9 |\n-------------\nNo winner.\n"
     },
     {
      "args": "-b XXO...OOX -p O -c 5",
-     "label": "",
+     "label": "O takes 5 and wins",
      "status": 0,
      "stdout": "-------------\n| X | X | O |\n-------------\n| 4 | O | 6 |\n-------------\n| O | O | X |\n-------------\nO has won!\n"
     },
     {
      "args": "-b XXXOOO...",
-     "label": "",
+     "label": "impossible board",
      "status": 2,
      "stdout": ""
     },
     {
      "args": "-b XO.XO.... -p X -c 7",
-     "label": "",
+     "label": "X takes 7 and wins",
      "status": 0,
      "stdout": "-------------\n| X | O | 3 |\n-------------\n| X | O | 6 |\n-------------\n| X | 8 | 9 |\n-------------\nX has won!\n"
     },
@@ -1299,7 +1299,7 @@
      "X and O can't BOTH have won"
     ],
     "args": "-b XXXOOO...",
-    "label": "",
+    "label": "impossible board",
     "real": {
      "status": 2,
      "line": ""
@@ -1331,7 +1331,7 @@
    "chips": [
     {
      "args": "",
-     "label": "",
+     "label": "empty board",
      "status": 0,
      "stdout": "-------------\n| 1 | 2 | 3 |\n-------------\n| 4 | 5 | 6 |\n-------------\n| 7 | 8 | 9 |\n-------------\nPlayer X, what is your move? [q to quit]: \nNo more moves. Bye!\n"
     }
@@ -1362,7 +1362,7 @@
      "Whatever anyone types, X never gets two turns in a row"
     ],
     "args": "",
-    "label": "",
+    "label": "empty board",
     "real": {
      "status": 0,
      "line": "| 1 | 2 | 3 |"
