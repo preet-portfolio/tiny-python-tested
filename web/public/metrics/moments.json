@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T10:37Z",
- "python": "3.14.10",
+ "generated": "2026-11-27T10:24Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -609,39 +609,39 @@
    },
    "rules": {
     "book": 8,
-    "real_life": 8,
+    "real_life": 9,
     "ci_only": 0
    },
    "gremlins": {
-    "total": 30,
-    "book_caught": 29,
-    "all_caught": 30,
+    "total": 36,
+    "book_caught": 35,
+    "all_caught": 36,
     "book_missed_real_life_caught": 1
    },
    "chips": [
     {
-     "args": "-n 2",
+     "args": "-n 2 --drink lemonade",
      "label": "",
      "status": 0,
-     "stdout": "2 bottles of beer on the wall,\n2 bottles of beer,\nTake one down, pass it around,\n1 bottle of beer on the wall!\n\n1 bottle of beer on the wall,\n1 bottle of beer,\nTake one down, pass it around,\nNo more bottles of beer on the wall!\n"
+     "stdout": "2 bottles of lemonade on the wall,\n2 bottles of lemonade,\nTake one down, pass it around,\n1 bottle of lemonade on the wall!\n\n1 bottle of lemonade on the wall,\n1 bottle of lemonade,\nTake one down, pass it around,\nNo more bottles of lemonade on the wall!\n"
     },
     {
-     "args": "-n 0",
+     "args": "-n 0 --drink lemonade",
      "label": "",
      "status": 2,
      "stdout": ""
     },
     {
-     "args": "-n 2.5",
+     "args": "-n 2.5 --drink lemonade",
      "label": "",
      "status": 2,
      "stdout": ""
     },
     {
-     "args": "--num 21",
+     "args": "--num 21 --drink lemonade",
      "label": "",
      "status": 0,
-     "stdout": "21 bottles of beer on the wall,\n21 bottles of beer,\nTake one down, pass it around,\n20 bottles of beer on the wall!\n\n20 bottles of beer on the wall,\n20 bottles of beer,\nTake one down, pass it around,\n19 bottles of beer on the wall!\n\n19 bottles of beer on the wall,\n19 bottles of beer,\nTake one down, pass it around,\n18 bottles of beer on the wall!\n\n18 bottles of beer on the wall,\n18 bottles of beer,\nTake one down, pass it around,\n17 bottles of beer on the wall!\n\n17 bottles of beer on the wall,\n17 bottles of beer,\nTake one down, pass it around,\n16 bottles of beer on the wall!\n\n16 bottles of beer on the wall,\n16 bottles of beer,\nTake one down, pass it around,\n15 bottles of beer on the wall!\n\n15 bottles of beer on the wall,\n15 bottles of beer,\nTake one down, pass it around,\n14 bottles of beer on the wall!\n\n14 bottles of beer on the wall,\n14 bottles of beer,\nTake one down, pass it around,\n13 bottles of beer on the wall!\n\n13 bottles of beer on the wall,\n13 bottles of beer,\nTake one down, pass it around,\n12 bottles of beer on the wall!\n\n12 bottles of beer on the wall,\n12 bottles of beer,\nTake one down, pass it around,\n11 bottles of beer on the wall!\n\n11 bottles of beer on the wall,\n11 bottles of beer,\nTake one down, pass it around,\n10 bottles of beer on the wall!\n\n10 bottles of beer on the wall,\n10 bottles of beer,\nTake one down, pass it around,\n9 bottles of beer on the wall!\n\n9 bottles of beer on the wall,\n9 bottles of beer,\nTake one down, pass it around,\n8 bottles of beer on the wall!\n\n8 bottles of beer on the wall,\n8 bottles of beer,\nTake one down, pass it around,\n7 bottles of beer on the wall!\n\n7 bottles of beer on the wall,\n7 bottles of beer,\nTake one down, pass it around,\n6 bottles of beer on the wall!\n\n6 bottles of beer on the wall,\n6 bottles of beer,\nTake one down, pass it around,\n5 bottles of beer on the wall!\n\n5 bottles of beer on the wall,\n5 bottles of beer,\nTake one down, pass it around,\n4 bottles of beer on the wall!\n\n4 bottles of beer on the wall,\n4 bottles of "
+     "stdout": "21 bottles of lemonade on the wall,\n21 bottles of lemonade,\nTake one down, pass it around,\n20 bottles of lemonade on the wall!\n\n20 bottles of lemonade on the wall,\n20 bottles of lemonade,\nTake one down, pass it around,\n19 bottles of lemonade on the wall!\n\n19 bottles of lemonade on the wall,\n19 bottles of lemonade,\nTake one down, pass it around,\n18 bottles of lemonade on the wall!\n\n18 bottles of lemonade on the wall,\n18 bottles of lemonade,\nTake one down, pass it around,\n17 bottles of lemonade on the wall!\n\n17 bottles of lemonade on the wall,\n17 bottles of lemonade,\nTake one down, pass it around,\n16 bottles of lemonade on the wall!\n\n16 bottles of lemonade on the wall,\n16 bottles of lemonade,\nTake one down, pass it around,\n15 bottles of lemonade on the wall!\n\n15 bottles of lemonade on the wall,\n15 bottles of lemonade,\nTake one down, pass it around,\n14 bottles of lemonade on the wall!\n\n14 bottles of lemonade on the wall,\n14 bottles of lemonade,\nTake one down, pass it around,\n13 bottles of lemonade on the wall!\n\n13 bottles of lemonade on the wall,\n13 bottles of lemonade,\nTake one down, pass it around,\n12 bottles of lemonade on the wall!\n\n12 bottles of lemonade on the wall,\n12 bottles of lemonade,\nTake one down, pass it around,\n11 bottles of lemonade on the wall!\n\n11 bottles of lemonade on the wall,\n11 bottles of lemonade,\nTake one down, pass it around,\n10 bottles of lemonade on the wall!\n\n10 bottles of lemonade on the wall,\n10 bottles of lemonade,\nTake one down, pass it around,\n9 bottles of lemonade on the wall!\n\n9 bottles of lemonade on the wall,\n9 bottles of lemonade,\nTake one down, pass it around,\n8 bottles of lemonade on the wall!\n\n8 bottles of lemonade on the wall,\n8 bottles of lemonade,\nTake one down, pass it around,\n7 bottles of lemonade on the wall!\n\n7 bottles of lemonade on the wall,\n7 bottles of lemonade,\nTake one down, pass it around,\n6 bottles of lemonade on the wall!\n\n6 bottles of lemonade on the wall,\n6 bottles of lemonade,\nTake one down, pass it around,\n5"
     }
    ],
    "moment": {
@@ -698,7 +698,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "nO sEed, dIfFErEnt EVERy time\n"
+     "stdout": "NO SeED, diFfereNT EveRY Time\n"
     }
    ],
    "moment": null
@@ -965,7 +965,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mess ervey tmie\n"
+     "stdout": "no seed, new mess eevry time\n"
     }
    ],
    "moment": {
@@ -985,11 +985,11 @@
     "label": "no seed, new mess every time",
     "real": {
      "status": 0,
-     "line": "no seed, new mess ervey tmie"
+     "line": "no seed, new mess eevry time"
     },
     "gremlin": {
      "status": 0,
-     "line": "no seed, new mess erevy tmie"
+     "line": "no seed, new mess ervey tmie"
     }
    }
   },

@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T10:37Z",
- "python": "3.14.10",
+ "generated": "2026-11-27T10:24Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -177,18 +177,18 @@
    "id": "11_bottles_of_beer",
    "tests": {
     "book": 8,
-    "world": 8,
-    "passed": 16,
-    "total": 16
+    "world": 9,
+    "passed": 17,
+    "total": 17
    },
    "mutation": {
     "book": {
-     "killed": 29,
-     "total": 30
+     "killed": 35,
+     "total": 36
     },
     "world": {
-     "killed": 30,
-     "total": 30
+     "killed": 36,
+     "total": 36
     }
    }
   },

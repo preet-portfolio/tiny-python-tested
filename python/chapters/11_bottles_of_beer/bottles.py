@@ -13,6 +13,9 @@ def get_args() -> argparse.Namespace:
     parser.add_argument(
         "-n", "--num", metavar="number", type=int, default=10, help="How many bottles"
     )
+    # The book's song is about beer, and its tests check that word for word; the site sings
+    # about lemonade instead by passing --drink.
+    parser.add_argument("-d", "--drink", metavar="drink", default="beer", help="What's in the bottles")
     args = parser.parse_args()
     if args.num < 1:
         parser.error(f'--num "{args.num}" must be greater than 0')
@@ -26,22 +29,22 @@ def bottles(n: int) -> str:
     return f"{n} bottle{'' if n == 1 else 's'}"
 
 
-def verse(n: int) -> str:
-    """One verse, starting with n bottles on the wall."""
+def verse(n: int, drink: str) -> str:
+    """One verse, starting with n bottles of drink on the wall."""
     return "\n".join(
         [
-            f"{bottles(n)} of beer on the wall,",
-            f"{bottles(n)} of beer,",
+            f"{bottles(n)} of {drink} on the wall,",
+            f"{bottles(n)} of {drink},",
             "Take one down, pass it around,",
-            f"{bottles(n - 1)} of beer on the wall!",
+            f"{bottles(n - 1)} of {drink} on the wall!",
         ]
     )
 
 
 def main() -> None:
     """Sing every verse from --num down to 1."""
-    num = get_args().num
-    print("\n\n".join(verse(n) for n in range(num, 0, -1)))
+    args = get_args()
+    print("\n\n".join(verse(n, args.drink) for n in range(args.num, 0, -1)))
 
 
 if __name__ == "__main__":

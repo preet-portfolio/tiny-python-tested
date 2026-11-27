@@ -140,10 +140,11 @@ function Choir({ run, brain }: ToyProps) {
   const { mine, busy, go } = useCompare(run, brain, false);
   const sing = (n: string) => {
     setNum(n);
-    go(`-n ${quote(n.trim() || "''")}`);
+    // The book's song is about beer; the choir here sings about lemonade.
+    go(`-n ${quote(n.trim() || "''")} --drink lemonade`);
   };
   useEffect(() => {
-    go("-n 3");
+    go("-n 3 --drink lemonade");
   }, [go]);
   const verses = mine?.status === 0 ? mine.stdout.trim().split("\n\n") : [];
   const count = Math.max(0, Math.min(40, parseInt(num, 10) || 0));
@@ -179,8 +180,9 @@ function Choir({ run, brain }: ToyProps) {
         label="Try a number"
       />
       <Oops run={mine} />
+      {/* The songbook scrolls on long songs, so it must take keyboard focus (axe: scrollable-region-focusable). */}
       {verses.length > 0 && (
-        <div className="songbook" aria-live="polite">
+        <div className="songbook" aria-live="polite" tabIndex={0} role="region" aria-label="The song">
           <p className="songbook-count">
             {verses.length} {verses.length === 1 ? "verse" : "verses"}
           </p>
