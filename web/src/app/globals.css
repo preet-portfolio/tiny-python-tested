@@ -1356,6 +1356,11 @@ a.big-btn {
 .ticks {
   margin: 10px 0 0;
 }
+.ticks-note {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 .tick {
   color: var(--pass);
   font-weight: 800;

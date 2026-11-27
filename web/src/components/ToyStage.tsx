@@ -68,6 +68,9 @@ export function ToyStage({
   const [brainRequest, setBrainRequest] = useState<{ brain: BrainId; n: number } | undefined>();
   const liveRef = useRef<HTMLDivElement>(null);
   const { book, real_life } = entry.rules;
+  // These numbers are CI's, which has every book text. The browser skips the rules that need
+  // a text we can't share, so its own counts below are lower; say so here, where they first appear.
+  const ciOnly = entry.rules.ci_only ?? 0;
   const g = entry.gremlins;
   const H = headingLevel === 1 ? "h1" : "h2";
 
@@ -165,6 +168,13 @@ export function ToyStage({
           <span className="tick">✓</span> {who} passes all {book} of the book&apos;s rules
           {real_life > 0 && <> and all {real_life} real-life rules</>}.
         </p>
+        {ciOnly > 0 && (
+          <p className="ticks-note">
+            {ciOnly === 1 ? "One of the book's rules needs" : `${ciOnly} of the book's rules need`} words someone else
+            wrote, which we can&apos;t share. Our server checks {ciOnly === 1 ? "it" : "them"}, but your browser
+            can&apos;t, so when you play below it has {book - ciOnly} book rules and may catch fewer gremlins.
+          </p>
+        )}
       </section>
 
       <section className="step step-gremlin" aria-labelledby={`${entry.id}-gremlin`}>

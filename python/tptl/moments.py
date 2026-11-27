@@ -8,6 +8,7 @@ gremlin's answer to the input where the two differ. Nothing on that screen is ty
 
 from __future__ import annotations
 
+import ast
 import shlex
 from pathlib import Path
 from typing import Any
@@ -64,6 +65,21 @@ def _first_difference(a: str, b: str) -> tuple[str, str]:
     if len(la) != len(lb):
         return (la[len(lb)] if len(la) > len(lb) else ""), (lb[len(la)] if len(lb) > len(la) else "")
     return a, b
+
+
+def ci_only(d: Path, book_tests: list[str]) -> int:
+    """How many of the book's rules the browser skips: they read a text we can't share.
+
+    The chapter's conftest.py names them in NEEDS_TEXT; CI has the text and runs them.
+    """
+    conf = d / "conftest.py"
+    if not conf.exists():
+        return 0
+    for node in ast.parse(conf.read_text(encoding="utf-8")).body:
+        if isinstance(node, ast.Assign) and any(getattr(t, "id", None) == "NEEDS_TEXT" for t in node.targets):
+            names = ast.literal_eval(node.value)
+            return sum(1 for t in book_tests if t.rsplit("::", 1)[-1] in names)
+    return 0
 
 
 def record(ch: dict, d: Path, book: dict, world: dict) -> dict[str, Any]:
@@ -124,7 +140,8 @@ def record(ch: dict, d: Path, book: dict, world: dict) -> dict[str, Any]:
     return {
         "id": ch["id"],
         "character": ch["character"],
-        "rules": {"book": len(book_tests), "real_life": len(world_tests) - len(book_tests)},
+        "rules": {"book": len(book_tests), "real_life": len(world_tests) - len(book_tests),
+                  "ci_only": ci_only(d, book_tests)},
         "gremlins": {
             "total": book.get("total", 0),
             "book_caught": book.get("killed", 0),

@@ -37,7 +37,8 @@ export type Chip = { args: string; label: string; status: number; stdout: string
 export type MomentEntry = {
   id: string;
   character: { name: string; emoji: string; role: string };
-  rules: { book: number; real_life: number };
+  /** ci_only: book rules that need a text we can't share, so only CI runs them. */
+  rules: { book: number; real_life: number; ci_only?: number };
   gremlins: { total: number; book_caught: number; all_caught: number; book_missed_real_life_caught: number };
   chips: Chip[];
   moment: {
