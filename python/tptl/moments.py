@@ -15,6 +15,7 @@ from typing import Any
 
 from . import shim
 from .mutate import CRASHED, generate, write_source
+from .runner import repeatable_random
 
 # Which gremlins a child can follow, best first. A changed word or number is easier to explain
 # than a flipped branch.
@@ -24,7 +25,12 @@ MAX_OUT = 2000
 
 
 def _run(d: Path, program: str, args: str) -> dict[str, Any]:
-    r = shim._run_in(str(d), program, args)
+    # A chip with no --seed ("no seed, different every time") would record new lines on every
+    # CI run, and the publish job would commit them though nothing changed. Record it with the
+    # tests' fixed seed instead: still a real answer, the same each run, and a gremlin's line
+    # then differs from the real one only because of the gremlin. Live play stays random.
+    with repeatable_random():
+        r = shim._run_in(str(d), program, args)
     return {"status": r.status, "stdout": r.stdout[:MAX_OUT], "stderr": r.stderr[-400:]}
 
 
