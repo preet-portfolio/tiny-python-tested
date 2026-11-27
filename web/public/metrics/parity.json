@@ -275,20 +275,20 @@
   {
    "chapter": "11_bottles_of_beer",
    "variant": "reference",
-   "tests": 16,
-   "native_passed": 16,
-   "shim_passed": 16,
-   "commands_compared": 16,
+   "tests": 17,
+   "native_passed": 17,
+   "shim_passed": 17,
+   "commands_compared": 17,
    "mismatches": [],
    "output_mismatches": []
   },
   {
    "chapter": "11_bottles_of_beer",
    "variant": "starter",
-   "tests": 16,
+   "tests": 17,
    "native_passed": 4,
    "shim_passed": 4,
-   "commands_compared": 12,
+   "commands_compared": 13,
    "mismatches": [],
    "output_mismatches": []
   },

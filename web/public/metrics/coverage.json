@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26T12:07Z",
+ "generated": "2026-11-27T11:14Z",
  "python": "3.14.10",
  "tests": "book + real world, real subprocess",
  "chapters": [
@@ -87,8 +87,8 @@
   {
    "id": "11_bottles_of_beer",
    "program": "bottles.py",
-   "statements": 19,
-   "covered": 19,
+   "statements": 20,
+   "covered": 20,
    "branches": 6,
    "covered_branches": 6,
    "percent": 100.0
