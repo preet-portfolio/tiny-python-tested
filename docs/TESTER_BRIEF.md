@@ -46,7 +46,9 @@ Verify the claims:
 1. **Book's tests unchanged.** Clone github.com/kyclark/tiny_python_projects at `bcf4b24`.
    For every chapter on the site, `diff` its `test.py` (and `unit.py`, inputs) against
    `python/upstream/<chapter>/` and against the test text the page shows. Pass: no difference
-   at all (whitespace included).
+   at all (whitespace included), except `07_gashlycrumb/test.py`: `test_a`, `test_b_c` and
+   `test_y` compare SHA-256 digests instead of quoting Gorey. Pass there: the digest of each
+   book expected string equals the one in the file, and nothing else differs.
 2. **Numbers match the JSON.** For each chapter, every number on the page (tests, passes,
    gremlins/mutants caught, coverage, parity counts) appears in `/metrics/summary.json`,
    `/metrics/parity.json`, `/metrics/coverage.json` or `/metrics/pyodide.json` on the same

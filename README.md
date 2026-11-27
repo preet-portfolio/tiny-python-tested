@@ -14,7 +14,7 @@ WebAssembly (Pyodide).
 
 | Path | What |
 |---|---|
-| `python/upstream/` | The book's tests and input files, unchanged (MIT, with its LICENSE) |
+| `python/upstream/` | The book's tests and input files, unchanged except where they quoted a text we can't share (MIT, with its LICENSE; see `docs/PLAN.md`) |
 | `python/chapters/` | My programs, real-life tests and property tests, one folder per chapter |
 | `python/tptl/` | The harness: in-process `subprocess` shim, mutation testing, metrics |
 | `web/` | Next.js static site |
