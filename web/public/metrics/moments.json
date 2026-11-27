@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T09:12Z",
- "python": "3.14.10",
+ "generated": "2026-11-27T09:46Z",
+ "python": "3.14.0",
  "chapters": [
   {
    "id": "02_crowsnest",
@@ -11,7 +11,8 @@
    },
    "rules": {
     "book": 6,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -83,7 +84,8 @@
    },
    "rules": {
     "book": 7,
-    "real_life": 8
+    "real_life": 8,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 38,
@@ -161,7 +163,8 @@
    },
    "rules": {
     "book": 4,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 27,
@@ -212,7 +215,8 @@
    },
    "rules": {
     "book": 5,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 21,
@@ -288,7 +292,8 @@
    },
    "rules": {
     "book": 9,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 26,
@@ -333,7 +338,8 @@
    },
    "rules": {
     "book": 8,
-    "real_life": 7
+    "real_life": 7,
+    "ci_only": 4
    },
    "gremlins": {
     "total": 25,
@@ -395,7 +401,8 @@
    },
    "rules": {
     "book": 8,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 21,
@@ -452,7 +459,8 @@
    },
    "rules": {
     "book": 11,
-    "real_life": 12
+    "real_life": 12,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 46,
@@ -520,7 +528,8 @@
    },
    "rules": {
     "book": 10,
-    "real_life": 10
+    "real_life": 10,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 34,
@@ -600,7 +609,8 @@
    },
    "rules": {
     "book": 8,
-    "real_life": 8
+    "real_life": 8,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 30,
@@ -656,7 +666,8 @@
    },
    "rules": {
     "book": 6,
-    "real_life": 10
+    "real_life": 10,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 17,
@@ -687,7 +698,7 @@
      "args": "'no seed, different every time'",
      "label": "no seed, different every time",
      "status": 0,
-     "stdout": "No seEd, DiffeReNt eVery tiMe\n"
+     "stdout": "No SEeD, difFerENT EveRY TIMe\n"
     }
    ],
    "moment": null
@@ -701,7 +712,8 @@
    },
    "rules": {
     "book": 7,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -773,7 +785,8 @@
    },
    "rules": {
     "book": 7,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -841,7 +854,8 @@
    },
    "rules": {
     "book": 10,
-    "real_life": 5
+    "real_life": 5,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 33,
@@ -913,7 +927,8 @@
    },
    "rules": {
     "book": 7,
-    "real_life": 9
+    "real_life": 9,
+    "ci_only": 1
    },
    "gremlins": {
     "total": 27,
@@ -950,7 +965,7 @@
      "args": "'no seed, new mess every time'",
      "label": "no seed, new mess every time",
      "status": 0,
-     "stdout": "no seed, new mess erevy tmie\n"
+     "stdout": "no seed, new mses eervy tmie\n"
     }
    ],
    "moment": {
@@ -970,11 +985,11 @@
     "label": "no seed, new mess every time",
     "real": {
      "status": 0,
-     "line": "no seed, new mess erevy tmie"
+     "line": "no seed, new mses eervy tmie"
     },
     "gremlin": {
      "status": 0,
-     "line": "no seed, new mses ervey time"
+     "line": "no seed, new mess erevy tmie"
     }
    }
   },
@@ -987,7 +1002,8 @@
    },
    "rules": {
     "book": 7,
-    "real_life": 9
+    "real_life": 9,
+    "ci_only": 1
    },
    "gremlins": {
     "total": 37,
@@ -998,19 +1014,19 @@
    "chips": [
     {
      "args": "inputs/fox.txt -i surly car under bicycle",
-     "label": "fox car under bicycle",
+     "label": "fox surly car under bicycle",
      "status": 0,
      "stdout": "The quick surly car jumps under the lazy bicycle.\n"
     },
     {
      "args": "inputs/romeo_juliet.txt -i penguins Paris pancake socks spoon wobbly dance 7 elbow giggle",
-     "label": "romeo_juliet Paris pancake socks spoon wobbly dance 7 elbow giggle",
+     "label": "romeo_juliet penguins Paris pancake socks spoon wobbly dance 7 elbow giggle",
      "status": 0,
      "stdout": "Two penguins, both alike in dignity,\nIn fair Paris, where we lay our scene,\nFrom ancient pancake break to new mutiny,\nWhere civil blood makes civil hands unclean.\nFrom forth the fatal loins of these two foes\nA pair of star-cross'd socks take their life;\nWhose misadventur'd piteous overthrows\nDoth with their spoon bury their parents' strife.\nThe fearful passage of their wobbly love,\nAnd the continuance of their parents' rage,\nWhich, but their children's end, nought could dance,\nIs now the 7 hours' traffic of our stage;\nThe which if you with patient elbow attend,\nWhat here shall giggle, our toil shall strive to mend.\n"
     },
     {
      "args": "inputs/fox.txt -i only two",
-     "label": "fox two",
+     "label": "fox only two",
      "status": 1,
      "stdout": ""
     },
@@ -1039,7 +1055,7 @@
      "With no words given, she asks for each one: \"Give me an adjective\""
     ],
     "args": "inputs/fox.txt -i surly car under bicycle",
-    "label": "fox car under bicycle",
+    "label": "fox surly car under bicycle",
     "real": {
      "status": 0,
      "line": ""
@@ -1059,7 +1075,8 @@
    },
    "rules": {
     "book": 6,
-    "real_life": 6
+    "real_life": 6,
+    "ci_only": 1
    },
    "gremlins": {
     "total": 11,
@@ -1110,7 +1127,8 @@
    },
    "rules": {
     "book": 9,
-    "real_life": 9
+    "real_life": 9,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -1176,7 +1194,8 @@
    },
    "rules": {
     "book": 17,
-    "real_life": 12
+    "real_life": 12,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -1227,7 +1246,8 @@
    },
    "rules": {
     "book": 19,
-    "real_life": 8
+    "real_life": 8,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
@@ -1299,7 +1319,8 @@
    },
    "rules": {
     "book": 4,
-    "real_life": 18
+    "real_life": 18,
+    "ci_only": 0
    },
    "gremlins": {
     "total": 60,
