@@ -21,10 +21,10 @@
     "sums.txt"
   ],
   "try_args": [
-    "-n 2",
-    "-n 0",
-    "-n 2.5",
-    "--num 21"
+    "-n 2 --drink lemonade",
+    "-n 0 --drink lemonade",
+    "-n 2.5 --drink lemonade",
+    "--num 21 --drink lemonade"
   ],
   "toy": "bottles",
   "character": {
@@ -55,6 +55,7 @@
     "test_default_is_ten_verses": "With no number, sings 10 verses",
     "test_one_verse_per_bottle": "99 bottles means 99 verses",
     "test_numbers_ending_in_one_stay_plural": "21, 11 and 101 bottles are still \"bottles\"",
-    "test_ends_with_no_more": "Always ends on \"No more bottles\""
+    "test_ends_with_no_more": "Always ends on \"No more bottles\"",
+    "test_sings_about_lemonade": "Sings about lemonade when you ask, word for word"
   }
 }

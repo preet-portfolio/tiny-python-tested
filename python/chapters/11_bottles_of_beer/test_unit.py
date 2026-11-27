@@ -16,7 +16,7 @@ def bottles():
 
 def test_verse_last(bottles):
     """the last verse is singular and ends with 'No more'"""
-    assert bottles.verse(1).splitlines() == [
+    assert bottles.verse(1, "beer").splitlines() == [
         "1 bottle of beer on the wall,",
         "1 bottle of beer,",
         "Take one down, pass it around,",
@@ -26,7 +26,7 @@ def test_verse_last(bottles):
 
 def test_verse_two(bottles):
     """two bottles goes down to one bottle, singular"""
-    assert bottles.verse(2).splitlines() == [
+    assert bottles.verse(2, "beer").splitlines() == [
         "2 bottles of beer on the wall,",
         "2 bottles of beer,",
         "Take one down, pass it around,",

@@ -43,3 +43,10 @@ def test_ends_with_no_more():
     verses = sing("-n 3")
     assert verses[-1].endswith("No more bottles of beer on the wall!")
     assert "0 bottles" not in "\n".join(verses)
+
+
+def test_sings_about_lemonade():
+    """--drink lemonade changes every line, and nothing else"""
+    verses = sing("-n 2 --drink lemonade")
+    assert verses == [v.replace("beer", "lemonade") for v in sing("-n 2")]
+    assert "beer" not in "\n\n".join(verses)

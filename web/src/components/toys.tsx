@@ -140,10 +140,11 @@ function Choir({ run, brain }: ToyProps) {
   const { mine, busy, go } = useCompare(run, brain, false);
   const sing = (n: string) => {
     setNum(n);
-    go(`-n ${quote(n.trim() || "''")}`);
+    // The book's song is about beer; the choir here sings about lemonade.
+    go(`-n ${quote(n.trim() || "''")} --drink lemonade`);
   };
   useEffect(() => {
-    go("-n 3");
+    go("-n 3 --drink lemonade");
   }, [go]);
   const verses = mine?.status === 0 ? mine.stdout.trim().split("\n\n") : [];
   const count = Math.max(0, Math.min(40, parseInt(num, 10) || 0));
