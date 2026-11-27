@@ -90,8 +90,13 @@ def record(ch: dict, d: Path, book: dict, world: dict) -> dict[str, Any]:
     chips = []
     # moment_args, when a chapter has them, are kinder examples for the first screen (Lexi's
     # alphabet instead of the book's gloomy one).
-    for args in ch.get("moment_args") or ch.get("try_args", []):
-        chips.append({"args": args, "label": label(args), **_run(d, program, args)})
+    # chip_labels names chips whose words are all flags ("-s 1 -n 1" would be an empty label).
+    named = ch.get("chip_labels", {})
+    used = ch.get("moment_args") or ch.get("try_args", [])
+    if stale := sorted(set(named) - set(used)):
+        raise ValueError(f"{ch['id']}: chip_labels for commands it doesn't run: {stale}")
+    for args in used:
+        chips.append({"args": args, "label": named.get(args) or label(args), **_run(d, program, args)})
 
     by_id = {m["id"]: m for m in world.get("mutants", [])}
     escaped = [m for m in book.get("mutants", []) if not m["killed"]]
